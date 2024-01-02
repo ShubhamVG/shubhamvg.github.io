@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:html';
 import 'dart:typed_data' show Uint8List;
 
@@ -13,7 +14,6 @@ void enableElement(Element e) {
 
 void main() {
   final FileReader reader = FileReader();
-  reader.onLoad;
 
   querySelector('#imageDropperContainer')!.onInput.listen((event) {
     final InputElement imgUploadElem =
@@ -25,13 +25,19 @@ void main() {
     }
   });
 
-  querySelector('#downloadBtn')!.onClick.listen((event) {
+  querySelector('#downloadBtn')!.onClick.listen((event) async {
     // Get image
     final InputElement imgUploadElem =
         querySelector('#uploadFile')! as InputElement;
-    reader.readAsArrayBuffer(imgUploadElem.files!.first);
+    final File inputImgFile = imgUploadElem.files!.first;
+    reader.readAsArrayBuffer(inputImgFile);
+
+    // Wait till the image has been read and then get the image
+    while (reader.readyState != FileReader.DONE) {
+      await Future.delayed(Duration(milliseconds: 100));
+    }
+
     final Image inputImg = decodeImage(reader.result as Uint8List)!;
-    // inputImageBuffer.clear();
 
     // Get settings
     final InputElement scalarElem =
@@ -48,12 +54,16 @@ void main() {
     // Do manipulation
     final int resizedWidth = (inputImg.width * scale).toInt();
     final int resizedHeight = (inputImg.height * scale).toInt();
-    print("this?");
     final Image resizedImg =
-        Image.fromResized(inputImg, width: resizedWidth, height: resizedHeight);
+        copyResize(inputImg, width: resizedWidth, height: resizedHeight);
 
     // Start downloading
-    AnchorElement a = AnchorElement(href: resizedImg.toString());
+    final String uriBasedLink =
+        "data:${inputImgFile.type};base64,${base64Encode(encodeNamedImage(inputImgFile.name, resizedImg)!)}";
+
+    AnchorElement a = AnchorElement(href: uriBasedLink);
+    a.setAttribute('download', '');
     a.click();
+    a.remove;
   });
 }

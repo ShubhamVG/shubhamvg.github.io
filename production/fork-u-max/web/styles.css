@@ -106,6 +106,7 @@ input[type="radio"]:checked + .btn-toggle {
 
 #scaleBy {
   margin-top: 10px;
+  gap: 5px;
 }
 
 #scaleType {
