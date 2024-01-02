@@ -1,0 +1,130 @@
+/* Defining imports, fonts, variables, animations and such */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/* Elements */
+
+html, body {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  background-image: linear-gradient(
+    50deg,
+    hsl(215deg 100% 20%) 0%,
+    hsl(232deg 52% 30%) 11%,
+    hsl(249deg 43% 35%) 22%,
+    hsl(264deg 44% 38%) 33%,
+    hsl(277deg 45% 40%) 44%,
+    hsl(290deg 46% 41%) 56%,
+    hsl(303deg 49% 43%) 67%,
+    hsl(312deg 55% 48%) 78%,
+    hsl(319deg 66% 53%) 89%,
+    hsl(325deg 85% 57%) 100%
+  );
+  background-size: 100vw 100vh;
+}
+
+footer {
+  padding: 10px;
+}
+
+header {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+input[type="file"], input[type="radio"] {
+  display: none;
+}
+
+/* Classes */
+
+.bottom {
+  position: absolute;
+  bottom: 0px;
+}
+
+.btn {
+  background-color: magenta;
+  font-size: medium;
+  border: 0px;
+  color: white;
+  padding: 20px;
+}
+
+.btn:disabled {
+  background-color: gray;
+}
+
+.btn-toggle {
+  background-color: gray;
+  padding: 20px;
+}
+
+input[type="radio"]:checked + .btn-toggle {
+  background-color: magenta;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+
+.fit-content {
+  width: fit-content;
+}
+
+.flex {
+  display: flex;
+}
+
+.rect {
+  outline: 2px solid gray;
+  background-color: rgba(0, 81, 255, 0.507);
+}
+
+.round-10 {
+  border-radius: 10px;
+}
+
+.round-full {
+  border-radius: 9999px;
+}
+
+/* IDs */
+#imageDropper {
+  width: clamp(200px, 90%, 500px);
+  line-height: 150px;
+  margin-bottom: 50px;
+}
+
+#scaleBy {
+  margin-top: 10px;
+}
+
+#scaleType {
+  background-color: gray;
+}
+
+#downloadBtnContainer {
+  margin-top: 50px;
+}
+
+/* Responsiveness */
+
+@media (min-width: 640px) {
+  #scaleBy {
+    margin-top: 0px;
+  }
+
+  #scaleChoose {
+    display: flex;
+    gap: 100px;
+  }
+}
