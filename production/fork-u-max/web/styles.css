@@ -24,7 +24,7 @@ html, body {
 }
 
 footer {
-  padding: 10px;
+  padding: 15px;
 }
 
 header {
@@ -40,10 +40,10 @@ input[type="file"], input[type="radio"] {
 
 /* Classes */
 
-.bottom {
+/* .bottom {
   position: absolute;
   bottom: 0px;
-}
+} */
 
 .btn {
   background-color: magenta;
@@ -115,11 +115,17 @@ input[type="radio"]:checked + .btn-toggle {
 
 #downloadBtnContainer {
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 /* Responsiveness */
 
-@media (min-width: 640px) {
+@media (min-height: 900px) {
+  .bottom {
+    position: absolute;
+    bottom: 0;
+  }
+
   #scaleBy {
     margin-top: 0px;
   }
