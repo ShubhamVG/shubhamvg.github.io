@@ -1,0 +1,6 @@
+.vscode/
+*/.gitignore
+
+# Production or deployed trash
+**/.build.manifest
+**/.dart_tool
