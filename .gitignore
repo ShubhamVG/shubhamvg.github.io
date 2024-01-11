@@ -3,4 +3,4 @@
 
 # Production or deployed trash
 **/.build.manifest
-**/.dart_tool
+**/.dart_tool/
