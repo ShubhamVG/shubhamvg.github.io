@@ -12,8 +12,52 @@
 </head>
 
 <body>
-
-  <div id="output"></div>
-
+  <header>
+    <section>
+      <h1>Check today's fortune!</h1>
+      <p>Click on any of the 4 cards to know your today's fortune or shuffle the cards before picking.</p>
+    </section>
+  </header>
+  <main>
+    <div id="cards">
+      <div class="card" id="card1" data-closed="true">
+        <div class="cardfront"></div>
+        <div class="cardback"></div>
+      </div>
+      <div class="card" id="card2" data-closed="true">
+        <div class="cardfront"></div>
+        <div class="cardback"></div>
+      </div>
+      <div class="card" id="card3" data-closed="true">
+        <div class="cardfront"></div>
+        <div class="cardback"></div>
+      </div>
+      <div class="card" id="card4" data-closed="true">
+        <div class="cardfront"></div>
+        <div class="cardback"></div>
+      </div>
+    </div>
+    <div id="stackedCards">
+      <div class="card" id="stackedCard1">Press to shuffle</div>
+      <div class="card" id="stackedCard2"></div>
+      <div class="card" id="stackedCard3"></div>
+      <div class="card" id="stackedCard4"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="card" id="specialCard">
+      <div class="cardfront">
+        <span>Special Card</span>
+        <div class="circle" id="circle1"></div>
+        <div class="circle" id="circle2"></div>
+        <div class="circle" id="circle3"></div>
+        <div class="circle" id="circle4"></div>  
+      </div>
+      <div class="cardback">
+        <img src="./assets/catpurring.gif" alt="gif" style="width: clamp(300px, 20vw, 500px);">
+      </div>
+    </div>
+    <p>I need suggestions to improve this card btw.</p>
+  </footer>
 </body>
 </html>

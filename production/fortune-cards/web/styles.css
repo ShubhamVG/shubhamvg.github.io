@@ -1,14 +1,244 @@
+/* Global setup */
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+:root {
+  --bg-color: #120024;
+  --card-color: #34005c;
+  --circle1-color: rgba(119, 13, 48, 0.418);
+  --circle2-color: #5200afa4;
+  --circle3-color: #178b5721;
+  --circle4-color: #d0ff0062;
+}
+
+/* Elements */
+
+body {
+  background-color: var(--bg-color);
+  color: white;
   font-family: 'Roboto', sans-serif;
 }
 
-#output {
-  padding: 20px;
+header {
   text-align: center;
+}
+
+footer {
+  display: flex;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+footer p {
+  margin-top: 20%;
+  margin-left: 50px;
+}
+
+section p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Classes */
+.card {
+  background-color: var(--card-color);
+  height: clamp(40px, 25vh, 300px);
+  width: clamp(30px, 35vw, 170px);
+  border-radius: 5px;
+  box-shadow: 0px 0px 100px 1px black;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.cardfront {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.cardback {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  text-align: center;
+  padding-top: 5px;
+  font-size: 0.9rem;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+}
+
+.stacked-cards-animated {
+  transform: translateX(-30%) translateY(-30%);
+  opacity: 0;
+}
+
+.rotateY180 {
+  transform: rotateY(180deg);
+}
+
+/* IDs */
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  transition: all 10s ease;
+}
+
+#circle1 {
+  background-color: var(--circle1-color);
+  box-shadow: 0px 0px 10px 15px var(--circle1-color);
+  opacity: 70%;
+  animation: shine 1s ease-in-out 0.1s infinite forwards alternate-reverse;
+}
+
+#circle2 {
+  background-color: var(--circle2-color);
+  box-shadow: 0px 0px 10px 15px var(--circle2-color);
+  opacity: 70%;
+  animation: shine 0.5s ease-in-out 0.2s infinite forwards alternate-reverse;
+  right: 0;
+  top: 0;
+  position: fixed;
+}
+
+#circle3 {
+  background-color: var(--circle3-color);
+  box-shadow: 0px 0px 10px 15px var(--circle3-color);
+  opacity: 70%;
+  animation: shine 0.8s ease-in-out 0.3s infinite forwards alternate-reverse;
+  bottom: 0;
+  position: fixed;
+}
+
+#circle4 {
+  background-color: var(--circle4-color);
+  box-shadow: 0px 0px 10px 15px var(--circle4-color);
+  opacity: 70%;
+  animation: shine 1.3s ease-in-out 0.4s infinite forwards alternate-reverse;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+#specialCard {
+  outline: rgb(97, 79, 0) solid 1px;
+}
+
+#specialCard span {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  rotate: -30deg;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-large;
+  text-align: center;
+  text-wrap: wrap;
+}
+
+#stackedCards {
+  position: relative;
+  width: fit-content;
+  margin-left: 75vw;
+  margin-top: 50px;
+  height: 100px;
+  width: 100px;
+  transition: all 0.4s ease-out;
+}
+
+#stackedCards .card {
+  height: 100px;
+  width: 60px;
+  position: absolute;
+  rotate: 45deg;
+  outline: grey solid 0.5px;
+  box-shadow: none;
+}
+
+#stackedCard1 {
+  z-index: 4;
+  line-height: 270%;
+  text-align: center;
+}
+
+#stackedCard2 {
+  z-index: 3;
+  margin-top: 8px;
+  margin-left: 2px;
+}
+
+#stackedCard3 {
+  z-index: 2;
+  margin-top: 16px;
+  margin-left: 4px;
+}
+
+#stackedCard4 {
+  z-index: 1;
+  margin-top: 24px;
+  margin-left: 6px;
+}
+
+/* Animations */
+@keyframes shine {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 60%;
+  }
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  footer {
+    display: block;
+    margin-top: 50px;
+  }
+
+  footer p {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #cards {
+    width: clamp(80px, 80vw, 360px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #specialCard {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #specialCard span {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    rotate: -30deg;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    text-align: center;
+    text-wrap: wrap;
+  }
+
+  #stackedCards {
+    position: relative;
+    width: fit-content;
+    margin-left: auto;
+    margin-top: 50px;
+    height: 100px;
+    width: 100px;
+  }
 }
