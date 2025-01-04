@@ -3,6 +3,6 @@
 }
 
 body {
-  background-color: light-dark(black, white);
-  color: light-dark(white, black);
+  background-color: light-dark(white, black);
+  color: light-dark(black, white);
 }
