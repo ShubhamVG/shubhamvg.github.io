@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+@property --ball-color1 {
+  syntax: "<image>";
+  inherits: false;
+  initial-value: radial-gradient(circle, hsla(147, 100%, 36%, 1) 0%, hsla(194, 83%, 26%, 0) 50%);
+}
+
+@property --ball-color2 {
+  syntax: "<image>";
+  inherits: false;
+  initial-value: radial-gradient(circle, rgb(19, 141, 94) 0%, hsla(194, 83%, 26%, 0) 50%);
+}
+
+@property --ball-color3 {
+  syntax: "<image>";
+  inherits: false;
+  initial-value: radial-gradient(circle, rgb(8, 190, 160) 0%, hsla(194, 83%, 26%, 0) 50%);
+}
+
+@property --ball-size {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 80%;
+}
+
+@property --bg-gradient {
+  syntax: "<image>";
+  inherits: false;
+  initial-value: linear-gradient(135deg, hsla(0, 0%, 0%, 1) 22%, hsla(160, 28%, 10%, 1) 53%, hsla(161, 27%, 24%, 1) 84%, hsla(162, 27%, 34%, 1) 100%);
+}
+
+:root {
+  font-family: 'Titillium Web';
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100vh;
+}
+
+footer {
+  color: darkgrey;
+  margin-bottom: 0;
+}
+
+footer>a {
+  color: white;
+  text-decoration: none;
+}
+
+.g1 {
+  position: absolute;
+  background: var(--ball-color1);
+  width: var(--ball-size);
+  height: var(--ball-size);
+
+  transform-origin: 25%;
+  animation: moveCirc 30s ease infinite;
+}
+
+.g2 {
+  position: absolute;
+  background: var(--ball-color2);
+  width: var(--ball-size);
+  height: var(--ball-size);
+
+  transform-origin: center center;
+  animation: moveNE 20s ease infinite;
+}
+
+.g3 {
+  position: absolute;
+  background: var(--ball-color3);
+  width: var(--ball-size);
+  height: var(--ball-size);
+
+  transform-origin: center center;
+  animation: moveVert 20s ease infinite;
+}
+
+#gradient-bg {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+
+  top: 0;
+  left: 0;
+
+  background: linear-gradient(135deg, rgb(8, 43, 24) 0%, rgb(15, 58, 34) 26%, hsla(147, 50%, 8%, 1) 60%, hsla(0, 0%, 0%, 1) 100%);
+  overflow: hidden;
+  z-index: -1;
+}
+
+#gradient-bg>svg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+
+#gradients {
+  filter: url(#goo) blur(40px);
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  text-align: center;
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 67.5rem;
+}
+
+#typewritter-container {
+  width: fit-content;
+}
+
+#typewritter-text {
+  font-size: 2rem;
+  width: 100%;
+  border-right: 0.31rem solid;
+  padding-right: 0.1rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.typing-delete {
+  animation:
+    cursor-blink 0.5s step-end infinite alternate,
+    typing-delete 1s forwards;
+}
+
+.typing-start {
+  animation:
+    cursor-blink 0.5s step-end infinite alternate,
+    typing-start 1.5s;
+}
+
+@keyframes cursor-blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes moveCirc {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveNE {
+  0% {
+    transform: translateY(20%) translateX(-50%);
+  }
+
+  50% {
+    transform: translateY(-20%) translateX(50%);
+  }
+
+  100% {
+    transform: translateY(20%) translateX(-50%);
+  }
+}
+
+@keyframes moveVert {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  50% {
+    transform: translateY(50%);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes typing-delete {
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes typing-start {
+  from {
+    width: 0;
+  }
+}
