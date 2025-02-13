@@ -10,11 +10,13 @@ void main() {
 
 void _addListeners() {
   final hamMenu = web.document.getElementById('ham-menu') as web.HTMLDivElement;
+  final navBg = web.document.getElementById('nav-bg') as web.HTMLDivElement;
   final navItems =
       web.document.getElementById('nav-items') as web.HTMLDivElement;
 
   hamMenu.onclick = () {
     hamMenu.classList.toggle('active');
+    navBg.classList.toggle('active');
     navItems.classList.toggle('active');
   }.toJS;
 }

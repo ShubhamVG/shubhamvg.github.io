@@ -47,19 +47,25 @@
   color-scheme: dark;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 .badge {
-  backdrop-filter: blur(0.3rem);
   background-color: var(--dark-green);
   border-radius: 0.4rem;
   display: inline-block;
   outline-color: var(--shiny-green);
   outline-style: solid;
   outline-width: 0.06rem;
-  padding: 0.5rem;
+  padding: 0.25rem;
   transition: all 0.3s ease;
 }
 
 .badge:hover {
+  backdrop-filter: blur(1rem);
+  box-shadow: 0 0 1rem black;
   scale: 120%;
   transition: all 0.3s ease;
 }
@@ -72,11 +78,6 @@ body {
 footer {
   color: darkgrey;
   text-align: center;
-}
-
-a {
-  color: white;
-  text-decoration: none;
 }
 
 .g1 {
@@ -131,7 +132,7 @@ a {
 }
 
 #gradients {
-  filter: url(#goo) blur(40px);
+  filter: url(#goo) blur(2.5rem);
   width: 100%;
   height: 100%;
 }
@@ -146,6 +147,9 @@ main {
   max-width: 62.5rem;
 }
 
+#nav-bg {
+  display: none;
+}
 
 #nav-items {
   align-items: center;
@@ -207,13 +211,18 @@ main {
     typing-start 1.5s;
 }
 
+.wavy-text {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 0.06rem;
+}
+
 @media (max-width: 25rem) {
   #ham-menu {
     display: block;
-    position: fixed;
-    right: 1rem;
+    margin-left: auto;
+    margin-right: 0;
     width: fit-content;
-    z-index: 100;
   }
 
   #ham-menu.active div:nth-child(1) {
@@ -231,7 +240,7 @@ main {
   #ham-menu div {
     background-color: #86ffc1;
     border-radius: 1.25rem;
-    height: 0.31rem;
+    height: 0.3rem;
     margin-top: 0.19rem;
     width: 1.7rem;
     transition: all 0.3s;
@@ -241,43 +250,46 @@ main {
     margin-left: 0.65rem;
     margin-right: 0.65rem;
     margin-top: 0.65rem;
+    position: relative;
+  }
+
+  #nav-bg.active {
+    backdrop-filter: blur(2rem);
+    background-color: #07633559;
+    display: block;
+    left: 0;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100vw;
   }
 
   #nav-items {
-    backdrop-filter: blur(0.5rem);
-    backdrop-filter: blur(0.25rem);
     border-radius: 0;
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1fr;
-    height: 100vh;
-    left: 0;
+    height: auto;
     opacity: 0;
     outline: none;
-    overflow: hidden;
     padding: 0;
-    position: fixed;
-    right: 0;
-    text-align: center;
-    top: 0;
+    position: absolute;
     transition: all 0.3s;
     visibility: hidden;
-    width: 100vw;
-    z-index: 10;
-  }
-
-  #nav-items a {
-    align-items: center;
-    border: 1px solid var(--shiny-green);
-    display: flex;
-    justify-content: center;
-    height: 40%;
     width: 100%;
+    transform: translateY(50%);
   }
 
   #nav-items.active {
+    display: grid;
     opacity: 1.0;
     transition: all 0.3s;
     visibility: visible;
+  }
+
+  #nav-items a {
+    text-align: center;
+    padding: 1rem;
+    outline: 0.06rem solid var(--shiny-green);
   }
 
   main {
