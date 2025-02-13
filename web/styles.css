@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
-@property --ball-color1 {
+@property --ball-bg1 {
   syntax: "<image>";
   inherits: false;
   initial-value: radial-gradient(circle, hsla(147, 100%, 36%, 1) 0%, hsla(194, 83%, 26%, 0) 50%);
 }
 
-@property --ball-color2 {
+@property --ball-bg2 {
   syntax: "<image>";
   inherits: false;
   initial-value: radial-gradient(circle, rgb(19, 141, 94) 0%, hsla(194, 83%, 26%, 0) 50%);
 }
 
-@property --ball-color3 {
+@property --ball-bg3 {
   syntax: "<image>";
   inherits: false;
   initial-value: radial-gradient(circle, rgb(8, 190, 160) 0%, hsla(194, 83%, 26%, 0) 50%);
@@ -30,28 +30,58 @@
   initial-value: linear-gradient(135deg, hsla(0, 0%, 0%, 1) 22%, hsla(160, 28%, 10%, 1) 53%, hsla(161, 27%, 24%, 1) 84%, hsla(162, 27%, 34%, 1) 100%);
 }
 
+@property --dark-green {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #07633559;
+}
+
+@property --shiny-green {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rgb(0, 141, 59);
+}
+
 :root {
   font-family: 'Titillium Web';
   color-scheme: dark;
 }
 
+.badge {
+  backdrop-filter: blur(0.3rem);
+  background-color: var(--dark-green);
+  border-radius: 0.4rem;
+  display: inline-block;
+  outline-color: var(--shiny-green);
+  outline-style: solid;
+  outline-width: 0.06rem;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  scale: 120%;
+  transition: all 0.3s ease;
+}
+
 body {
   min-height: 100vh;
+  padding: 0.5rem;
 }
 
 footer {
   color: darkgrey;
-  margin-bottom: 0;
+  text-align: center;
 }
 
-footer>a {
+a {
   color: white;
   text-decoration: none;
 }
 
 .g1 {
   position: absolute;
-  background: var(--ball-color1);
+  background: var(--ball-bg1);
   width: var(--ball-size);
   height: var(--ball-size);
 
@@ -61,7 +91,7 @@ footer>a {
 
 .g2 {
   position: absolute;
-  background: var(--ball-color2);
+  background: var(--ball-bg2);
   width: var(--ball-size);
   height: var(--ball-size);
 
@@ -71,7 +101,7 @@ footer>a {
 
 .g3 {
   position: absolute;
-  background: var(--ball-color3);
+  background: var(--ball-bg3);
   width: var(--ball-size);
   height: var(--ball-size);
 
@@ -106,14 +136,49 @@ footer>a {
   height: 100%;
 }
 
-footer {
-  text-align: center;
+#ham-menu {
+  display: none;
 }
 
 main {
   margin-left: auto;
   margin-right: auto;
-  max-width: 67.5rem;
+  max-width: 62.5rem;
+}
+
+
+#nav-items {
+  align-items: center;
+  background-color: #07633559;
+  border-radius: 2rem;
+  display: flex;
+  height: 2rem;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 40rem;
+  outline-color: var(--shiny-green);
+  outline-style: solid;
+  outline-width: 0.06rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 80%;
+}
+
+#nav-items a {
+  text-shadow: 0 0 0.1rem #00ffaa80;
+}
+
+.section-container {
+  backdrop-filter: blur(1rem);
+  border-radius: 0.3rem;
+  background-color: #24352c5e;
+  /* background-color: var(--dark-green); */
+  /* box-shadow: 0 0 2rem 0.5rem rgba(0, 0, 0, 0.685); */
+  outline-style: solid;
+  outline-width: 0.06rem;
+  outline-color: var(--shiny-green);
+  padding: 0.5rem;
 }
 
 #typewritter-container {
@@ -121,8 +186,9 @@ main {
 }
 
 #typewritter-text {
-  font-size: 2rem;
+  font-size: 1.5rem;
   width: 100%;
+  max-width: 100vw;
   border-right: 0.31rem solid;
   padding-right: 0.1rem;
   overflow: hidden;
@@ -139,6 +205,86 @@ main {
   animation:
     cursor-blink 0.5s step-end infinite alternate,
     typing-start 1.5s;
+}
+
+@media (max-width: 25rem) {
+  #ham-menu {
+    display: block;
+    position: fixed;
+    right: 1rem;
+    width: fit-content;
+    z-index: 100;
+  }
+
+  #ham-menu.active div:nth-child(1) {
+    transform: translateY(150%) rotate(45deg);
+  }
+
+  #ham-menu.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  #ham-menu.active div:nth-child(3) {
+    transform: translateY(-150%) rotate(-45deg);
+  }
+
+  #ham-menu div {
+    background-color: #86ffc1;
+    border-radius: 1.25rem;
+    height: 0.31rem;
+    margin-top: 0.19rem;
+    width: 1.7rem;
+    transition: all 0.3s;
+  }
+
+  header {
+    margin-left: 0.65rem;
+    margin-right: 0.65rem;
+    margin-top: 0.65rem;
+  }
+
+  #nav-items {
+    backdrop-filter: blur(0.5rem);
+    backdrop-filter: blur(0.25rem);
+    border-radius: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    left: 0;
+    opacity: 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    top: 0;
+    transition: all 0.3s;
+    visibility: hidden;
+    width: 100vw;
+    z-index: 10;
+  }
+
+  #nav-items a {
+    align-items: center;
+    border: 1px solid var(--shiny-green);
+    display: flex;
+    justify-content: center;
+    height: 40%;
+    width: 100%;
+  }
+
+  #nav-items.active {
+    opacity: 1.0;
+    transition: all 0.3s;
+    visibility: visible;
+  }
+
+  main {
+    display: block;
+    margin-left: 0.63rem;
+    margin-right: 0.63rem;
+  }
 }
 
 @keyframes cursor-blink {
