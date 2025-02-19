@@ -5,6 +5,7 @@ import 'package:web/web.dart' as web;
 
 void main() {
   _addListeners();
+  _startTime();
   _startTypewritter();
 }
 
@@ -19,6 +20,50 @@ void _addListeners() {
     navBg.classList.toggle('active');
     navItems.classList.toggle('active');
   }.toJS;
+}
+
+void _setTimeElem() {
+  const monthMap = <int, String>{
+    1: 'Jan',
+    2: 'Feb',
+    3: 'Mar',
+    4: 'Apr',
+    5: 'May',
+    6: 'Jun',
+    7: 'Jul',
+    8: 'Aug',
+    9: 'Sep',
+    10: 'Oct',
+    11: 'Nov',
+    12: 'Dec',
+  };
+
+  final hourElem = web.document.getElementById('hour') as web.HTMLDivElement;
+  final minuteElem =
+      web.document.getElementById('minute') as web.HTMLDivElement;
+  final dateElem = web.document.getElementById('date') as web.HTMLDivElement;
+
+  final timeNow = DateTime.timestamp().add(
+    const Duration(hours: 5, minutes: 30),
+  );
+
+  final todayHour = timeNow.hour;
+  final todayMinute = timeNow.minute;
+
+  final hourText = '${todayHour < 10 ? '0' : ''}$todayHour';
+  final minuteText = '${todayMinute < 10 ? '0' : ''}$todayMinute';
+
+  final date = timeNow.day;
+  final month = monthMap[timeNow.month]!;
+
+  hourElem.innerText = hourText;
+  minuteElem.innerText = minuteText;
+  dateElem.innerText = '${date}th $month';
+}
+
+void _startTime() {
+  _setTimeElem();
+  Timer.periodic(const Duration(seconds: 30), (_) => _setTimeElem());
 }
 
 void _startTypewritter() {
