@@ -22,6 +22,25 @@ void _addListeners() {
   }.toJS;
 }
 
+String _numTh(final int n) {
+  final mod100 = n % 100;
+  if (mod100 > 4 && mod100 < 20) {
+    return '${n}th';
+  }
+
+  final int remainder = n % 10;
+  switch (remainder) {
+    case 1:
+      return '${n}st';
+    case 2:
+      return '${n}nd';
+    case 3:
+      return '${n}rd';
+    default:
+      return '${n}th';
+  }
+}
+
 void _setTimeElem() {
   const monthMap = <int, String>{
     1: 'Jan',
@@ -58,7 +77,7 @@ void _setTimeElem() {
 
   hourElem.innerText = hourText;
   minuteElem.innerText = minuteText;
-  dateElem.innerText = '${date}th $month';
+  dateElem.innerText = '${_numTh(date)} $month';
 }
 
 void _startTime() {
