@@ -3,37 +3,16 @@ import 'dart:js_interop';
 
 import 'package:web/web.dart' as web;
 
-// TODO: Refactor
-// TODO: Add clock ticking
+import '../../commons.dart';
+
 void main() async {
-  final duration = DateTime.now().difference(DateTime(2025));
-  final yearProgressPercentage = duration.inDays * 100 ~/ 365;
-
-  final yearProgress =
-      web.document.getElementById('year-progress') as web.HTMLDivElement;
-  yearProgress.style.setProperty('--progress', '$yearProgressPercentage%');
-
-  final finishedGoalsContainer = web.document
-      .getElementById('finished-goals-container') as web.HTMLDivElement;
-
-  final pendingGoalsContainer = web.document
-      .getElementById('pending-goals-container') as web.HTMLDivElement;
-
-  final goals = await getGoals(toSort: true);
-
-  for (final goal in goals) {
-    if (goal.progress == 100) {
-      final finishedGoalDiv = makeFinishedGoalElem(goal);
-      finishedGoalsContainer.appendChild(finishedGoalDiv);
-    } else {
-      final pendingGoalDiv = makePendingGoalElem(goal);
-      pendingGoalsContainer.appendChild(pendingGoalDiv);
-    }
-  }
+  addBasicListeners();
+  startTime();
+  _loadYearProgress();
+  await _loadGoals();
 }
 
-// =========================== WEB STUFF ===========================
-web.HTMLImageElement makeCrownElem() {
+web.HTMLImageElement get _crownElem {
   final crownLogo = web.document.createElement('img') as web.HTMLImageElement
     ..alt = 'crown'
     ..className = 'crown'
@@ -42,7 +21,35 @@ web.HTMLImageElement makeCrownElem() {
   return crownLogo;
 }
 
-web.HTMLDivElement makeFinishedGoalElem(final Goal goal) {
+Future<void> _loadGoals() async {
+  final finishedGoalsContainer = web.document
+      .getElementById('finished-goals-container') as web.HTMLDivElement;
+
+  final pendingGoalsContainer = web.document
+      .getElementById('pending-goals-container') as web.HTMLDivElement;
+
+  final goals = await _getGoals(toSort: true);
+
+  for (final goal in goals) {
+    if (goal.progress == 100) {
+      final finishedGoalDiv = _makeFinishedGoalElem(goal);
+      finishedGoalsContainer.appendChild(finishedGoalDiv);
+    } else {
+      final pendingGoalDiv = _makePendingGoalElem(goal);
+      pendingGoalsContainer.appendChild(pendingGoalDiv);
+    }
+  }
+}
+
+void _loadYearProgress() {
+  final duration = DateTime.now().difference(DateTime(2025));
+  final yearProgressPercentage = duration.inDays * 100 ~/ 365;
+  final yearProgress =
+      web.document.getElementById('year-progress') as web.HTMLDivElement;
+  yearProgress.style.setProperty('--progress', '$yearProgressPercentage%');
+}
+
+web.HTMLDivElement _makeFinishedGoalElem(final Goal goal) {
   final div = web.document.createElement('div') as web.HTMLDivElement
     ..className = 'goal';
 
@@ -54,7 +61,7 @@ web.HTMLDivElement makeFinishedGoalElem(final Goal goal) {
     ..className = 'goal-progress'
     ..style.setProperty('--progress', '100%');
 
-  final crown = makeCrownElem();
+  final crown = _crownElem;
 
   final logoSrc = goal.iconUrl.startsWith('https://')
       ? goal.iconUrl
@@ -76,7 +83,7 @@ web.HTMLDivElement makeFinishedGoalElem(final Goal goal) {
   return div;
 }
 
-web.HTMLDivElement makePendingGoalElem(final Goal goal) {
+web.HTMLDivElement _makePendingGoalElem(final Goal goal) {
   final div = web.document.createElement('div') as web.HTMLDivElement
     ..className = 'goal';
 
@@ -122,7 +129,7 @@ final class Goal {
   final int progress;
 }
 
-Future<List<Goal>> getGoals({final bool toSort = false}) async {
+Future<List<Goal>> _getGoals({final bool toSort = false}) async {
   final goals = <Goal>[];
 
   final jsonFile = await web.window.fetch('goals.json'.toJS).toDart;
