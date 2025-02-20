@@ -175,8 +175,8 @@ nav {
   height: 2rem;
   justify-content: space-between;
   margin-left: auto;
-  margin-right: auto;
-  max-width: 40rem;
+  margin-right: 0;
+  max-width: 50rem;
   outline-color: var(--shiny-green);
   outline-style: solid;
   outline-width: 0.06rem;
@@ -243,7 +243,7 @@ nav {
   text-decoration-thickness: 0.06rem;
 }
 
-@media (max-width: 25rem) {
+@media (max-width: 50rem) {
   #ham-menu {
     display: block;
     margin-left: auto;
