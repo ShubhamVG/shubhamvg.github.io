@@ -1,5 +1,12 @@
 .dart_tool/package_config.json
 CNAME
+goals/2025/assets/brainiacs.jpg
+goals/2025/assets/crown.svg
+goals/2025/assets/github.svg
+goals/2025/goals.json
+goals/2025/index.html
+goals/2025/main.dart.js
+goals/2025/styles.css
 index.html
 main.dart.js
 packages/$sdk/dev_compiler/amd/require.js
