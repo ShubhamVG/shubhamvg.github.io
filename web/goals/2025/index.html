@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="title" content="LaV's Digital Home">
+  <meta name="description" content="Everything about me should be present on this website.">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <meta name="author" content="LaV">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="scaffolded-by" content="https://github.com/dart-lang/sdk">
+  <title>LaV</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="main.dart.js"></script>
+</head>
+
+<body>
+  <!-- Gradient body, nothing else -->
+  <div id="gradient-bg">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </defs>
+    </svg>
+    <div id="gradients">
+      <div class="g1"></div>
+      <div class="g2"></div>
+      <div class="g3"></div>
+    </div>
+  </div>
+
+  <div>
+
+    <header>
+      <div>
+        <div id="time">
+          <div id="hour">22</div>
+          <div id="time-colon">:</div>
+          <div id="minute">31</div>
+        </div>
+        <div id="date">4th Feb</div>
+      </div>
+
+      <nav>
+        <!-- For hamburger menu only -->
+        <div id="nav-bg"></div>
+
+        <div id="ham-menu">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <div id="nav-items">
+          <a href="...">Apple</a>
+          <a href="...">Ball</a>
+          <a href="...">Cat</a>
+          <a href="...">Doll</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div id="year-container">
+        <div id="year-progress"><span>2025's goals</span></div>
+        <div id="year-text">
+          <p class="font-large">This is how much of 2025 has passed.</p>
+          <p>And below is everything LaV expects to achieve before it ends.</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="goals-category-title">Goals in progress:</p>
+        <div id="pending-goals-container" class="goals-container"></div>
+      </div>
+
+      <div>
+        <p class="goals-category-title">Goals finished so far:</p>
+        <div id="finished-goals-container" class="goals-container"></div>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    Made by
+    <a href="https://github.com/ShubhamVG" class="wavy-text">LaV</a>
+  </footer>
+</body>
+
+</html>
