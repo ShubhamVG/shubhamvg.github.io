@@ -39,7 +39,7 @@
 @property --dark-green {
   syntax: "<color>";
   inherits: false;
-  initial-value: #07633559;
+  initial-value: #05502b9c;
 }
 
 @property --goal-text-container-color {
@@ -266,14 +266,14 @@ nav {
   height: 2rem;
   justify-content: space-between;
   margin-left: auto;
-  margin-right: auto;
-  max-width: 40rem;
+  margin-right: 0;
+  min-width: 40rem;
   outline-color: var(--shiny-green);
   outline-style: solid;
   outline-width: 0.06rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  width: 80%;
+  width: 90%;
 }
 
 #nav-items a {
@@ -366,29 +366,6 @@ nav {
   justify-content: center;
 }
 
-@media (max-width: 50rem) {
-  .goal {
-    width: fit-content;
-  }
-
-  .goal:nth-child(even) {
-    margin-left: auto;
-    margin-right: 0;
-  }
-
-  .goal-text {
-    width: 70%;
-  }
-
-  .goals-container {
-    display: block;
-  }
-
-  main {
-    width: auto;
-  }
-}
-
 @media (max-width: 39rem) {
   .goal {
     width: 80%;
@@ -412,7 +389,28 @@ nav {
   }
 }
 
-@media (max-width: 25rem) {
+@media (max-width: 50rem) {
+  #clock {
+    width: fit-content;
+  }
+
+  .goal {
+    width: fit-content;
+  }
+
+  .goal:nth-child(even) {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .goal-text {
+    width: 70%;
+  }
+
+  .goals-container {
+    display: block;
+  }
+
   #ham-menu {
     display: block;
     margin-left: auto;
@@ -441,15 +439,17 @@ nav {
     transition: all 0.3s;
   }
 
-  #clock {
-    width: fit-content;
-  }
-
   header {
     margin-left: 0.65rem;
     margin-right: 0.65rem;
     margin-top: 0.65rem;
     position: relative;
+  }
+
+  main {
+    display: block;
+    margin-left: 0.63rem;
+    margin-right: 0.63rem;
   }
 
   nav {
@@ -495,12 +495,6 @@ nav {
     text-align: center;
     padding: 1rem;
     outline: 0.06rem solid var(--shiny-green);
-  }
-
-  main {
-    display: block;
-    margin-left: 0.63rem;
-    margin-right: 0.63rem;
   }
 }
 

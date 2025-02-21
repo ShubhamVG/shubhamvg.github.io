@@ -39,7 +39,7 @@
 @property --dark-green {
   syntax: "<color>";
   inherits: false;
-  initial-value: #07633559;
+  initial-value: #05502b9c;
 }
 
 @property --goal-text-container-color {
