@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
+@property --aurora-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #00ff8c;
+}
+
 @property --ball-bg1 {
   syntax: "<image>";
   inherits: false;
@@ -36,6 +42,30 @@
   initial-value: #07633559;
 }
 
+@property --goal-text-container-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #2020203f;
+}
+
+@property --progress-circ-gradient {
+  syntax: "<image>";
+  inherits: false;
+  initial-value: linear-gradient(135deg, hsla(0, 0%, 0%, 1) 22%, rgb(18, 70, 44) 53%, rgb(29, 94, 67) 84%, rgb(13, 189, 136) 100%);
+}
+
+@property --progress-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #00c569;
+}
+
+@property --progress-shell-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #2b2b2b;
+}
+
 @property --shiny-green {
   syntax: "<color>";
   inherits: false;
@@ -52,27 +82,16 @@ a {
   text-decoration: none;
 }
 
-.badge {
-  background-color: var(--dark-green);
-  border-radius: 0.4rem;
-  display: inline-block;
-  outline-color: var(--shiny-green);
-  outline-style: solid;
-  outline-width: 0.06rem;
-  padding: 0.25rem;
-  transition: all 0.3s ease;
-}
-
-.badge:hover {
-  backdrop-filter: blur(1rem);
-  box-shadow: 0 0 1rem black;
-  scale: 120%;
-  transition: all 0.3s ease;
-}
-
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-height: 100vh;
   padding: 0.5rem;
+}
+
+.font-large {
+  font-size: 1.5rem;
 }
 
 footer {
@@ -153,6 +172,7 @@ header {
 main {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1rem;
   max-width: 62.5rem;
 }
 
@@ -192,18 +212,6 @@ nav {
 
 #nav-items a:hover {
   scale: 120%;
-}
-
-.section-container {
-  backdrop-filter: blur(1rem);
-  border-radius: 0.3rem;
-  background-color: #24352c5e;
-  /* background-color: var(--dark-green); */
-  /* box-shadow: 0 0 2rem 0.5rem rgba(0, 0, 0, 0.685); */
-  outline-style: solid;
-  outline-width: 0.06rem;
-  outline-color: var(--shiny-green);
-  padding: 0.5rem;
 }
 
 #time {
@@ -249,6 +257,10 @@ nav {
 }
 
 @media (max-width: 50rem) {
+  #clock {
+    width: fit-content;
+  }
+
   #ham-menu {
     display: block;
     margin-left: auto;
@@ -277,15 +289,17 @@ nav {
     transition: all 0.3s;
   }
 
-  #clock {
-    width: fit-content;
-  }
-
   header {
     margin-left: 0.65rem;
     margin-right: 0.65rem;
     margin-top: 0.65rem;
     position: relative;
+  }
+
+  main {
+    display: block;
+    margin-left: 0.63rem;
+    margin-right: 0.63rem;
   }
 
   nav {
@@ -331,12 +345,6 @@ nav {
     text-align: center;
     padding: 1rem;
     outline: 0.06rem solid var(--shiny-green);
-  }
-
-  main {
-    display: block;
-    margin-left: 0.63rem;
-    margin-right: 0.63rem;
   }
 }
 

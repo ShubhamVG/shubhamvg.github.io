@@ -196,17 +196,22 @@ nav {
   justify-content: space-between;
   margin-left: auto;
   margin-right: 0;
-  max-width: 50rem;
+  min-width: 40rem;
   outline-color: var(--shiny-green);
   outline-style: solid;
   outline-width: 0.06rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  width: 80%;
+  width: 90%;
 }
 
 #nav-items a {
   text-shadow: 0 0 0.1rem #00ffaa80;
+  transition: all 0.3s ease-out;
+}
+
+#nav-items a:hover {
+  scale: 120%;
 }
 
 .pop-on-hover {
