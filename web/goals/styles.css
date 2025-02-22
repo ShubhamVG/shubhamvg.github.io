@@ -341,6 +341,7 @@ nav {
     display: none;
     grid-template-columns: 1fr 1fr;
     height: auto;
+    min-width: auto;
     opacity: 0;
     outline: none;
     padding: 0;
