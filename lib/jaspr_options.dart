@@ -30,6 +30,7 @@ final defaultJasprOptions = JasprOptions(
     prefix5.App: ClientTarget<prefix5.App>('app'),
     prefix0.AuroraBackground: ClientTarget<prefix0.AuroraBackground>('components/aurora_background'),
     prefix1.Header: ClientTarget<prefix1.Header>('components/header'),
+    prefix2.Navbar: ClientTarget<prefix2.Navbar>('components/navbar'),
     prefix3.Time: ClientTarget<prefix3.Time>('components/time'),
     prefix4.Home: ClientTarget<prefix4.Home>('pages/home'),
   },

@@ -390,14 +390,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.1"
-  jaspr_riverpod:
-    dependency: "direct main"
-    description:
-      name: jaspr_riverpod
-      sha256: "71c2de7590aea5ac5122501a1df5414483217309c307b672e30cbb16c307502f"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.18"
   jaspr_router:
     dependency: "direct main"
     description:
@@ -526,14 +518,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.5.0"
-  riverpod:
-    dependency: transitive
-    description:
-      name: riverpod
-      sha256: "59062512288d3056b2321804332a13ffdd1bf16df70dcc8e506e411280a72959"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.6.1"
   rxdart:
     dependency: transitive
     description:
@@ -630,14 +614,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.12.1"
-  state_notifier:
-    dependency: transitive
-    description:
-      name: state_notifier
-      sha256: b8677376aa54f2d7c58280d5a007f9e8774f1968d1fb1c096adcb4792fba29bb
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0"
   stream_channel:
     dependency: transitive
     description:
@@ -695,7 +671,7 @@ packages:
     source: hosted
     version: "1.4.0"
   universal_web:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: universal_web
       sha256: fd161c6424fd78625097429b0050c2ea967304fb2b8b5ea0c0f51cd41b915053

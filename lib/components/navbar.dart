@@ -1,23 +1,20 @@
 import 'package:jaspr/jaspr.dart';
-import 'package:jaspr_riverpod/jaspr_riverpod.dart';
 import 'package:jaspr_router/jaspr_router.dart';
+import 'package:universal_web/web.dart' as web;
 
 import '../constants/routes.dart';
 import '../constants/theme.dart';
 
-final _hamMenuProvider = StateProvider<bool>((ref) => false);
-
+@client
 class Navbar extends StatelessComponent {
   const Navbar({super.key});
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    final isActive = context.watch(_hamMenuProvider);
-
     yield nav([
-      _NavBg(active: isActive),
-      _HamMenu(active: isActive),
-      _NavItems(active: isActive),
+      _NavBg(),
+      _HamMenu(),
+      _NavItems(),
     ]);
   }
 
@@ -130,47 +127,48 @@ class Navbar extends StatelessComponent {
 }
 
 class _HamMenu extends StatelessComponent {
-  const _HamMenu({required this.active});
-
-  final bool active;
+  const _HamMenu();
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield div(
       id: 'ham-menu',
-      classes: active ? 'active' : null,
       events: events(onClick: () => toggleActive(context)),
       [div([]), div([]), div([])],
     );
   }
 
   void toggleActive(BuildContext context) {
-    final state = context.read(_hamMenuProvider.notifier).state;
-    context.read(_hamMenuProvider.notifier).state = !state;
+    if (kIsWeb) {
+      final hamMenu =
+          web.document.getElementById('ham-menu') as web.HTMLDivElement;
+      final navBg = web.document.getElementById('nav-bg') as web.HTMLDivElement;
+      final navItems =
+          web.document.getElementById('nav-items') as web.HTMLDivElement;
+
+      hamMenu.classList.toggle('active');
+      navBg.classList.toggle('active');
+      navItems.classList.toggle('active');
+    }
   }
 }
 
 class _NavBg extends StatelessComponent {
-  const _NavBg({required this.active});
-
-  final bool active;
+  const _NavBg();
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield div(id: 'nav-bg', classes: active ? 'active' : null, []);
+    yield div(id: 'nav-bg', []);
   }
 }
 
 class _NavItems extends StatelessComponent {
-  const _NavItems({required this.active});
-
-  final bool active;
+  const _NavItems();
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield div(
       id: 'nav-items',
-      classes: active ? 'active' : null,
       NavbarRoute.values.map((route) {
         return Link(to: route.path, child: text(route.label));
       }).toList(growable: false),

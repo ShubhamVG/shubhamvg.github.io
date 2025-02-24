@@ -1,5 +1,4 @@
 import 'package:jaspr/jaspr.dart';
-import 'package:jaspr_riverpod/jaspr_riverpod.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 import 'components/aurora_background.dart';
@@ -15,7 +14,7 @@ class App extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield const AuroraBackground();
-    yield const ProviderScope(child: Header());
+    yield const Header();
     yield Router(routes: [
       Route(
         path: '/',
