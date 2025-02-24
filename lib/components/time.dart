@@ -7,7 +7,7 @@ class Time extends StatefulComponent {
   const Time({super.key});
 
   @override
-  State createState() => TimeState();
+  State<Time> createState() => TimeState();
 }
 
 class TimeState extends State<Time> {

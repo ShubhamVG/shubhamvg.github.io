@@ -21,6 +21,8 @@ final darkGreen = hexAlpha('#05502b9c');
 
 final hamMenuColor = Color.hex('#86ffc1');
 
+final smolScrnMediaQry = MediaQuery.screen(maxWidth: 50.rem);
+
 final navBgActiveColor = hexAlpha('#07633559');
 
 final shinyGreen = Color.rgb(0, 141, 59);

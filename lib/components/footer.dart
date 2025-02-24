@@ -9,10 +9,10 @@ class Footer extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield footer(
-      styles: Styles.text(align: TextAlign.center),
+      styles: Styles.text(align: TextAlign.center, color: Colors.darkGray),
       const [
         Text('Made by '),
-        Link(to: githubLink, child: Text('LaV')),
+        Link(classes: 'wavy-text', to: githubLink, child: Text('LaV')),
       ],
     );
   }

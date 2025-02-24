@@ -55,7 +55,7 @@ class Navbar extends StatelessComponent {
         .box(
             transition: Transition('all', duration: 300, curve: Curve.easeOut)),
     css('#nav-items a:hover').raw({'scale': '120%'}),
-    css.media(MediaQuery.screen(maxWidth: 50.rem), <StyleRule>[
+    css.media(smolScrnMediaQry, [
       css('#ham-menu')
           .box(
               display: Display.block,

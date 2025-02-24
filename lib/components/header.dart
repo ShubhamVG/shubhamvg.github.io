@@ -1,5 +1,6 @@
 import 'package:jaspr/jaspr.dart';
 
+import '../constants/theme.dart';
 import 'navbar.dart';
 import 'time.dart';
 
@@ -14,17 +15,17 @@ class Header extends StatelessComponent {
 
   @css
   static final styles = <StyleRule>[
-    css.media(MediaQuery.screen(maxWidth: 50.rem), [
-      css('header').box(
-        margin: EdgeInsets.only(left: 0.65.rem, right: 0.65.rem, top: 0.65.rem),
-        position: Position.relative(),
-      )
-    ]),
     css('header')
         .box(
             display: Display.flex,
             maxWidth: 62.5.rem,
             margin: EdgeInsets.symmetric(horizontal: Unit.auto))
         .flexbox(justifyContent: JustifyContent.spaceBetween),
+    css.media(smolScrnMediaQry, [
+      css('header').box(
+        margin: EdgeInsets.only(left: 0.65.rem, right: 0.65.rem, top: 0.65.rem),
+        position: Position.relative(),
+      )
+    ]),
   ];
 }
