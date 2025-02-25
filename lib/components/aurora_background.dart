@@ -35,10 +35,7 @@ class AuroraBackground extends StatelessComponent {
               ),
               DomComponent(
                 tag: 'feBlend',
-                attributes: {
-                  'in': 'SourceGraphic',
-                  'in2': 'goo',
-                },
+                attributes: {'in': 'SourceGraphic', 'in2': 'goo'},
               ),
             ]),
           ),
@@ -59,61 +56,67 @@ class AuroraBackground extends StatelessComponent {
   @css
   static final styles = <StyleRule>[
     css.keyframes('moveCirc', {
-      '0%': Styles.box(transform: Transform.rotate(0.deg)),
-      '50%': Styles.box(transform: Transform.rotate(180.deg)),
-      '100%': Styles.box(transform: Transform.rotate(360.deg)),
+      '0%': Styles(transform: Transform.rotate(0.deg)),
+      '50%': Styles(transform: Transform.rotate(180.deg)),
+      '100%': Styles(transform: Transform.rotate(360.deg)),
     }),
     css.keyframes('moveNE', {
-      '0%': Styles.box(
+      '0%': Styles(
         transform: Transform.translate(x: (-50).percent, y: 20.percent),
       ),
-      '50%': Styles.box(
+      '50%': Styles(
         transform: Transform.translate(x: 50.percent, y: (-20).percent),
       ),
-      '100%': Styles.box(
+      '100%': Styles(
         transform: Transform.translate(x: (-50).percent, y: 20.percent),
       ),
     }),
     css.keyframes('moveVert', {
-      '0%': Styles.box(transform: Transform.translate(y: (-50).percent)),
-      '50%': Styles.box(transform: Transform.translate(y: 50.percent)),
-      '100%': Styles.box(transform: Transform.translate(y: (-50).percent)),
+      '0%': Styles(transform: Transform.translate(y: (-50).percent)),
+      '50%': Styles(transform: Transform.translate(y: 50.percent)),
+      '100%': Styles(transform: Transform.translate(y: (-50).percent)),
     }),
-    css('#g1')
-        .box(height: ballSize, position: Position.absolute(), width: ballSize)
-        .raw({
-      'animation': 'moveCirc 30s ease infinite',
-      'background': ballBg1,
-      'transform-origin': 'center center',
-    }),
-    css('#g2')
-        .box(height: ballSize, position: Position.absolute(), width: ballSize)
-        .raw({
-      'animation': 'moveNE 20s ease infinite',
-      'background': ballBg2,
-      'transform-origin': 'center center',
-    }),
-    css('#g3')
-        .box(height: ballSize, position: Position.absolute(), width: ballSize)
-        .raw({
-      'animation': 'moveVert 20s ease infinite',
-      'background': ballBg3,
-      'transform-origin': 'center center',
-    }),
-    css('#gradient-bg')
-        .box(
-            height: 100.vh,
-            overflow: Overflow.hidden,
-            position: Position.fixed(
-                left: Unit.zero, top: Unit.zero, zIndex: ZIndex(-1)),
-            width: 100.vw)
-        .raw({'background': bgGradient}),
-    css('#gradient-bg>svg').box(
-        height: Unit.zero,
+    css('#g1').styles(
+        position: Position.absolute(),
+        width: ballSize,
+        height: ballSize,
+        raw: {
+          'animation': 'moveCirc 30s ease infinite',
+          'background': ballBg1,
+          'transform-origin': 'center center'
+        }),
+    css('#g2').styles(
+        position: Position.absolute(),
+        width: ballSize,
+        height: ballSize,
+        raw: {
+          'animation': 'moveNE 20s ease infinite',
+          'background': ballBg2,
+          'transform-origin': 'center center'
+        }),
+    css('#g3').styles(
+        position: Position.absolute(),
+        width: ballSize,
+        height: ballSize,
+        raw: {
+          'animation': 'moveVert 20s ease infinite',
+          'background': ballBg3,
+          'transform-origin': 'center center'
+        }),
+    css('#gradient-bg').styles(
+        position: Position.fixed(left: Unit.zero, top: Unit.zero),
+        zIndex: ZIndex(-1),
+        width: 100.vw,
+        height: 100.vh,
+        overflow: Overflow.hidden,
+        raw: {'background': bgGradient}),
+    css('#gradient-bg>svg').styles(
         position: Position.fixed(top: Unit.zero, left: Unit.zero),
-        width: Unit.zero),
-    css('#gradients')
-        .box(height: 100.percent, width: 100.percent)
-        .raw({'filter': 'url(#goo) blur(2.5rem)'}),
+        width: Unit.zero,
+        height: Unit.zero),
+    css('#gradients').styles(
+        width: 100.percent,
+        height: 100.percent,
+        raw: {'filter': 'url(#goo) blur(2.5rem)'}),
   ];
 }

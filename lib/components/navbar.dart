@@ -20,108 +20,100 @@ class Navbar extends StatelessComponent {
 
   @css
   static final styles = <StyleRule>[
-    css('#ham-menu').box(display: Display.none),
-    css('nav')
-        .raw({'height': 'fit-content'})
-        .box(margin: EdgeInsets.symmetric(vertical: Unit.auto))
-        .flexItem(flex: Flex(basis: FlexBasis(100.percent))),
-    css('#nav-bg').box(display: Display.none),
-    css('#nav-items')
-        .background(color: navBgActiveColor)
-        .box(
-            display: Display.flex,
-            height: 2.rem,
-            margin: EdgeInsets.only(left: Unit.auto, right: Unit.zero),
-            outline: Outline(
-              color: shinyGreen,
-              style: OutlineStyle.solid,
-              width: OutlineWidth(0.06.rem),
-            ),
-            padding: EdgeInsets.symmetric(horizontal: 1.rem),
-            radius: BorderRadius.circular(2.rem),
-            minWidth: 40.rem,
-            width: 90.percent)
-        .flexbox(
-            alignItems: AlignItems.center,
-            justifyContent: JustifyContent.spaceBetween),
-    css('#nav-items a')
-        .text(
-          shadow: TextShadow(
-            offsetX: Unit.zero,
-            offsetY: Unit.zero,
-            color: textShadowColor,
-          ),
-        )
-        .box(
-            transition: Transition('all', duration: 300, curve: Curve.easeOut)),
-    css('#nav-items a:hover').raw({'scale': '120%'}),
+    css('#ham-menu').styles(display: Display.none),
+    css('nav').styles(
+        margin: Margin.symmetric(vertical: Unit.auto),
+        flex: Flex(basis: FlexBasis(100.percent)),
+        raw: {'height': 'fit-content'}),
+    css('#nav-bg').styles(display: Display.none),
+    css('#nav-items').styles(
+        display: Display.flex,
+        width: 90.percent,
+        height: 2.rem,
+        minWidth: 40.rem,
+        padding: Padding.symmetric(horizontal: 1.rem),
+        margin: Margin.only(left: Unit.auto, right: Unit.zero),
+        radius: BorderRadius.circular(2.rem),
+        outline: Outline(
+          color: shinyGreen,
+          style: OutlineStyle.solid,
+          width: OutlineWidth(0.06.rem),
+        ),
+        justifyContent: JustifyContent.spaceBetween,
+        alignItems: AlignItems.center,
+        color: navBgActiveColor),
+    css('#nav-items a').styles(
+        transition: Transition('all', duration: 300, curve: Curve.easeOut),
+        textShadow: TextShadow(
+          offsetX: Unit.zero,
+          offsetY: Unit.zero,
+          color: textShadowColor,
+        )),
+    css('#nav-items a:hover').styles(raw: {'scale': '120%'}),
     css.media(smolScrnMediaQry, [
-      css('#ham-menu')
-          .box(
-              display: Display.block,
-              margin: EdgeInsets.only(left: Unit.auto, right: Unit.zero))
-          .raw({'width': 'fit-content'}),
-      css('#ham-menu.active div:nth-child(1)').box(
+      css('#ham-menu').styles(
+          display: Display.block,
+          margin: Margin.only(left: Unit.auto, right: Unit.zero),
+          raw: {'width': 'fit-content'}),
+      css('#ham-menu.active div:nth-child(1)').styles(
         transform: Transform.combine([
           Transform.translate(y: 150.percent),
           Transform.rotate(45.deg),
         ]),
       ),
-      css('#ham-menu.active div:nth-child(2)').box(opacity: 0),
-      css('#ham-menu.active div:nth-child(3)').box(
+      css('#ham-menu.active div:nth-child(2)').styles(opacity: 0),
+      css('#ham-menu.active div:nth-child(3)').styles(
         transform: Transform.combine([
           Transform.translate(y: (-150).percent),
           Transform.rotate((-45).deg),
         ]),
       ),
-      css('#ham-menu div').background(color: hamMenuColor).box(
-          margin: EdgeInsets.only(top: 0.19.rem),
+      css('#ham-menu div').styles(
+          width: 1.7.rem,
           height: 0.3.rem,
+          margin: Margin.only(top: 0.19.rem),
           radius: BorderRadius.circular(1.25.rem),
           transition: Transition('all', duration: 300),
-          width: 1.7.rem),
-      css('nav')
-          .box(margin: EdgeInsets.only(top: Unit.zero, bottom: Unit.auto)),
-      css('#nav-bg.active')
-          .box(
-              display: Display.block,
-              height: 100.vh,
-              position: Position.fixed(top: Unit.zero, left: Unit.zero),
-              width: 100.vw)
-          .raw({'backdrop-filter': 'blur(2rem)'}),
-      css('#nav-items').box(
+          color: hamMenuColor),
+      css('nav').styles(margin: Margin.only(top: Unit.zero, bottom: Unit.auto)),
+      css('#nav-bg.active').styles(
+          display: Display.block,
+          position: Position.fixed(top: Unit.zero, left: Unit.zero),
+          width: 100.vw,
+          height: 100.vh,
+          raw: {'backdrop-filter': 'blur(2rem)'}),
+      css('#nav-items').styles(
           display: Display.none,
+          position: Position.absolute(right: Unit.zero),
+          width: 100.percent,
           height: Unit.auto,
           minWidth: Unit.auto,
-          opacity: 0,
-          padding: EdgeInsets.all(Unit.zero),
+          padding: Padding.all(Unit.zero),
           radius: BorderRadius.circular(Unit.zero),
-          position: Position.absolute(right: Unit.zero),
-          transform: Transform.translate(y: 50.percent),
-          transition: Transition('all', duration: 300),
+          opacity: 0,
           visibility: Visibility.hidden,
-          width: 100.percent),
-      css('#nav-items.active')
-          .box(
-              display: Display.grid,
-              opacity: 1.0,
-              transition: Transition('all', duration: 300),
-              visibility: Visibility.visible)
-          .grid(
-            template: GridTemplate(
-              columns: GridTracks(
-                  [GridTrack(TrackSize.fr(1)), GridTrack(TrackSize.fr(1))]),
-            ),
+          transition: Transition('all', duration: 300),
+          transform: Transform.translate(y: 50.percent)),
+      css('#nav-items.active').styles(
+        display: Display.grid,
+        opacity: 1.0,
+        visibility: Visibility.visible,
+        transition: Transition('all', duration: 300),
+        gridTemplate: GridTemplate(
+          columns: GridTracks([
+            GridTrack(TrackSize.fr(1)),
+            GridTrack(TrackSize.fr(1)),
+          ]),
+        ),
+      ),
+      css('#nav-items a').styles(
+          padding: Padding.all(1.rem),
+          outline: Outline(
+            width: OutlineWidth(0.06.rem),
+            style: OutlineStyle.solid,
+            color: shinyGreen,
           ),
-      css('#nav-items a')
-          .box(
-              padding: EdgeInsets.all(1.rem),
-              outline: Outline(
-                width: OutlineWidth(0.06.rem),
-                style: OutlineStyle.solid,
-                color: shinyGreen,
-              ))
-          .text(align: TextAlign.center),
+          textAlign: TextAlign.center),
     ]),
   ];
 }

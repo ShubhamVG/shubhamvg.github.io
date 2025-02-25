@@ -30,7 +30,7 @@ class TimeState extends State<Time> {
 
   @css
   static final styles = <StyleRule>[
-    css.keyframes('blink', {'50%': Styles.box(opacity: 0)}),
+    css.keyframes('blink', {'50%': Styles(opacity: 0)}),
   ];
 }
 
@@ -45,7 +45,8 @@ class _Clock extends StatelessComponent {
     final minuteText = _doubleDigit(time.minute);
 
     yield div(
-      styles: Styles.box(display: Display.flex).text(
+      styles: Styles(
+        display: Display.flex,
         fontSize: 2.rem,
         lineHeight: 90.percent,
       ),
@@ -55,7 +56,7 @@ class _Clock extends StatelessComponent {
 
         // time-colon
         div(
-          styles: Styles.raw({
+          styles: Styles(raw: {
             'animation': 'blink 0.5s step-end infinite alternate',
           }),
           const [Text(':')],

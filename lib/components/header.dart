@@ -15,16 +15,15 @@ class Header extends StatelessComponent {
 
   @css
   static final styles = <StyleRule>[
-    css('header')
-        .box(
-            display: Display.flex,
-            maxWidth: 62.5.rem,
-            margin: EdgeInsets.symmetric(horizontal: Unit.auto))
-        .flexbox(justifyContent: JustifyContent.spaceBetween),
+    css('header').styles(
+        display: Display.flex,
+        maxWidth: 62.5.rem,
+        margin: Margin.symmetric(horizontal: Unit.auto),
+        justifyContent: JustifyContent.spaceBetween),
     css.media(smolScrnMediaQry, [
-      css('header').box(
-        margin: EdgeInsets.only(left: 0.65.rem, right: 0.65.rem, top: 0.65.rem),
+      css('header').styles(
         position: Position.relative(),
+        margin: Margin.only(left: 0.65.rem, right: 0.65.rem, top: 0.65.rem),
       )
     ]),
   ];

@@ -57,31 +57,27 @@ class TypewriterState extends State<Typewriter> {
 
   @css
   static final styles = <StyleRule>[
-    css('#typewriter-container').raw({'width': 'fit-content'}),
-    css('#typewriter-text')
-        .box(
-            width: 100.percent,
-            maxWidth: 100.vw,
-            border: Border.only(right: BorderSide.solid(width: 0.31.rem)),
-            padding: EdgeInsets.only(right: 0.1.rem),
-            overflow: Overflow.hidden)
-        .text(whiteSpace: WhiteSpace.noWrap, fontSize: 1.5.rem),
-    css('.typing-delete').raw({
+    css('#typewriter-container').styles(raw: {'width': 'fit-content'}),
+    css('#typewriter-text').styles(
+        width: 100.percent,
+        maxWidth: 100.vw,
+        padding: Padding.only(right: 0.1.rem),
+        border: Border.only(right: BorderSide.solid(width: 0.31.rem)),
+        overflow: Overflow.hidden,
+        fontSize: 1.5.rem,
+        whiteSpace: WhiteSpace.noWrap),
+    css('.typing-delete').styles(raw: {
       'animation': 'cursor-blink 0.5s step-end infinite alternate,'
           'typing-delete 1s forwards'
     }),
-    css('.typing-start').raw({
+    css('.typing-start').styles(raw: {
       'animation': 'cursor-blink 0.5s step-end infinite alternate,'
           'typing-start 1.2s forwards'
     }),
     css.keyframes('cursor-blink', {
-      '50%': Styles.raw({'border-color': 'transparent'})
+      '50%': Styles(raw: {'border-color': 'transparent'}),
     }),
-    css.keyframes('typing-delete', {
-      '100%': Styles.box(width: Unit.zero),
-    }),
-    css.keyframes('typing-start', {
-      'from': Styles.box(width: Unit.zero),
-    }),
+    css.keyframes('typing-delete', {'100%': Styles(width: Unit.zero)}),
+    css.keyframes('typing-start', {'from': Styles(width: Unit.zero)}),
   ];
 }
