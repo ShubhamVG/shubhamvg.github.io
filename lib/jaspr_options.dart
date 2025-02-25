@@ -42,7 +42,7 @@ final defaultJasprOptions = JasprOptions(
     ...prefix1.Header.styles,
     ...prefix2.Main.styles,
     ...prefix3.Navbar.styles,
-    ...prefix4.TimeState.styles,
+    ...prefix4.Time.styles,
     ...prefix5.TypewriterState.styles,
     ...prefix7.App.styles,
   ],

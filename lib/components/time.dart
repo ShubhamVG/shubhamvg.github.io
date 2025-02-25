@@ -3,29 +3,21 @@ import 'dart:async';
 import 'package:jaspr/jaspr.dart';
 
 @client
-class Time extends StatefulComponent {
+class Time extends StatelessComponent {
   const Time({super.key});
 
   @override
-  State<Time> createState() => TimeState();
-}
-
-class TimeState extends State<Time> {
-  late DateTime indianTime;
-
-  @override
-  void initState() {
-    indianTime = _getIndianTime();
-    Timer.periodic(const Duration(seconds: 30), (_) {
-      setState(() => indianTime = _getIndianTime());
-    });
-
-    super.initState();
-  }
-
-  @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield div([_Clock(indianTime), _Date(indianTime)]);
+    yield StreamBuilder(
+      stream: Stream.periodic(const Duration(seconds: 5)),
+      builder: (context, snapshot) sync* {
+        final indianTime = _getIndianTime();
+        yield div([
+          _Clock(indianTime),
+          _Date(indianTime),
+        ]);
+      },
+    );
   }
 
   @css
@@ -41,8 +33,8 @@ class _Clock extends StatelessComponent {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    final hourText = _doubleDigit(time.hour);
-    final minuteText = _doubleDigit(time.minute);
+    final hour = _doubleDigit(time.hour);
+    final minute = _doubleDigit(time.minute);
 
     yield div(
       styles: Styles(
@@ -52,7 +44,7 @@ class _Clock extends StatelessComponent {
       ),
       [
         // hour
-        div([Text(hourText)]),
+        div([Text(hour)]),
 
         // time-colon
         div(
@@ -63,7 +55,7 @@ class _Clock extends StatelessComponent {
         ),
 
         // minute
-        div([Text(minuteText)]),
+        div([Text(minute)]),
       ],
     );
   }
