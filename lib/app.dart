@@ -5,6 +5,7 @@ import 'components/aurora_background.dart';
 import 'components/header.dart';
 import 'components/footer.dart';
 import 'constants/theme.dart';
+import 'pages/goals.dart';
 import 'pages/home.dart';
 
 @client
@@ -20,22 +21,27 @@ class App extends StatelessComponent {
         Route(
           path: '/',
           title: 'Home',
-          builder: (context, state) => const Home(),
+          builder: (_, __) => const Home(),
+        ),
+        Route(
+          path: '/goals',
+          title: 'Goals',
+          builder: (_, state) => Goals(year: state.params['year']),
+        ),
+        Route(
+          path: '/goals/:year',
+          title: 'Goals',
+          builder: (_, state) => Goals(year: state.params['year']),
+        ),
+        Route(
+          path: '/goals/:year',
+          title: 'Goals',
+          builder: (_, state) => Goals(year: state.params['year']),
         ),
       ])
     ]);
 
     yield Footer();
-    // yield const AuroraBackground();
-    // yield const Header();
-    // yield Router(routes: [
-    //   Route(
-    //     path: '/',
-    //     title: 'Home',
-    //     builder: (context, state) => const Home(),
-    //   ),
-    // ]);
-    // yield Footer();
   }
 
   @css
@@ -68,6 +74,29 @@ class App extends StatelessComponent {
       flexDirection: FlexDirection.column,
       justifyContent: JustifyContent.spaceBetween,
     ),
+    css('.fancy-badge').styles(
+        display: Display.inlineFlex,
+        position: Position.relative(),
+        padding: Padding.symmetric(vertical: 0.4.rem, horizontal: 0.5.rem),
+        margin: Margin.symmetric(horizontal: 0.5.rem),
+        radius: BorderRadius.circular(9999.rem),
+        justifyContent: JustifyContent.center,
+        alignItems: AlignItems.center,
+        fontWeight: FontWeight.bold,
+        backgroundColor: Colors.black,
+        raw: {
+          // 'background': fancyBadgeBgCss,
+          '--progress-start': '20%',
+          '--progress-end': '42%',
+        }),
+    css('.fancy-badge::before').styles(
+        content: '',
+        position: Position.absolute(),
+        width: 95.percent,
+        height: 95.percent,
+        radius: BorderRadius.circular(9999.rem),
+        raw: {'background': 'black'}),
+    css('.font-large').styles(fontSize: 1.5.rem),
     css('.wavy-text').styles(
       textDecoration: TextDecoration(
         line: TextDecorationLine.underline,

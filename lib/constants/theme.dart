@@ -2,6 +2,8 @@ import 'package:jaspr/jaspr.dart';
 
 import '../utils/colors.dart';
 
+final auroraColor = Color.hex('#00ff8c');
+
 final ballBg1 = 'radial-gradient(circle, hsla(147, 100%, 36%, 1) 0%,'
     'hsla(194, 83%, 26%, 0) 50%)';
 
@@ -20,11 +22,23 @@ final darkGreen = hexAlpha('#05502b9c');
 
 final hamMenuColor = Color.hex('#86ffc1');
 
+final goalTextContainerColor = hexAlpha('#2020203f');
+
 final smolScrnMediaQry = MediaQuery.screen(maxWidth: 50.rem);
 
 final maxScrnWidth = 62.5.rem;
 
 final navBgActiveColor = hexAlpha('#07633559');
+
+final progressCircGradient = 'linear-gradient(135deg, hsla(0, 0%, 0%, 1) 22%,'
+    'rgb(18, 70, 44) 53%, rgb(29, 94, 67) 84%, rgb(13, 189, 136) 100%)';
+
+final progressColor = Color.hex('#00c569');
+final progressShellColor = Color.hex('#2b2b2b');
+
+final progressBgCss =
+    'conic-gradient(${progressColor.value} var(--progress, 0%),'
+    '${progressShellColor.value} var(--progress, 0%) 100%)';
 
 final shinyGreen = Color.rgb(0, 141, 59);
 

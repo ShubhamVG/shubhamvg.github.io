@@ -16,7 +16,7 @@ class Main extends StatelessComponent {
   static final styles = <StyleRule>[
     css('main').styles(
         maxWidth: maxScrnWidth,
-        margin: Margin.symmetric(horizontal: Unit.auto)),
+        margin: Margin.symmetric(horizontal: Unit.auto, vertical: 1.rem)),
     css.media(smolScrnMediaQry, [
       css('main').styles(margin: Margin.symmetric(horizontal: 0.63.rem)),
     ]),

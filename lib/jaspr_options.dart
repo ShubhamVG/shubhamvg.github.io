@@ -4,13 +4,14 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jass/components/aurora_background.dart' as prefix0;
 import 'package:jass/components/footer.dart' as prefix1;
-import 'package:jass/components/header.dart' as prefix2;
-import 'package:jass/components/main_.dart' as prefix3;
-import 'package:jass/components/navbar.dart' as prefix4;
-import 'package:jass/components/time.dart' as prefix5;
-import 'package:jass/components/typewriter.dart' as prefix6;
-import 'package:jass/pages/home.dart' as prefix7;
-import 'package:jass/app.dart' as prefix8;
+import 'package:jass/components/goal_year.dart' as prefix2;
+import 'package:jass/components/header.dart' as prefix3;
+import 'package:jass/components/main_.dart' as prefix4;
+import 'package:jass/components/navbar.dart' as prefix5;
+import 'package:jass/components/time.dart' as prefix6;
+import 'package:jass/components/typewriter.dart' as prefix7;
+import 'package:jass/pages/home.dart' as prefix8;
+import 'package:jass/app.dart' as prefix9;
 
 /// Default [JasprOptions] for use with your jaspr project.
 ///
@@ -30,25 +31,26 @@ import 'package:jass/app.dart' as prefix8;
 /// ```
 final defaultJasprOptions = JasprOptions(
   clients: {
-    prefix8.App: ClientTarget<prefix8.App>('app'),
+    prefix9.App: ClientTarget<prefix9.App>('app'),
     prefix0.AuroraBackground: ClientTarget<prefix0.AuroraBackground>('components/aurora_background'),
     prefix1.Footer: ClientTarget<prefix1.Footer>('components/footer'),
-    prefix2.Header: ClientTarget<prefix2.Header>('components/header'),
-    prefix4.Navbar: ClientTarget<prefix4.Navbar>('components/navbar'),
-    prefix5.Time: ClientTarget<prefix5.Time>('components/time'),
-    prefix6.Typewriter: ClientTarget<prefix6.Typewriter>('components/typewriter', params: _prefix6Typewriter),
-    prefix7.Home: ClientTarget<prefix7.Home>('pages/home'),
+    prefix3.Header: ClientTarget<prefix3.Header>('components/header'),
+    prefix5.Navbar: ClientTarget<prefix5.Navbar>('components/navbar'),
+    prefix6.Time: ClientTarget<prefix6.Time>('components/time'),
+    prefix7.Typewriter: ClientTarget<prefix7.Typewriter>('components/typewriter', params: _prefix7Typewriter),
+    prefix8.Home: ClientTarget<prefix8.Home>('pages/home'),
   },
   styles: () => [
     ...prefix0.AuroraBackground.styles,
     ...prefix1.Footer.styles,
-    ...prefix2.Header.styles,
-    ...prefix3.Main.styles,
-    ...prefix4.Navbar.styles,
-    ...prefix5.Time.styles,
-    ...prefix6.TypewriterState.styles,
-    ...prefix8.App.styles,
+    ...prefix2.GoalYear.styles,
+    ...prefix3.Header.styles,
+    ...prefix4.Main.styles,
+    ...prefix5.Navbar.styles,
+    ...prefix6.Time.styles,
+    ...prefix7.TypewriterState.styles,
+    ...prefix9.App.styles,
   ],
 );
 
-Map<String, dynamic> _prefix6Typewriter(prefix6.Typewriter c) => {'messages': c.messages};
+Map<String, dynamic> _prefix7Typewriter(prefix7.Typewriter c) => {'messages': c.messages};

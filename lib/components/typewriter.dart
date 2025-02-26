@@ -57,7 +57,7 @@ class TypewriterState extends State<Typewriter> {
 
   @css
   static final styles = <StyleRule>[
-    css('#typewriter-container').styles(raw: {'width': 'fit-content'}),
+    css('#typewriter-container').styles(width: Unit.fitContent),
     css('#typewriter-text').styles(
         width: 100.percent,
         maxWidth: 100.vw,

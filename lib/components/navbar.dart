@@ -22,9 +22,10 @@ class Navbar extends StatelessComponent {
   static final styles = <StyleRule>[
     css('#ham-menu').styles(display: Display.none),
     css('nav').styles(
-        margin: Margin.symmetric(vertical: Unit.auto),
-        flex: Flex(basis: FlexBasis(100.percent)),
-        raw: {'height': 'fit-content'}),
+      height: Unit.fitContent,
+      margin: Margin.symmetric(vertical: Unit.auto),
+      flex: Flex(basis: FlexBasis(100.percent)),
+    ),
     css('#nav-bg').styles(display: Display.none),
     css('#nav-items').styles(
         display: Display.flex,
@@ -52,9 +53,10 @@ class Navbar extends StatelessComponent {
     css('#nav-items a:hover').styles(raw: {'scale': '120%'}),
     css.media(smolScrnMediaQry, [
       css('#ham-menu').styles(
-          display: Display.block,
-          margin: Margin.only(left: Unit.auto, right: Unit.zero),
-          raw: {'width': 'fit-content'}),
+        display: Display.block,
+        width: Unit.fitContent,
+        margin: Margin.only(left: Unit.auto, right: Unit.zero),
+      ),
       css('#ham-menu.active div:nth-child(1)').styles(
         transform: Transform.combine([
           Transform.translate(y: 150.percent),

@@ -1,4 +1,5 @@
 import 'package:jaspr/jaspr.dart';
+import 'package:jass/constants/routes.dart';
 
 import '../components/main_.dart';
 import '../components/typewriter.dart';
@@ -18,10 +19,11 @@ class Home extends StatelessComponent {
       ]),
       section([
         h1([const Text("Welcome to LaV's Digital Home")]),
-        p(const [
-          RawText(
+        p([
+          const RawText(
             "First, let me tell you about myself so I go by LaV and I am a 20 "
-            "y/o lad who like to build stuff (<strong>not</strong> limited to coding)."
+            "y/o lad who like to build stuff (<strong>not</strong> limited to "
+            "coding)."
             "<br>"
             "Previously, I used to tell everyone that I am a problem solver "
             "but lately, I haven't came across any \"problem\" to solve so "
@@ -31,9 +33,13 @@ class Home extends StatelessComponent {
             '<a href="/projects/" class="badge">Project</a> page or on my '
             '<a href="https://github.com/ShubhamVG/" class="wavy-text">GitHub'
             '</a> if it is open-sourced.'
-            '<br>',
+            '<br>'
+            '(Do drop me a follow and star the repos that you like ;)'
+            '<br>'
+            '<br>'
+            "Also, checkout my <a href='$cvLink' class='fancy-badge'>Resume</a>"
+            "'cuz why not?",
           ),
-          Text('(Do drop me a follow and star the repos that you like ;)'),
         ]),
       ]),
     ]);

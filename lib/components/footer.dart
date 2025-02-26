@@ -15,7 +15,7 @@ class Footer extends StatelessComponent {
         width: Unit.expression('calc(100% - 2rem)'),
         maxWidth: maxScrnWidth,
         padding: Padding.all(1.rem),
-        margin: Margin.symmetric(horizontal: Unit.auto, vertical: 0.5.rem),
+        margin: Margin.symmetric(horizontal: Unit.auto),
         radius: BorderRadius.circular(1.5.rem),
         shadow: BoxShadow(
             offsetX: Unit.zero,
