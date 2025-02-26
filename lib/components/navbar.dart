@@ -41,7 +41,7 @@ class Navbar extends StatelessComponent {
         ),
         justifyContent: JustifyContent.spaceBetween,
         alignItems: AlignItems.center,
-        color: navBgActiveColor),
+        backgroundColor: navBgActiveColor),
     css('#nav-items a').styles(
         transition: Transition('all', duration: 300, curve: Curve.easeOut),
         textShadow: TextShadow(
@@ -74,7 +74,7 @@ class Navbar extends StatelessComponent {
           margin: Margin.only(top: 0.19.rem),
           radius: BorderRadius.circular(1.25.rem),
           transition: Transition('all', duration: 300),
-          color: hamMenuColor),
+          backgroundColor: hamMenuColor),
       css('nav').styles(margin: Margin.only(top: Unit.zero, bottom: Unit.auto)),
       css('#nav-bg.active').styles(
           display: Display.block,

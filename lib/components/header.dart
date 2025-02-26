@@ -17,7 +17,7 @@ class Header extends StatelessComponent {
   static final styles = <StyleRule>[
     css('header').styles(
         display: Display.flex,
-        maxWidth: 62.5.rem,
+        maxWidth: maxScrnWidth,
         margin: Margin.symmetric(horizontal: Unit.auto),
         justifyContent: JustifyContent.spaceBetween),
     css.media(smolScrnMediaQry, [

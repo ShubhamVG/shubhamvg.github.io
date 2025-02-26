@@ -14,11 +14,11 @@ class Main extends StatelessComponent {
 
   @css
   static final styles = <StyleRule>[
-    css('main').box(
-        margin: EdgeInsets.symmetric(horizontal: Unit.auto),
-        maxWidth: 62.5.rem),
+    css('main').styles(
+        maxWidth: maxScrnWidth,
+        margin: Margin.symmetric(horizontal: Unit.auto)),
     css.media(smolScrnMediaQry, [
-      css('main').box(margin: EdgeInsets.symmetric(horizontal: 0.63.rem)),
+      css('main').styles(margin: Margin.symmetric(horizontal: 0.63.rem)),
     ]),
   ];
 }

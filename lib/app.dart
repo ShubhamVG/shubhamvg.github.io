@@ -13,16 +13,29 @@ class App extends StatelessComponent {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield const AuroraBackground();
-    yield const Header();
-    yield Router(routes: [
-      Route(
-        path: '/',
-        title: 'Home',
-        builder: (context, state) => const Home(),
-      ),
+    yield div([
+      const AuroraBackground(),
+      const Header(),
+      Router(routes: [
+        Route(
+          path: '/',
+          title: 'Home',
+          builder: (context, state) => const Home(),
+        ),
+      ])
     ]);
+
     yield Footer();
+    // yield const AuroraBackground();
+    // yield const Header();
+    // yield Router(routes: [
+    //   Route(
+    //     path: '/',
+    //     title: 'Home',
+    //     builder: (context, state) => const Home(),
+    //   ),
+    // ]);
+    // yield Footer();
   }
 
   @css
@@ -49,6 +62,12 @@ class App extends StatelessComponent {
           color: Colors.black,
         ),
         raw: {'scale': '120%', 'backdrop-filter': 'blur(1rem)'}),
+    css('body').styles(
+      display: Display.flex,
+      minHeight: 100.vh,
+      flexDirection: FlexDirection.column,
+      justifyContent: JustifyContent.spaceBetween,
+    ),
     css('.wavy-text').styles(
       textDecoration: TextDecoration(
         line: TextDecorationLine.underline,
