@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="/"/>
+    <meta charset="utf-8"/>
+    <!--$-->
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--/-->
+    <script src="app.client.dart.js" defer></script>
+    <style>
+      @import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap);
+      @keyframes moveCirc {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes moveNE {
+        0% {
+          transform: translate(-50%, 20%);
+        }
+        50% {
+          transform: translate(50%, -20%);
+        }
+        100% {
+          transform: translate(-50%, 20%);
+        }
+      }
+      @keyframes moveVert {
+        0% {
+          transform: translateY(-50%);
+        }
+        50% {
+          transform: translateY(50%);
+        }
+        100% {
+          transform: translateY(-50%);
+        }
+      }
+      #g1 {
+        width: 80%;
+        height: 80%;
+        position: absolute;
+        animation: moveCirc 30s ease infinite;
+        background: radial-gradient(circle, hsla(147, 100%, 36%, 1) 0%,hsla(194, 83%, 26%, 0) 50%);
+        transform-origin: center center;
+      }
+      #g2 {
+        width: 80%;
+        height: 80%;
+        position: absolute;
+        animation: moveNE 20s ease infinite;
+        background: radial-gradient(circle, rgb(19, 141, 94) 0%,hsla(194, 83%, 26%, 0) 50%);
+        transform-origin: center center;
+      }
+      #g3 {
+        width: 80%;
+        height: 80%;
+        position: absolute;
+        animation: moveVert 20s ease infinite;
+        background: radial-gradient(circle, rgb(8, 190, 160) 0%,hsla(194, 83%, 26%, 0) 50%);
+        transform-origin: center center;
+      }
+      #gradient-bg {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: linear-gradient(135deg, rgb(8, 43, 24) 0%, rgb(15, 58, 34)26%, hsla(147, 50%, 8%, 1) 60%, hsla(0, 0%, 0%, 1) 100%);
+      }
+      #gradient-bg>svg {
+        width: 0;
+        height: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      #gradients {
+        width: 100%;
+        height: 100%;
+        filter: url(#goo) blur(2.5rem);
+      }
+      header {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        max-width: 62.5rem;
+        justify-content: space-between;
+      }
+      @media screen and (max-width: 50rem) {
+        header {
+          margin-top: 0.65rem;
+          margin-left: 0.65rem;
+          margin-right: 0.65rem;
+          position: relative;
+        }
+      }
+      main {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 62.5rem;
+      }
+      @media screen and (max-width: 50rem) {
+        main {
+          margin-left: 0.63rem;
+          margin-right: 0.63rem;
+        }
+      }
+      #ham-menu {
+        display: none;
+      }
+      nav {
+        margin-top: auto;
+        margin-bottom: auto;
+        flex-basis: 100%;
+        height: fit-content;
+      }
+      #nav-bg {
+        display: none;
+      }
+      #nav-items {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-left: auto;
+        margin-right: 0;
+        display: flex;
+        width: 90%;
+        height: 2rem;
+        min-width: 40rem;
+        outline-color: rgb(0, 141, 59);
+        outline-style: solid;
+        outline-width: 0.06rem;
+        border-radius: 2rem;
+        color: rgba(7, 99, 53, 0.34901960784313724);
+        justify-content: space-between;
+        align-items: center;
+      }
+      #nav-items a {
+        transition: all 300ms ease-out;
+        text-shadow: 0 0 rgba(0, 255, 170, 0.5019607843137255);
+      }
+      #nav-items a:hover {
+        scale: 120%;
+      }
+      @media screen and (max-width: 50rem) {
+        #ham-menu {
+          margin-left: auto;
+          margin-right: 0;
+          display: block;
+          width: fit-content;
+        }
+        #ham-menu.active div:nth-child(1) {
+          transform: translateY(150%) rotate(45deg);
+        }
+        #ham-menu.active div:nth-child(2) {
+          opacity: 0.0;
+        }
+        #ham-menu.active div:nth-child(3) {
+          transform: translateY(-150%) rotate(-45deg);
+        }
+        #ham-menu div {
+          margin-top: 0.19rem;
+          width: 1.7rem;
+          height: 0.3rem;
+          border-radius: 1.25rem;
+          transition: all 300ms;
+          color: #86ffc1;
+        }
+        nav {
+          margin-top: 0;
+          margin-bottom: auto;
+        }
+        #nav-bg.active {
+          display: block;
+          width: 100vw;
+          height: 100vh;
+          position: fixed;
+          top: 0;
+          left: 0;
+          backdrop-filter: blur(2rem);
+        }
+        #nav-items {
+          padding: 0;
+          display: none;
+          width: 100%;
+          height: auto;
+          min-width: auto;
+          opacity: 0.0;
+          border-radius: 0;
+          position: absolute;
+          right: 0;
+          visibility: hidden;
+          transform: translateY(50%);
+          transition: all 300ms;
+        }
+        #nav-items.active {
+          display: grid;
+          opacity: 1.0;
+          visibility: visible;
+          transition: all 300ms;
+          grid-template-columns: 1.0fr 1.0fr;
+        }
+        #nav-items a {
+          padding: 1rem;
+          outline-color: rgb(0, 141, 59);
+          outline-style: solid;
+          outline-width: 0.06rem;
+          text-align: center;
+        }
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0.0;
+        }
+      }
+      #typewriter-container {
+        width: fit-content;
+      }
+      #typewriter-text {
+        padding-right: 0.1rem;
+        width: 100%;
+        max-width: 100vw;
+        border-right-style: solid;
+        border-right-width: 0.31rem;
+        overflow: hidden;
+        font-size: 1.5rem;
+        white-space: nowrap;
+      }
+      .typing-delete {
+        animation: cursor-blink 0.5s step-end infinite alternate,typing-delete 1s forwards;
+      }
+      .typing-start {
+        animation: cursor-blink 0.5s step-end infinite alternate,typing-start 1.2s forwards;
+      }
+      @keyframes cursor-blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+      @keyframes typing-delete {
+        100% {
+          width: 0;
+        }
+      }
+      @keyframes typing-start {
+        from {
+          width: 0;
+        }
+      }
+      :root {
+        font-family: 'Titillium Web';
+        color-scheme: dark;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      .badge {
+        padding: 0.25rem;
+        display: inline-block;
+        outline-color: rgb(0, 141, 59);
+        outline-style: solid;
+        outline-width: 0.06rem;
+        border-radius: 0.4rem;
+        transition: all 300ms ease;
+        background-color: rgba(5, 80, 43, 0.611764705882353);
+      }
+      .badge:hover {
+        box-shadow: 0 0 black;
+        scale: 120%;
+        backdrop-filter: blur(1rem);
+      }
+      .wavy-text {
+        text-decoration: underline wavy 0.06rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!--@app-->
+    <div id="gradient-bg">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="goo">
+            <fegaussianblur in="SourceGraphic" result="blur" stdDeviation="10"></fegaussianblur>
+            <fecolormatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo"></fecolormatrix>
+            <feblend in="SourceGraphic" in2="goo"></feblend>
+          </filter>
+        </defs>
+      </svg>
+      <div id="gradients"><div id="g1"></div><div id="g2"></div><div id="g3"></div></div>
+    </div>
+    <header>
+      <div>
+        <div style="display: flex; font-size: 2rem; line-height: 90%"><div>15</div><div style="animation: blink 0.5s step-end infinite alternate">:</div><div>18</div></div>
+        <div><div>25th Feb</div></div>
+      </div>
+      <nav>
+        <div id="nav-bg"></div>
+        <div id="ham-menu"><div></div><div></div><div></div></div>
+        <div id="nav-items">
+          <a href="/projects/">Projects</a>
+          <a href="/blogs/">Blogs</a>
+          <a href="/goals/">Goals</a>
+          <a href="/support/">Support</a>
+          <a href="/socials/">Socials</a>
+          <a href="/fav-tech/">Fav Tech</a>
+          <a href="/journey/">Journey</a>
+          <a href="/skills-hobbies/">Skills &amp; Hobbies</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div id="typewriter-container"><p id="typewriter-text" class="typing-start">Hello!</p></div>
+      <section>
+        <h1>Welcome to LaV's Digital Home</h1>
+        <p>
+          First, let me tell you about myself so I go by LaV and I am a 20 y/o lad who like to build stuff (<strong>not</strong> limited to coding).<br>Previously, I used to tell everyone that I am a problem solver but lately, I haven't came across any "problem" to solve so here I am, building beautiful stuff like this website!<br><br>You can check out my projects on the <a href="/projects/" class="badge">Project</a> page or on my <a href="https://github.com/ShubhamVG/" class="wavy-text">GitHub</a> if it is open-sourced.<br>(Do drop me a follow and star the repos that you like ;)
+        </p>
+      </section>
+    </main>
+    <footer style="color: darkGray; text-align: center">Made by <a class="wavy-text" href="https://github.com/ShubhamVG/">LaV</a></footer>
+    <!--/@app-->
+  </body>
+</html>

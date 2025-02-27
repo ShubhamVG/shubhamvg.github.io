@@ -1,0 +1,1 @@
+{"name":"Typewriter","id":"components/typewriter","import":"package:jass/components/typewriter.dart","params":[{"name":"messages","isNamed":true,"decoder":"(p['messages'] as List<dynamic>).cast<String>()","encoder":"c.messages"}]}
