@@ -1,24 +1,15 @@
-A bare-bones Dart web app.
+# jass
 
-Uses [`package:web`](https://pub.dev/packages/web)
-to interop with JS and the DOM.
+A new jaspr project.
 
-## Running and building
+## Running the project
 
-To run the app,
-activate and use [`package:webdev`](https://dart.dev/tools/webdev):
+Run your project using `jaspr serve`.
 
-```
-dart pub global activate webdev
-webdev serve
-```
+The development server will be available on `http://localhost:8080`.
 
-To build a production version ready for deployment,
-use the `webdev build` command:
+## Building the project
 
-```
-webdev build
-```
+Build your project using `jaspr build`.
 
-To learn how to interop with web APIs and other JS libraries,
-check out https://dart.dev/interop/js-interop.
+The output will be located inside the `build/jaspr/` directory.
