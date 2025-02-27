@@ -4,7 +4,7 @@ build/jaspr/: $(source_files)
 	jaspr build
 
 .PHONY: github_push
-github_push: build/
+github_push: build/jaspr/
 	rm -rf docs/ && \
 	mv build/jaspr/ docs/ && \
 	rmdir build && \
