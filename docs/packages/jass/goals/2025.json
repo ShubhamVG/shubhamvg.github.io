@@ -1,0 +1,27 @@
+[
+  {
+    "icon": "github.svg",
+    "text": "Get 60 followers on GitHub",
+    "progress": 78
+  },
+  {
+    "icon": "https://static.vecteezy.com/system/resources/thumbnails/011/257/977/small_2x/trophy-icon-gold-cup-best-for-tournament-or-championship-logo-illustration-vector.jpg",
+    "text": "Participate in 3 hackathons in 2025",
+    "progress": 0
+  },
+  {
+    "icon": "https://www.pngkey.com/png/full/399-3999135_photo-team-work-clipart-png-images-transparent-background.png",
+    "text": "Collab with at least 5 different people",
+    "progress": 40
+  },
+  {
+    "icon": "brainiacs.jpg",
+    "text": "Publish the brainiacs.in website",
+    "progress": 100
+  },
+  {
+    "icon": "https://i.pinimg.com/474x/2e/e1/f3/2ee1f31d6bd1bb4083d8321ed42334a9.jpg",
+    "text": "Make brainiacs.in indexable by Google",
+    "progress": 100
+  }
+]
