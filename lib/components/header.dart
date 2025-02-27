@@ -4,7 +4,6 @@ import '../constants/theme.dart';
 import 'navbar.dart';
 import 'time.dart';
 
-@client
 class Header extends StatelessComponent {
   const Header({super.key});
 

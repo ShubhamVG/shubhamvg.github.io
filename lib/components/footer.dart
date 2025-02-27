@@ -4,7 +4,6 @@ import 'package:jass/constants/theme.dart';
 
 import '../constants/routes.dart';
 
-@client
 class Footer extends StatelessComponent {
   const Footer({super.key});
 

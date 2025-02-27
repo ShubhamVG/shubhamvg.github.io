@@ -2,7 +2,6 @@ import 'package:jaspr/jaspr.dart';
 
 import '../constants/theme.dart';
 
-@client
 class AuroraBackground extends StatelessComponent {
   const AuroraBackground({super.key});
 
@@ -51,8 +50,6 @@ class AuroraBackground extends StatelessComponent {
     ]);
   }
 
-  // This is so fked up. Just using [css.raw] would have been much cleaner but
-  // meh, at least it is more secure this way.
   @css
   static final styles = <StyleRule>[
     css.keyframes('moveCirc', {

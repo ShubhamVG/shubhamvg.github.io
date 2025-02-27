@@ -4,7 +4,6 @@ import 'package:jass/constants/routes.dart';
 import '../components/main_.dart';
 import '../components/typewriter.dart';
 
-@client
 class Home extends StatelessComponent {
   const Home({super.key});
 
