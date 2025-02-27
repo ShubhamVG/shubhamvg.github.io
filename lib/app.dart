@@ -1,14 +1,16 @@
+import 'dart:io';
+
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 import 'components/aurora_background.dart';
+import 'components/goal_year.dart';
 import 'components/header.dart';
 import 'components/footer.dart';
 import 'constants/theme.dart';
 import 'pages/goals.dart';
 import 'pages/home.dart';
 
-@client
 class App extends StatelessComponent {
   const App({super.key});
 
@@ -26,22 +28,30 @@ class App extends StatelessComponent {
         Route(
           path: '/goals',
           title: 'Goals',
-          builder: (_, state) => Goals(year: state.params['year']),
+          builder: (_, state) => Goals(),
         ),
-        Route(
-          path: '/goals/:year',
-          title: 'Goals',
-          builder: (_, state) => Goals(year: state.params['year']),
-        ),
-        Route(
-          path: '/goals/:year',
-          title: 'Goals',
-          builder: (_, state) => Goals(year: state.params['year']),
-        ),
+        ..._goalYearRoutes(),
       ])
     ]);
 
     yield Footer();
+  }
+
+  List<Route> _goalYearRoutes() {
+    final yearGoalsJsons = Directory('lib/goals/').listSync();
+    final years = yearGoalsJsons.map((e) {
+      final start = e.path.length - 9;
+      return e.path.substring(start, start + 4);
+    }).toList(growable: false);
+
+    final routes = years
+        .map((year) => Route(
+            path: '/goals/$year',
+            title: 'Goals $year',
+            builder: (_, __) => GoalYear(year)))
+        .toList(growable: false);
+
+    return routes;
   }
 
   @css

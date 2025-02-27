@@ -31,7 +31,6 @@ import 'package:jass/app.dart' as prefix9;
 /// ```
 final defaultJasprOptions = JasprOptions(
   clients: {
-    prefix9.App: ClientTarget<prefix9.App>('app'),
     prefix0.AuroraBackground: ClientTarget<prefix0.AuroraBackground>('components/aurora_background'),
     prefix1.Footer: ClientTarget<prefix1.Footer>('components/footer'),
     prefix3.Header: ClientTarget<prefix3.Header>('components/header'),

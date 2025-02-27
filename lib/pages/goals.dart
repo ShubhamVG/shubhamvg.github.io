@@ -3,23 +3,14 @@ import 'dart:io' show Directory;
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
-import '../components/goal_year.dart';
 import '../components/main_.dart';
 import '../components/typewriter.dart';
 
 class Goals extends StatelessComponent {
-  const Goals({super.key, required this.year});
-
-  final String? year;
+  const Goals({super.key});
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    if (year != null) {
-      yield GoalYear(year!);
-      return;
-    }
-
-    // Default page
     final yearGoalsJsons = Directory('lib/goals/').listSync();
     final yearJsons = yearGoalsJsons.map((e) {
       final start = e.path.length - 9;
