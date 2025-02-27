@@ -80,15 +80,21 @@ class App extends StatelessComponent {
         padding: Padding.symmetric(vertical: 0.4.rem, horizontal: 0.5.rem),
         margin: Margin.symmetric(horizontal: 0.5.rem),
         radius: BorderRadius.circular(9999.rem),
+        transition: Transition('all', duration: 300),
         justifyContent: JustifyContent.center,
         alignItems: AlignItems.center,
         fontWeight: FontWeight.bold,
         backgroundColor: Colors.black,
         raw: {
-          // 'background': fancyBadgeBgCss,
+          'background': fancyBadgeBgCss,
           '--progress-start': '20%',
           '--progress-end': '42%',
+          'animation': 'dance 10s linear infinite alternate',
         }),
+    css('.fancy-badge:hover').styles(
+      transition: Transition('all', duration: 300),
+      raw: {'scale': '120%'},
+    ),
     css('.fancy-badge::before').styles(
         content: '',
         position: Position.absolute(),
@@ -96,6 +102,14 @@ class App extends StatelessComponent {
         height: 95.percent,
         radius: BorderRadius.circular(9999.rem),
         raw: {'background': 'black'}),
+    css('.fancy-badge:hover::before').styles(
+      raw: {
+        'height': '90%',
+        'width': '90%',
+      },
+    ),
+    css('.fancy-badge > span')
+        .styles(zIndex: ZIndex(2), textAlign: TextAlign.center),
     css('.font-large').styles(fontSize: 1.5.rem),
     css('.wavy-text').styles(
       textDecoration: TextDecoration(
@@ -104,5 +118,20 @@ class App extends StatelessComponent {
         thickness: TextDecorationThickness.value(0.06.rem),
       ),
     ),
+    css('@property --pe').styles(raw: {
+      'syntax': "'<percentage>'",
+      'initial-value': '20%',
+      'inherits': 'false',
+    }),
+    css('@property --ps').styles(raw: {
+      'syntax': "'<percentage>'",
+      'initial-value': '0%',
+      'inherits': 'false',
+    }),
+    css.keyframes('dance', {
+      '100%': Styles(
+        raw: {'--ps': '80%', '--pe': '100%'},
+      ),
+    }),
   ];
 }

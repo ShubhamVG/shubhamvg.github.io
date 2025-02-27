@@ -36,6 +36,10 @@ final progressCircGradient = 'linear-gradient(135deg, hsla(0, 0%, 0%, 1) 22%,'
 final progressColor = Color.hex('#00c569');
 final progressShellColor = Color.hex('#2b2b2b');
 
+final fancyBadgeBgCss = 'conic-gradient(black var(--ps, 0%),'
+    'white var(--pe, 0%) var(--ps, 10%),'
+    'black var(--pe, 10%) 100%)';
+
 final progressBgCss =
     'conic-gradient(${progressColor.value} var(--progress, 0%),'
     '${progressShellColor.value} var(--progress, 0%) 100%)';

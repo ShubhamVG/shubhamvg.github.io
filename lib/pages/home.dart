@@ -37,7 +37,8 @@ class Home extends StatelessComponent {
             '(Do drop me a follow and star the repos that you like ;)'
             '<br>'
             '<br>'
-            "Also, checkout my <a href='$cvLink' class='fancy-badge'>Resume</a>"
+            "Also, checkout my<a href='$cvLink' class='fancy-badge' target='_blank'>"
+            "<span>Resume<span></a>"
             "'cuz why not?",
           ),
         ]),
