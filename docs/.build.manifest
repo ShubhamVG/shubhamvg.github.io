@@ -1,8 +1,5 @@
 .dart_tool/package_config.json
 CNAME
-components/aurora_background.client.dart.js
-components/footer.client.dart.js
-components/header.client.dart.js
 components/navbar.client.dart.js
 components/time.client.dart.js
 components/typewriter.client.dart.js
@@ -13,20 +10,11 @@ images/github.svg
 images/logo.svg
 main.clients.dart.js
 main.clients.dart.js_1.part.js
-main.clients.dart.js_11.part.js
-main.clients.dart.js_12.part.js
-main.clients.dart.js_14.part.js
-main.clients.dart.js_16.part.js
-main.clients.dart.js_18.part.js
-main.clients.dart.js_19.part.js
 main.clients.dart.js_2.part.js
-main.clients.dart.js_20.part.js
-main.clients.dart.js_21.part.js
-main.clients.dart.js_22.part.js
 main.clients.dart.js_3.part.js
+main.clients.dart.js_4.part.js
 main.clients.dart.js_5.part.js
 main.clients.dart.js_6.part.js
-main.clients.dart.js_9.part.js
 packages/$sdk/dev_compiler/amd/require.js
 packages/$sdk/dev_compiler/ddc/ddc_module_loader.js
 packages/$sdk/dev_compiler/web/dart_stack_trace_mapper.js
@@ -41,12 +29,9 @@ packages/build_runner/src/server/graph_viz.js
 packages/build_runner/src/server/graph_viz_main.dart.js
 packages/build_web_compilers/src/dev_compiler_stack_trace/stack_trace_mapper.dart.js
 packages/jass/app.styles.json
-packages/jass/components/aurora_background.client.json
 packages/jass/components/aurora_background.styles.json
-packages/jass/components/footer.client.json
 packages/jass/components/footer.styles.json
 packages/jass/components/goal_year.styles.json
-packages/jass/components/header.client.json
 packages/jass/components/header.styles.json
 packages/jass/components/main_.styles.json
 packages/jass/components/navbar.client.json
@@ -56,7 +41,6 @@ packages/jass/components/time.styles.json
 packages/jass/components/typewriter.client.json
 packages/jass/components/typewriter.styles.json
 packages/jass/goals/2025.json
-packages/jass/pages/home.client.json
 packages/jass/styles.bundle.json
 packages/lints/core.yaml
 packages/lints/recommended.yaml
@@ -65,4 +49,3 @@ packages/vm_service/DEPENDENCIES.md
 packages/vm_service/src/DEPENDENCIES.md
 packages/vm_service/src/README.md
 packages/web/fix_data.yaml
-pages/home.client.dart.js
