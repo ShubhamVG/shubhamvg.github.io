@@ -2,15 +2,15 @@
 // Generated with jaspr_builder
 
 import 'package:jaspr/jaspr.dart';
-import 'package:jass/components/aurora_background.dart' as prefix0;
-import 'package:jass/components/footer.dart' as prefix1;
-import 'package:jass/components/goal_year.dart' as prefix2;
-import 'package:jass/components/header.dart' as prefix3;
-import 'package:jass/components/main_.dart' as prefix4;
-import 'package:jass/components/navbar.dart' as prefix5;
-import 'package:jass/components/time.dart' as prefix6;
-import 'package:jass/components/typewriter.dart' as prefix7;
-import 'package:jass/app.dart' as prefix8;
+import 'package:lav_home/components/aurora_background.dart' as prefix0;
+import 'package:lav_home/components/footer.dart' as prefix1;
+import 'package:lav_home/components/header.dart' as prefix2;
+import 'package:lav_home/components/main_.dart' as prefix3;
+import 'package:lav_home/components/navbar.dart' as prefix4;
+import 'package:lav_home/components/time.dart' as prefix5;
+import 'package:lav_home/components/typewriter.dart' as prefix6;
+import 'package:lav_home/pages/goal_year.dart' as prefix7;
+import 'package:lav_home/app.dart' as prefix8;
 
 /// Default [JasprOptions] for use with your jaspr project.
 ///
@@ -30,21 +30,21 @@ import 'package:jass/app.dart' as prefix8;
 /// ```
 final defaultJasprOptions = JasprOptions(
   clients: {
-    prefix5.Navbar: ClientTarget<prefix5.Navbar>('components/navbar'),
-    prefix6.Time: ClientTarget<prefix6.Time>('components/time'),
-    prefix7.Typewriter: ClientTarget<prefix7.Typewriter>('components/typewriter', params: _prefix7Typewriter),
+    prefix4.Navbar: ClientTarget<prefix4.Navbar>('components/navbar'),
+    prefix5.Time: ClientTarget<prefix5.Time>('components/time'),
+    prefix6.Typewriter: ClientTarget<prefix6.Typewriter>('components/typewriter', params: _prefix6Typewriter),
   },
   styles: () => [
     ...prefix0.AuroraBackground.styles,
     ...prefix1.Footer.styles,
-    ...prefix2.GoalYear.styles,
-    ...prefix3.Header.styles,
-    ...prefix4.Main.styles,
-    ...prefix5.Navbar.styles,
-    ...prefix6.Time.styles,
-    ...prefix7.TypewriterState.styles,
+    ...prefix2.Header.styles,
+    ...prefix3.Main.styles,
+    ...prefix4.Navbar.styles,
+    ...prefix5.Time.styles,
+    ...prefix6.TypewriterState.styles,
+    ...prefix7.GoalYear.styles,
     ...prefix8.App.styles,
   ],
 );
 
-Map<String, dynamic> _prefix7Typewriter(prefix7.Typewriter c) => {'messages': c.messages};
+Map<String, dynamic> _prefix6Typewriter(prefix6.Typewriter c) => {'messages': c.messages};

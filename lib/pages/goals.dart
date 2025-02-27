@@ -17,6 +17,11 @@ class Goals extends StatelessComponent {
       return e.path.substring(start, start + 4);
     }).toList(growable: false);
 
+    yield const Document.head(meta: {
+      "title": "LaV's Year Long Goals",
+      "description": "All of my new-year resolutions since 2025.",
+    });
+
     yield Main([
       const Typewriter(messages: [
         'New goals every year',

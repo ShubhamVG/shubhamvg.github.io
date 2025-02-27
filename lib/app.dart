@@ -4,7 +4,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 import 'components/aurora_background.dart';
-import 'components/goal_year.dart';
+import 'pages/goal_year.dart';
 import 'components/header.dart';
 import 'components/footer.dart';
 import 'constants/theme.dart';
@@ -22,7 +22,7 @@ class App extends StatelessComponent {
       Router(routes: [
         Route(
           path: '/',
-          title: 'Home',
+          title: 'LaV',
           builder: (_, __) => const Home(),
         ),
         Route(
@@ -47,7 +47,7 @@ class App extends StatelessComponent {
     final routes = years
         .map((year) => Route(
             path: '/goals/$year',
-            title: 'Goals $year',
+            title: '$year Goals',
             builder: (_, __) => GoalYear(year)))
         .toList(growable: false);
 

@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <base href="/"/>
     <meta charset="utf-8"/>
     <!--$-->
     <title>Goals</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="language" content="English"/>
+    <meta name="author" content="LaV"/>
+    <meta name="title" content="LaV's Year Long Goals"/>
+    <meta name="description" content="All of my new-year resolutions since 2025."/>
     <!--/-->
     <script src="main.clients.dart.js" defer></script>
     <style>
@@ -88,137 +93,6 @@
         width: 100%;
         height: 100%;
         filter: url(#goo) blur(2.5rem);
-      }
-      .crown {
-        width: 2rem;
-        height: 2rem;
-        position: absolute;
-        top: -1.25rem;
-        right: -0.4rem;
-        rotate: 30deg;
-      }
-      .goal {
-        padding: 0.5rem;
-        display: flex;
-        width: 100%;
-        align-items: center;
-      }
-      .goal-logo {
-        width: 80%;
-        height: 80%;
-        border-radius: 9999rem;
-        z-index: 2;
-      }
-      .goal-progress {
-        display: flex;
-        width: 3.5rem;
-        height: 3.5rem;
-        border-radius: 9999rem;
-        position: relative;
-        box-shadow: 0 0 0.5rem #00ff8c;
-        justify-content: center;
-        align-items: center;
-        background: conic-gradient(#00c569 var(--progress, 0%),#2b2b2b var(--progress, 0%) 100%);
-      }
-      .goal-progress::before {
-        width: 80%;
-        height: 80%;
-        border-radius: 9999rem;
-        position: absolute;
-        content: "";
-        background: linear-gradient(135deg, rgb(8, 43, 24) 0%, rgb(15, 58, 34)26%, hsla(147, 50%, 8%, 1) 60%, hsla(0, 0%, 0%, 1) 100%);
-      }
-      .goal-text {
-        padding: 1rem;
-        margin: 0.5rem;
-        width: 80%;
-        min-height: 2rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 0 0.4rem #00ff8c;
-        background-color: rgba(32, 32, 32, 0.24705882352941178);
-      }
-      .goals-category-title {
-        margin-top: 2rem;
-        margin-bottom: 0;
-        font-size: 1.2rem;
-      }
-      .goals-container {
-        margin-right: 0.8rem;
-        margin-bottom: 2rem;
-        display: grid;
-        grid-template-columns: 1.0fr 1.0fr;
-        column-gap: 1.5rem;
-      }
-      #year-container {
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        width: fit-content;
-      }
-      #year-progress {
-        display: flex;
-        width: 10rem;
-        height: 10rem;
-        border-radius: 9999rem;
-        position: relative;
-        box-shadow: 0 0 0.5rem #00ff8c;
-        justify-content: center;
-        align-items: center;
-        background: conic-gradient(#00c569 var(--progress, 0%),#2b2b2b var(--progress, 0%) 100%);
-      }
-      #year-progress::before {
-        width: 90%;
-        height: 90%;
-        border-radius: 9999rem;
-        position: absolute;
-        box-shadow: 0 0 0.5rem #00ff8c;
-        content: "";
-        background: linear-gradient(135deg, hsla(0, 0%, 0%, 1) 22%,rgb(18, 70, 44) 53%, rgb(29, 94, 67) 84%, rgb(13, 189, 136) 100%);
-      }
-      #year-progress > span {
-        width: 80%;
-        z-index: 2;
-        font-size: 1.3rem;
-        text-align: center;
-      }
-      #year-text {
-        margin-left: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-      @media screen and (max-width: 50rem) {
-        .goal {
-          width: fit-content;
-        }
-        .goal:nth-child(even) {
-          margin-left: auto;
-          margin-right: 0;
-        }
-        .goal-text {
-          width: 70%;
-        }
-        .goals-container {
-          display: block;
-        }
-      }
-      @media screen and (max-width: 39rem) {
-        .goal {
-          width: 80%;
-        }
-        .goal-text {
-          width: calc(90% - 5rem);
-        }
-        #year-container {
-          display: block;
-        }
-        #year-progress {
-          margin-left: auto;
-          margin-right: auto;
-        }
-        #year-text {
-          display: block;
-        }
       }
       header {
         margin-left: auto;
@@ -386,6 +260,137 @@
           width: 0;
         }
       }
+      .crown {
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        top: -1.25rem;
+        right: -0.4rem;
+        rotate: 30deg;
+      }
+      .goal {
+        padding: 0.5rem;
+        display: flex;
+        width: 100%;
+        align-items: center;
+      }
+      .goal-logo {
+        width: 80%;
+        height: 80%;
+        border-radius: 9999rem;
+        z-index: 2;
+      }
+      .goal-progress {
+        display: flex;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 9999rem;
+        position: relative;
+        box-shadow: 0 0 0.5rem #00ff8c;
+        justify-content: center;
+        align-items: center;
+        background: conic-gradient(#00c569 var(--progress, 0%),#2b2b2b var(--progress, 0%) 100%);
+      }
+      .goal-progress::before {
+        width: 80%;
+        height: 80%;
+        border-radius: 9999rem;
+        position: absolute;
+        content: "";
+        background: linear-gradient(135deg, rgb(8, 43, 24) 0%, rgb(15, 58, 34)26%, hsla(147, 50%, 8%, 1) 60%, hsla(0, 0%, 0%, 1) 100%);
+      }
+      .goal-text {
+        padding: 1rem;
+        margin: 0.5rem;
+        width: 80%;
+        min-height: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 0.4rem #00ff8c;
+        background-color: rgba(32, 32, 32, 0.24705882352941178);
+      }
+      .goals-category-title {
+        margin-top: 2rem;
+        margin-bottom: 0;
+        font-size: 1.2rem;
+      }
+      .goals-container {
+        margin-right: 0.8rem;
+        margin-bottom: 2rem;
+        display: grid;
+        grid-template-columns: 1.0fr 1.0fr;
+        column-gap: 1.5rem;
+      }
+      #year-container {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        width: fit-content;
+      }
+      #year-progress {
+        display: flex;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 9999rem;
+        position: relative;
+        box-shadow: 0 0 0.5rem #00ff8c;
+        justify-content: center;
+        align-items: center;
+        background: conic-gradient(#00c569 var(--progress, 0%),#2b2b2b var(--progress, 0%) 100%);
+      }
+      #year-progress::before {
+        width: 90%;
+        height: 90%;
+        border-radius: 9999rem;
+        position: absolute;
+        box-shadow: 0 0 0.5rem #00ff8c;
+        content: "";
+        background: linear-gradient(135deg, hsla(0, 0%, 0%, 1) 22%,rgb(18, 70, 44) 53%, rgb(29, 94, 67) 84%, rgb(13, 189, 136) 100%);
+      }
+      #year-progress > span {
+        width: 80%;
+        z-index: 2;
+        font-size: 1.3rem;
+        text-align: center;
+      }
+      #year-text {
+        margin-left: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      @media screen and (max-width: 50rem) {
+        .goal {
+          width: fit-content;
+        }
+        .goal:nth-child(even) {
+          margin-left: auto;
+          margin-right: 0;
+        }
+        .goal-text {
+          width: 70%;
+        }
+        .goals-container {
+          display: block;
+        }
+      }
+      @media screen and (max-width: 39rem) {
+        .goal {
+          width: 80%;
+        }
+        .goal-text {
+          width: calc(90% - 5rem);
+        }
+        #year-container {
+          display: block;
+        }
+        #year-progress {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        #year-text {
+          display: block;
+        }
+      }
       :root {
         font-family: 'Titillium Web';
         color-scheme: dark;
@@ -493,7 +498,7 @@
       <header>
         <!--@components/time-->
         <div>
-          <div style="display: flex; font-size: 2rem; line-height: 90%"><div>23</div><div style="animation: blink 0.5s step-end infinite alternate">:</div><div>14</div></div>
+          <div style="display: flex; font-size: 2rem; line-height: 90%"><div>23</div><div style="animation: blink 0.5s step-end infinite alternate">:</div><div>40</div></div>
           <div><div>27th Feb</div></div>
         </div>
         <!--/@components/time-->

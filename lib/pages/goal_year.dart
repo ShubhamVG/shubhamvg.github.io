@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:jaspr/jaspr.dart';
 
 import '../constants/theme.dart';
-import 'main_.dart';
+import '../components/main_.dart';
 
 class GoalYear extends StatelessComponent {
   const GoalYear(this.year, {super.key});
@@ -37,6 +37,11 @@ class GoalYear extends StatelessComponent {
         pendingGoals.add(goal);
       }
     }
+
+    yield Document.head(meta: {
+      "title": "LaV's $year Goals",
+      "description": "These are all the goals I wanna achieve in $year.",
+    });
 
     yield Main([
       // Year container

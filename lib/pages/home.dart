@@ -1,14 +1,19 @@
 import 'package:jaspr/jaspr.dart';
-import 'package:jass/constants/routes.dart';
 
 import '../components/main_.dart';
 import '../components/typewriter.dart';
+import '../constants/routes.dart';
 
 class Home extends StatelessComponent {
   const Home({super.key});
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
+    yield const Document.head(meta: {
+      "title": "LaV's Digital Home",
+      "description": "Everything about me should be present on this website.",
+    });
+
     yield Main([
       const Typewriter(messages: [
         'Hello!',
