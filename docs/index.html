@@ -99,6 +99,7 @@
         margin-right: auto;
         display: flex;
         max-width: 62.5rem;
+        z-index: 10;
         justify-content: space-between;
       }
       @media screen and (max-width: 50rem) {
@@ -278,7 +279,7 @@
         width: 80%;
         height: 80%;
         border-radius: 9999rem;
-        z-index: 2;
+        z-index: 1;
       }
       .goal-progress {
         display: flex;
@@ -348,7 +349,7 @@
       }
       #year-progress > span {
         width: 80%;
-        z-index: 2;
+        z-index: 1;
         font-size: 1.3rem;
         text-align: center;
       }
@@ -417,6 +418,7 @@
       body {
         display: flex;
         min-height: 100vh;
+        position: relative;
         flex-direction: column;
         justify-content: space-between;
       }
@@ -454,7 +456,7 @@
         width: 90%;
       }
       .fancy-badge > span {
-        z-index: 2;
+        z-index: 1;
         text-align: center;
       }
       .font-large {
@@ -498,8 +500,8 @@
       <header>
         <!--@components/time-->
         <div>
-          <div style="display: flex; font-size: 2rem; line-height: 90%"><div>23</div><div style="animation: blink 0.5s step-end infinite alternate">:</div><div>40</div></div>
-          <div><div>27th Feb</div></div>
+          <div style="display: flex; font-size: 2rem; line-height: 90%"><div>11</div><div style="animation: blink 0.5s step-end infinite alternate">:</div><div>44</div></div>
+          <div><div>28th Feb</div></div>
         </div>
         <!--/@components/time-->
         <!--@components/navbar-->
