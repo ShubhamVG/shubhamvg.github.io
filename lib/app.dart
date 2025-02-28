@@ -4,6 +4,8 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 import 'components/aurora_background.dart';
+import 'constants/routes.dart';
+import 'pages/fav_tech.dart';
 import 'pages/goal_year.dart';
 import 'components/header.dart';
 import 'components/footer.dart';
@@ -26,11 +28,16 @@ class App extends StatelessComponent {
           builder: (_, __) => const Home(),
         ),
         Route(
-          path: '/goals',
+          path: NavbarRoute.goals.path,
           title: 'Goals',
-          builder: (_, state) => Goals(),
+          builder: (_, state) => const Goals(),
+          routes: _goalYearRoutes(),
         ),
-        ..._goalYearRoutes(),
+        Route(
+          path: NavbarRoute.favTech.path,
+          title: 'Tech Stack',
+          builder: (_, __) => const FavTech(),
+        ),
       ])
     ]);
 
@@ -38,15 +45,15 @@ class App extends StatelessComponent {
   }
 
   List<Route> _goalYearRoutes() {
-    final yearGoalsJsons = Directory('lib/goals/').listSync();
-    final years = yearGoalsJsons.map((e) {
+    final goalFiles = Directory('lib/goals').listSync();
+    final years = goalFiles.map((e) {
       final start = e.path.length - 9;
       return e.path.substring(start, start + 4);
     }).toList(growable: false);
 
     final routes = years
         .map((year) => Route(
-            path: '/goals/$year',
+            path: year,
             title: '$year Goals',
             builder: (_, __) => GoalYear(year)))
         .toList(growable: false);
@@ -113,12 +120,8 @@ class App extends StatelessComponent {
         height: 95.percent,
         radius: BorderRadius.circular(9999.rem),
         raw: {'background': 'black'}),
-    css('.fancy-badge:hover::before').styles(
-      raw: {
-        'height': '90%',
-        'width': '90%',
-      },
-    ),
+    css('.fancy-badge:hover::before')
+        .styles(width: 90.percent, height: 90.percent),
     css('.fancy-badge > span')
         .styles(zIndex: ZIndex(1), textAlign: TextAlign.center),
     css('.font-large').styles(fontSize: 1.5.rem),
