@@ -1,12 +1,12 @@
 enum NavbarRoute {
-  project(label: 'Projects', path: '/projects/'),
-  blogs(label: 'Blogs', path: '/blogs/'),
-  goals(label: 'Goals', path: '/goals/'),
-  supports(label: 'Support', path: '/support/'),
-  contacts(label: 'Contacts & Socials', path: '/contacts/'),
-  favTech(label: 'Fav Tech', path: '/fav-tech/'),
-  journey(label: 'Journey', path: '/journey/'),
-  skillsHobbies(label: 'Skills & Hobbies', path: '/skills-hobbies/');
+  project(label: 'Projects', path: '/projects'),
+  blogs(label: 'Blogs', path: '/blogs'),
+  goals(label: 'Goals', path: '/goals'),
+  supports(label: 'Support', path: '/support'),
+  contacts(label: 'Contacts & Socials', path: '/contacts'),
+  favTech(label: 'Fav Tech', path: '/fav-tech'),
+  journey(label: 'Journey', path: '/journey'),
+  skillsHobbies(label: 'Skills & Hobbies', path: '/skills-hobbies');
 
   const NavbarRoute({required this.label, required this.path});
 
