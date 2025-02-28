@@ -25,7 +25,7 @@ enum AdditionalRoutes {
 
 const blueSkyLink = 'https://bsky.app/profile/lavisse.bsky.social';
 const cvLink =
-    'https://docs.google.com/document/d/1UrYJvRJvo7pJ793CHAQnNzk-1yKYCKel/';
+    'https://docs.google.com/document/d/1UrYJvRJvo7pJ793CHAQnNzk-1yKYCKel';
 const emailLink = 'mailto:vxshubham49@gmail.com';
-const githubLink = 'https://github.com/ShubhamVG/';
+const githubLink = 'https://github.com/ShubhamVG';
 const kofiLink = 'https://ko-fi.com/brainiacsin';
