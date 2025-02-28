@@ -16,6 +16,7 @@ class Header extends StatelessComponent {
   static final styles = <StyleRule>[
     css('header').styles(
         display: Display.flex,
+        zIndex: ZIndex(10),
         maxWidth: maxScrnWidth,
         margin: Margin.symmetric(horizontal: Unit.auto),
         justifyContent: JustifyContent.spaceBetween),

@@ -80,6 +80,7 @@ class App extends StatelessComponent {
         raw: {'scale': '120%', 'backdrop-filter': 'blur(1rem)'}),
     css('body').styles(
       display: Display.flex,
+      position: Position.relative(),
       minHeight: 100.vh,
       flexDirection: FlexDirection.column,
       justifyContent: JustifyContent.spaceBetween,
@@ -119,7 +120,7 @@ class App extends StatelessComponent {
       },
     ),
     css('.fancy-badge > span')
-        .styles(zIndex: ZIndex(2), textAlign: TextAlign.center),
+        .styles(zIndex: ZIndex(1), textAlign: TextAlign.center),
     css('.font-large').styles(fontSize: 1.5.rem),
     css('.wavy-text').styles(
       textDecoration: TextDecoration(

@@ -151,7 +151,7 @@ class GoalYear extends StatelessComponent {
         padding: Padding.all(0.5.rem),
         alignItems: AlignItems.center),
     css('.goal-logo').styles(
-        zIndex: ZIndex(2),
+        zIndex: ZIndex(1),
         width: 80.percent,
         height: 80.percent,
         radius: BorderRadius.circular(9999.rem)),
@@ -234,7 +234,7 @@ class GoalYear extends StatelessComponent {
         ),
         raw: {'background': progressCircGradient}),
     css('#year-progress > span').styles(
-        zIndex: ZIndex(2),
+        zIndex: ZIndex(1),
         width: 80.percent,
         textAlign: TextAlign.center,
         fontSize: 1.3.rem),
