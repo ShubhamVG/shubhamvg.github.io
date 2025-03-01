@@ -29,7 +29,10 @@ packages/build_runner/src/server/graph_viz.js
 packages/build_runner/src/server/graph_viz_main.dart.js
 packages/build_web_compilers/src/dev_compiler_stack_trace/stack_trace_mapper.dart.js
 packages/lav_home/app.styles.json
+packages/lav_home/blogs/markdowns/google_gemini_almost_got_me_cancelled.md
+packages/lav_home/blogs/posts.yaml
 packages/lav_home/components/aurora_background.styles.json
+packages/lav_home/components/blog_article.styles.json
 packages/lav_home/components/footer.styles.json
 packages/lav_home/components/header.styles.json
 packages/lav_home/components/main_.styles.json
