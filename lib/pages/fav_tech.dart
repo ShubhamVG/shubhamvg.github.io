@@ -8,58 +8,60 @@ class FavTech extends StatelessComponent {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield const Document.head(meta: {
-      "title": "LaV's Tech Stack",
-      "description": "All the tech stuff I use."
-    });
+    yield Main(
+      metaTitle: "LaV's Tech Stack",
+      metaDesc: "All the tech stuff I use.",
+      metaKeywords: 'Favorite, tech, LaV, dart, dartlang, go, golang, zig, '
+          'python, html, css, programming, device, linux, os, js, ts, '
+          'typescript, google, microsoft',
+      [
+        // Intro
+        h1(const [Text('The tech stuff I use')]),
+        const MarkdownText(introMd),
 
-    yield Main([
-      // Intro
-      h1(const [Text('The tech stuff I use')]),
-      const MarkdownText(introMd),
+        // Fav programming language
+        section([
+          h2(const [Text('Favorite programming language')]),
+          const MarkdownText(favProgLangMd),
+        ]),
 
-      // Fav programming language
-      section([
-        h2(const [Text('Favorite programming language')]),
-        const MarkdownText(favProgLangMd),
-      ]),
+        // Dart
+        section([
+          h3(const [Text('Dart')]),
+          const MarkdownText(dartMd),
+        ]),
 
-      // Dart
-      section([
-        h3(const [Text('Dart')]),
-        const MarkdownText(dartMd),
-      ]),
+        // Go
+        section([
+          h3(const [Text('Go (FKA Golang)')]),
+          const MarkdownText(goMd),
+        ]),
 
-      // Go
-      section([
-        h3(const [Text('Go (FKA Golang)')]),
-        const MarkdownText(goMd),
-      ]),
+        // Zig
+        section([
+          h3(const [Text('Zig')]),
+          const MarkdownText(zigMd),
+        ]),
 
-      // Zig
-      section([
-        h3(const [Text('Zig')]),
-        const MarkdownText(zigMd),
-      ]),
+        // Python
+        section([
+          h3(const [Text('Python')]),
+          const MarkdownText(pythonMd),
+        ]),
 
-      // Python
-      section([
-        h3(const [Text('Python')]),
-        const MarkdownText(pythonMd),
-      ]),
+        // Shoutouts
+        section([
+          h3(const [Text('Shoutouts')]),
+          const MarkdownText(shoutoutMd),
+        ]),
 
-      // Shoutouts
-      section([
-        h3(const [Text('Shoutouts')]),
-        const MarkdownText(shoutoutMd),
-      ]),
-
-      // My Devise and OS
-      section([
-        h3(const [Text('My Device and OS')]),
-        const MarkdownText(deviseOsMd),
-      ]),
-    ]);
+        // My Devise and OS
+        section([
+          h3(const [Text('My Device and OS')]),
+          const MarkdownText(deviseOsMd),
+        ]),
+      ],
+    );
   }
 }
 

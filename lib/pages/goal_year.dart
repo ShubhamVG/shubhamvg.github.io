@@ -13,10 +13,12 @@ class GoalYear extends StatelessComponent {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
+    // Read the json and extract goals/tasks from them
     final jsonFile = File('lib/goals/$year.json').readAsStringSync();
     final jsonList =
         (jsonDecode(jsonFile) as List).cast<Map<String, dynamic>>();
 
+    // Convert the json into a class
     final goals = <_Goal>[];
     for (final json in jsonList) {
       goals.add(_Goal(
@@ -26,8 +28,10 @@ class GoalYear extends StatelessComponent {
       ));
     }
 
+    // Sort the goals based on which one has more progress
     goals.sort((g1, g2) => g2.progress - g1.progress);
 
+    // Seperate pending goals and finished goals
     final pendingGoals = <_Goal>[];
     final finishedGoals = <_Goal>[];
     for (final goal in goals) {
@@ -38,55 +42,57 @@ class GoalYear extends StatelessComponent {
       }
     }
 
-    yield Document.head(meta: {
-      "title": "LaV's $year Goals",
-      "description": "These are all the goals I wanna achieve in $year.",
-    });
-
-    yield Main([
-      // Year container
-      div(id: 'year-container', [
-        div(
-          id: 'year-progress',
-          styles: Styles(raw: {'--progress': '${_yearProgress()}%'}),
-          [
-            span([Text("$year's goals")])
-          ],
-        ),
-        div(id: 'year-text', [
-          p(
-            classes: 'font-large',
-            [Text('This is how much of $year has passed.')],
+    yield Main(
+      metaTitle: "LaV's $year Goals",
+      metaDesc: "These are all the goals I wanna achieve in $year.",
+      metaKeywords: 'goals, $year, LaV, new year resolution',
+      [
+        // Year container
+        div(id: 'year-container', [
+          div(
+            id: 'year-progress',
+            styles: Styles(raw: {'--progress': '${_yearProgress()}%'}),
+            [
+              span([Text("$year's goals")])
+            ],
           ),
-          p([
-            Text(
-              'And below is everything LaV expects to achieve before it ends.',
+          div(id: 'year-text', [
+            p(
+              classes: 'font-large',
+              [Text('This is how much of $year has passed.')],
             ),
+            p([
+              Text(
+                'And below is everything LaV expects to achieve before it ends.',
+              ),
+            ]),
           ]),
         ]),
-      ]),
 
-      // Pending goals container
-      div([
-        p(classes: 'goals-category-title', [const Text('Goals in progress:')]),
-        div(
-          classes: 'goals-container',
-          pendingGoals.map((e) => _pendingGoal(e)).toList(growable: false),
-        ),
-      ]),
+        // Pending goals container
+        div([
+          p(
+              classes: 'goals-category-title',
+              [const Text('Goals in progress:')]),
+          div(
+            classes: 'goals-container',
+            pendingGoals.map((e) => _pendingGoal(e)).toList(growable: false),
+          ),
+        ]),
 
-      // Finished goals container
-      div([
-        p(
-          classes: 'goals-category-title',
-          [const Text('Goals finished so far:')],
-        ),
-        div(
-          classes: 'goals-container',
-          finishedGoals.map((e) => _finishedGoal(e)).toList(growable: false),
-        ),
-      ]),
-    ]);
+        // Finished goals container
+        div([
+          p(
+            classes: 'goals-category-title',
+            [const Text('Goals finished so far:')],
+          ),
+          div(
+            classes: 'goals-container',
+            finishedGoals.map((e) => _finishedGoal(e)).toList(growable: false),
+          ),
+        ]),
+      ],
+    );
   }
 
   Component _finishedGoal(final _Goal goal) {

@@ -59,14 +59,19 @@ class App extends StatelessComponent {
     final routes = <Route>[];
 
     for (int i = 0; i < posts.length; i++) {
-      final post = posts[i];
+      final post = posts[i] as YamlMap;
       final blogMd =
           File('lib/blogs/markdowns/${post['stub']!}.md').readAsStringSync();
 
       routes.add(Route(
         title: post['title']!,
         path: post['stub']!,
-        builder: (_, __) => BlogPage(blogMd),
+        builder: (_, __) => BlogPage(
+          blogMd,
+          metaTitle: post['title']!,
+          metaDesc: post['desc']!,
+          metaKeyword: post['keywords']!,
+        ),
       ));
     }
 

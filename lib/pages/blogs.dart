@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:jaspr/jaspr.dart';
 import 'package:yaml/yaml.dart';
 
-import '../components/aurora_background.dart';
 import '../components/blog_article.dart';
 import '../components/main_.dart';
 import '../components/markdown_text.dart';
@@ -13,13 +12,18 @@ class Blogs extends StatelessComponent {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield AuroraBackground.hideStyle();
-
-    yield Main([
-      h1(const [Text("My Blogs & Thoughts & Other random stuff")]),
-      const MarkdownText(introMd),
-      div(_getBlogs()),
-    ]);
+    yield Main(
+      metaTitle: "LaV's Blogs",
+      metaDesc: "If I ever start writing blogs, then you should be able to "
+          "find them here.",
+      metaKeywords: "LaV, blogs, writing, thoughts, stuff",
+      visibleAurora: false,
+      [
+        h1(const [Text("My Blogs & Thoughts & Other random stuff")]),
+        const MarkdownText(introMd),
+        div(_getBlogs()),
+      ],
+    );
   }
 
   List<Component> _getBlogs() {

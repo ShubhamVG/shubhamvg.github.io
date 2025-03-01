@@ -17,22 +17,21 @@ class Goals extends StatelessComponent {
       return e.path.substring(start, start + 4);
     }).toList(growable: false);
 
-    yield const Document.head(meta: {
-      "title": "LaV's Year Long Goals",
-      "description": "All of my new-year resolutions since 2025.",
-    });
-
-    yield Main([
-      const Typewriter(messages: [
-        'New goals every year',
-        'How much is left this year?',
-        'Hopefully not procrastinating xD',
-        'Thanks for dropping by!',
-      ]),
-      section([
-        h1([const Text("All of my new year resolution since 2025")]),
-        p([
-          const RawText("""
+    yield Main(
+      metaTitle: "LaV's Year Long Goals",
+      metaDesc: "All of my new-year resolutions since 2025.",
+      metaKeywords: 'goals, LaV, new year resolution',
+      [
+        const Typewriter(messages: [
+          'New goals every year',
+          'How much is left this year?',
+          'Hopefully not procrastinating xD',
+          'Thanks for dropping by!',
+        ]),
+        section([
+          h1([const Text("All of my new year resolution since 2025")]),
+          p([
+            const RawText("""
           Since 2025, I have started to publicize year long goals.
           <br>
           If you would like to, and have the means to support me & my
@@ -49,14 +48,22 @@ class Goals extends StatelessComponent {
           <br>
           Here they are. Click on the year to see that year's goals along with
           the progress:"""),
-          ul([
-            for (final year in yearJsons)
-              li(styles: Styles(margin: Margin.symmetric(vertical: 0.4.rem)), [
-                Link(to: '/goals/$year', classes: 'badge', child: Text(year))
-              ]),
+            ul([
+              for (final year in yearJsons)
+                li(
+                  styles: Styles(margin: Margin.symmetric(vertical: 0.4.rem)),
+                  [
+                    Link(
+                      to: '/goals/$year',
+                      classes: 'badge',
+                      child: Text(year),
+                    )
+                  ],
+                ),
+            ]),
           ]),
         ]),
-      ]),
-    ]);
+      ],
+    );
   }
 }

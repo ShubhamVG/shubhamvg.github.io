@@ -44,6 +44,7 @@ class Navbar extends StatelessComponent {
         alignItems: AlignItems.center,
         backgroundColor: navBgActiveColor),
     css('#nav-items a').styles(
+        userSelect: UserSelect.none,
         transition: Transition('all', duration: 300, curve: Curve.easeOut),
         textShadow: TextShadow(
           offsetX: Unit.zero,
