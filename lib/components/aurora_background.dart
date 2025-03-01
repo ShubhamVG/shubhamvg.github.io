@@ -50,6 +50,12 @@ class AuroraBackground extends StatelessComponent {
     ]);
   }
 
+  static Style hideStyle() {
+    return Style(
+      styles: [css('#gradient-bg').styles(display: Display.none)],
+    );
+  }
+
   @css
   static final styles = <StyleRule>[
     css.keyframes('moveCirc', {

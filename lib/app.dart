@@ -2,9 +2,12 @@ import 'dart:io';
 
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
+import 'package:yaml/yaml.dart';
 
 import 'components/aurora_background.dart';
 import 'constants/routes.dart';
+import 'pages/blog_page.dart';
+import 'pages/blogs.dart';
 import 'pages/fav_tech.dart';
 import 'pages/goal_year.dart';
 import 'components/header.dart';
@@ -38,10 +41,36 @@ class App extends StatelessComponent {
           title: 'Tech Stack',
           builder: (_, __) => const FavTech(),
         ),
+        Route(
+          path: NavbarRoute.blogs.path,
+          title: 'Blogs',
+          builder: (_, __) => const Blogs(),
+          routes: _blogPosts(),
+        ),
       ])
     ]);
 
     yield Footer();
+  }
+
+  List<Route> _blogPosts() {
+    final data = File('lib/blogs/posts.yaml').readAsStringSync();
+    final posts = loadYaml(data) as YamlList;
+    final routes = <Route>[];
+
+    for (int i = 0; i < posts.length; i++) {
+      final post = posts[i];
+      final blogMd =
+          File('lib/blogs/markdowns/${post['stub']!}.md').readAsStringSync();
+
+      routes.add(Route(
+        title: post['title']!,
+        path: post['stub']!,
+        builder: (_, __) => BlogPage(blogMd),
+      ));
+    }
+
+    return routes;
   }
 
   List<Route> _goalYearRoutes() {
