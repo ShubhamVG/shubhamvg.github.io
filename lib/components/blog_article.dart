@@ -19,7 +19,7 @@ class BlogArticle extends StatelessComponent {
       to: link,
       child: article(classes: 'blog-article', [
         h2([Text(title)]),
-        p([Text('$desc        Read More')]),
+        p([Text('$desc Read More')]),
         footer([
           p([Text(date)]),
           p([Text('By $author')]),

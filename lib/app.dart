@@ -5,16 +5,17 @@ import 'package:jaspr_router/jaspr_router.dart';
 import 'package:yaml/yaml.dart';
 
 import 'components/aurora_background.dart';
+import 'components/footer.dart';
+import 'components/header.dart';
 import 'constants/routes.dart';
+import 'constants/theme.dart';
 import 'pages/blog_page.dart';
 import 'pages/blogs.dart';
 import 'pages/fav_tech.dart';
 import 'pages/goal_year.dart';
-import 'components/header.dart';
-import 'components/footer.dart';
-import 'constants/theme.dart';
 import 'pages/goals.dart';
 import 'pages/home.dart';
+// import 'pages/journey.dart';
 
 class App extends StatelessComponent {
   const App({super.key});
@@ -47,6 +48,11 @@ class App extends StatelessComponent {
           builder: (_, __) => const Blogs(),
           routes: _blogPosts(),
         ),
+        // Route(
+        //   path: NavbarRoute.journey.path,
+        //   title: 'Journey',
+        //   builder: (_, __) => const Journey(),
+        // ),
       ])
     ]);
 

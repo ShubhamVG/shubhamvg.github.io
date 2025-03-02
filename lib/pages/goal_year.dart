@@ -63,7 +63,8 @@ class GoalYear extends StatelessComponent {
             ),
             p([
               Text(
-                'And below is everything LaV expects to achieve before it ends.',
+                'And below is everything LaV expects to achieve before it '
+                'ends.',
               ),
             ]),
           ]),

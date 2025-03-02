@@ -20,7 +20,7 @@ class Blogs extends StatelessComponent {
       visibleAurora: false,
       [
         h1(const [Text("My Blogs & Thoughts & Other random stuff")]),
-        const MarkdownText(introMd),
+        const MarkdownText(_introMd),
         div(_getBlogs()),
       ],
     );
@@ -47,7 +47,7 @@ class Blogs extends StatelessComponent {
   }
 }
 
-const introMd = """
+const _introMd = """
 As the title suggests, this page has blogs which aren't limited to just coding 
 stuff but also contains many random things. Also, I will try to get some of my 
 friends to write stuff too (hopefully) because they won't that on their own :p 

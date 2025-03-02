@@ -17,55 +17,55 @@ class FavTech extends StatelessComponent {
       [
         // Intro
         h1(const [Text('The tech stuff I use')]),
-        const MarkdownText(introMd),
+        const MarkdownText(_introMd),
 
         // Fav programming language
         section([
           h2(const [Text('Favorite programming language')]),
-          const MarkdownText(favProgLangMd),
+          const MarkdownText(_favProgLangMd),
         ]),
 
         // Dart
         section([
           h3(const [Text('Dart')]),
-          const MarkdownText(dartMd),
+          const MarkdownText(_dartMd),
         ]),
 
         // Go
         section([
           h3(const [Text('Go (FKA Golang)')]),
-          const MarkdownText(goMd),
+          const MarkdownText(_goMd),
         ]),
 
         // Zig
         section([
           h3(const [Text('Zig')]),
-          const MarkdownText(zigMd),
+          const MarkdownText(_zigMd),
         ]),
 
         // Python
         section([
           h3(const [Text('Python')]),
-          const MarkdownText(pythonMd),
+          const MarkdownText(_pythonMd),
         ]),
 
         // Shoutouts
         section([
           h3(const [Text('Shoutouts')]),
-          const MarkdownText(shoutoutMd),
+          const MarkdownText(_shoutoutMd),
         ]),
 
         // My Devise and OS
         section([
           h3(const [Text('My Device and OS')]),
-          const MarkdownText(deviseOsMd),
+          const MarkdownText(_deviseOsMd),
         ]),
       ],
     );
   }
 }
 
-const dartMd = """
+const _dartMd = """
 I found dart when I wanted to dabble into mobile app development and came 
 across <a href='https://flutter.dev' class='wavy-text'>Flutter</a>. Flutter, in 
 my very biased opinion, is the coolest framework to make 
@@ -94,7 +94,7 @@ Also, if you are a JS or TS person, do try out Dart for a week. You will enjoy
 it and who knows? You may end up loving it like I do or at least understand why 
 I love it as much as I do.""";
 
-const favProgLangMd = """
+const _favProgLangMd = """
 Soooo, back to the imfamous question and I don't have just one fav programming 
 language. I have four, namely:
 - <a href='https://dart.dev' class='wavy-text'>Dart</a>
@@ -109,7 +109,7 @@ most xD.
 I do play around with other ones too but these gotta be my fav. I use all of 
 them different reasons which you can read below or skip over as you like.""";
 
-const goMd = """
+const _goMd = """
 Well, this is the second language that Google owns. Makes me a Google 
 fanboy, doesn't it? Haha! I love Go because of its concurrency system. I 
 haven't tried Elixir but I have heard that it is the only other programming 
@@ -128,14 +128,14 @@ problem where we end up with packages which depend on something which depends
 on something and so on till we reach that 1 package unmaintained for years and 
 it breaking will shatter the Go's package ecosystem.""";
 
-const introMd = """
+const _introMd = """
 Finally made this page so that I won't have to answer the infamous question
 *"What is your favorite programming language?"*, haha! Well, this page
 is more than just that. I have listed everything from my most used programming
 languages to the OS and code editor I use & all that and also, why I use the
 things I do.""";
 
-const deviseOsMd = """
+const _deviseOsMd = """
 I use arch BTW on my lenovo laptop. Not a thinkpad tho'. I honestly don't know 
 its name or model but what I do know that it has 8 gigs of RAM (but only 6 
 usable) with AMD Ryzen 3 5300U with Radeon Graphics (8) @ 3.900 GHz (according 
@@ -161,13 +161,13 @@ any e-ink company hiring lol. I should join one. Hey, you reader! Connect me to
 one ;)
 """;
 
-const pythonMd = """
+const _pythonMd = """
 The Jack of all Trades but master of none. I use it to prototype stuff and 
 fiddling with stuff. Anyone who says Python is bad has not touched grass in 
 years and needs to go shower. They could be vampires actually. Never seen them 
 out in the sun :p Anyways, hating python is like hating water yk.""";
 
-const shoutoutMd = """
+const _shoutoutMd = """
 Big shoutout to <a href='https://www.modular.com/mojo' class='wavy-text'>Mojo
 </a> because I like the language design but it is too young and kinda 
 unsupported, or at least was when I tried to install it. I kept getting 
@@ -179,7 +179,7 @@ by the time I try it next.
 Other shoutout code to HTML and CSS. Keep arguing whether they are programming 
 languages or not but I love writing them so I have mentioned them.""";
 
-const zigMd = """
+const _zigMd = """
 WELCOME TO THE BIG BOYS CLUB WOOOOHOOOOOOO!!!!! SoOoOoOoOo, where do I start? 
 Zig is basically C but better (at least so far). It isn't like rust. Rust 
 solves a completely different problem so comparing it with Zig would be stupid. 
