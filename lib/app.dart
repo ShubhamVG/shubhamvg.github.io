@@ -15,7 +15,7 @@ import 'pages/fav_tech.dart';
 import 'pages/goal_year.dart';
 import 'pages/goals.dart';
 import 'pages/home.dart';
-// import 'pages/journey.dart';
+import 'pages/journey.dart';
 
 class App extends StatelessComponent {
   const App({super.key});
@@ -23,7 +23,7 @@ class App extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield div([
-      const AuroraBackground(),
+      if (!kDebugMode) const AuroraBackground(),
       const Header(),
       Router(routes: [
         Route(
@@ -48,11 +48,11 @@ class App extends StatelessComponent {
           builder: (_, __) => const Blogs(),
           routes: _blogPosts(),
         ),
-        // Route(
-        //   path: NavbarRoute.journey.path,
-        //   title: 'Journey',
-        //   builder: (_, __) => const Journey(),
-        // ),
+        Route(
+          path: NavbarRoute.journey.path,
+          title: 'Journey',
+          builder: (_, __) => const Journey(),
+        ),
       ])
     ]);
 
