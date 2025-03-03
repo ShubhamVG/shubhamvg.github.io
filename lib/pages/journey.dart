@@ -73,18 +73,20 @@ started building actual stuff.
 
 ## First Hackathon Win
 Whilst I was learning, I believe it was January of 2024 and I had just finished 
-the nand2tetris course and saw *Kyle Liang* in a Discord server asking for 
-permission to promote the hackathon him and his team were hosting. Well, they 
-didn't get the permission to promote their hackathon but Kyle had his DM open 
-and I wanted to try the hackathon experience so I shoot him a DM and he was an 
-awesome guy and same for the <a class="wavy-text">*22105 Runtime Terror 
-Hackathon*</a> team! It was my first hackathon so I was confused on a lot of 
-things but they helped me with everything. The hackathon was online weekend 
-event so it lasted 2 days. I, fortunately or unfortunately, could not assemble 
-a team so I had to participate alone. I still named my "team" 
-*[object Object]* haha. The theme of that year's **22105 Runtime Terror** 
-Hackathon was **art**. (So thankful to them that I gotta say their name 
-multiple time xD.)<br>
+the nand2tetris course and saw 
+<a href="https://www.linkedin.com/in/kyle-liang-352a95267/" class='wavy-text'>
+*Kyle Liang*</a> in a Discord server asking for permission to promote the 
+hackathon him and his team were hosting. Well, they didn't get the permission 
+to promote their hackathon but Kyle had his DM open and I wanted to try the 
+hackathon experience so I shoot him a DM and he was an awesome guy and same 
+for the <a href="https://www.instagram.com/ftc_runtimeterror/" 
+class="wavy-text">*22105 Runtime Terror*</a> team! It was my first hackathon 
+so I was confused on a lot of things but they helped me with everything. The 
+hackathon was online weekend event so it lasted 2 days. I, fortunately or 
+unfortunately, could not assemble a team so I had to participate alone. I 
+still named my "team" *[object Object]* haha. The theme of that year's **22105 
+Runtime Terror** Hackathon was **art**. (So thankful to them that I gotta say 
+their name multiple time xD.)<br>
 I created <a href="$hackathon1DevpostLink" class="wavy-text">Static Art Into 
 Dynamic Life</a> inspired by the <a href="https://youtu.be/3G1KBu6H6BM" 
 class="wavy-text">Chinese Drones Dragon</a> they have flying in their new year. 
