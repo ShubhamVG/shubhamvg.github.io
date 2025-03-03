@@ -33,7 +33,7 @@ class Blogs extends StatelessComponent {
     final blogComponents = <BlogArticle>[];
 
     for (int i = 0; i < posts.length; i++) {
-      final post = posts[i];
+      final post = posts[i] as YamlMap;
       blogComponents.add(BlogArticle(
         title: post['title']!,
         desc: post['desc']!,
