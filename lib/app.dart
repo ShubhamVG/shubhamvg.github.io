@@ -17,6 +17,7 @@ import 'pages/goal_year.dart';
 import 'pages/goals.dart';
 import 'pages/home.dart';
 import 'pages/journey.dart';
+import 'pages/privacy.dart';
 import 'pages/support.dart';
 
 class App extends StatelessComponent {
@@ -64,6 +65,11 @@ class App extends StatelessComponent {
           path: NavbarRoute.contacts.path,
           title: 'Contacts & Socials',
           builder: (_, __) => const Contact(),
+        ),
+        Route(
+          path: AdditionalRoutes.privacy.path,
+          title: 'Privacy',
+          builder: (_, __) => const Privacy(),
         ),
       ])
     ]);
