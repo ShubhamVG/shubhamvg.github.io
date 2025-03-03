@@ -28,7 +28,7 @@ const cvLink =
     'https://docs.google.com/document/d/1UrYJvRJvo7pJ793CHAQnNzk-1yKYCKel';
 const hackathon1DevpostLink =
     'https://devpost.com/software/static-art-into-dynamic-life';
-const emailLink = 'mailto:vxshubham49@gmail.com';
+const emailLink = 'mailto:vgshubham50@gmail.com';
 const githubLink = 'https://github.com/ShubhamVG';
 const kofiLink = 'https://ko-fi.com/brainiacsin';
 const recyclopiaLink = 'https://devpost.com/software/recyclopia';

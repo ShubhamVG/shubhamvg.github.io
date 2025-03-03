@@ -9,6 +9,7 @@ import 'components/footer.dart';
 import 'components/header.dart';
 import 'constants/routes.dart';
 import 'constants/theme.dart';
+import 'pages/contact.dart';
 import 'pages/blog_page.dart';
 import 'pages/blogs.dart';
 import 'pages/fav_tech.dart';
@@ -58,6 +59,11 @@ class App extends StatelessComponent {
           path: NavbarRoute.supports.path,
           title: 'Support',
           builder: (_, __) => const Support(),
+        ),
+        Route(
+          path: NavbarRoute.contacts.path,
+          title: 'Contacts & Socials',
+          builder: (_, __) => const Contact(),
         ),
       ])
     ]);
