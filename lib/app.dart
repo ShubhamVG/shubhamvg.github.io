@@ -16,6 +16,7 @@ import 'pages/goal_year.dart';
 import 'pages/goals.dart';
 import 'pages/home.dart';
 import 'pages/journey.dart';
+import 'pages/support.dart';
 
 class App extends StatelessComponent {
   const App({super.key});
@@ -52,6 +53,11 @@ class App extends StatelessComponent {
           path: NavbarRoute.journey.path,
           title: 'Journey',
           builder: (_, __) => const Journey(),
+        ),
+        Route(
+          path: NavbarRoute.supports.path,
+          title: 'Support',
+          builder: (_, __) => const Support(),
         ),
       ])
     ]);
