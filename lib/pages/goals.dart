@@ -5,17 +5,45 @@ import 'package:jaspr_router/jaspr_router.dart';
 
 import '../components/main_.dart';
 import '../components/typewriter.dart';
+import '../constants/routes.dart';
+import '../utils/interfaces.dart';
+import 'goal_year.dart';
 
-class Goals extends StatelessComponent {
+class Goals extends StatelessComponent implements IPage {
   const Goals({super.key});
 
   @override
-  Iterable<Component> build(BuildContext context) sync* {
-    final yearGoalsJsons = Directory('lib/goals/').listSync();
-    final yearJsons = yearGoalsJsons.map((e) {
+  Route get route {
+    return Route(
+      path: NavbarRoute.goals.path,
+      title: 'Goals',
+      builder: (_, state) => this,
+      routes: _goalYearRoutes(),
+    );
+  }
+
+  List<String> _getGoalYears() {
+    final goalFiles = Directory('lib/goals').listSync();
+    final years = goalFiles.map((e) {
       final start = e.path.length - 9;
       return e.path.substring(start, start + 4);
     }).toList(growable: false);
+
+    return years;
+  }
+
+  List<Route> _goalYearRoutes() {
+    final years = _getGoalYears();
+    final routes = years.map((year) {
+      return GoalYear(year).route;
+    }).toList(growable: false);
+
+    return routes;
+  }
+
+  @override
+  Iterable<Component> build(BuildContext context) sync* {
+    final years = _getGoalYears();
 
     yield Main(
       metaTitle: "LaV's Year Long Goals",
@@ -49,7 +77,7 @@ class Goals extends StatelessComponent {
           Here they are. Click on the year to see that year's goals along with
           the progress:"""),
             ul([
-              for (final year in yearJsons)
+              for (final year in years)
                 li(
                   styles: Styles(margin: Margin.symmetric(vertical: 0.4.rem)),
                   [

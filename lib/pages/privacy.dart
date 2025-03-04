@@ -1,10 +1,22 @@
 import 'package:jaspr/jaspr.dart';
+import 'package:jaspr_router/jaspr_router.dart';
 
 import '../components/main_.dart';
 import '../components/markdown_text.dart';
+import '../constants/routes.dart';
+import '../utils/interfaces.dart';
 
-class Privacy extends StatelessComponent {
+class Privacy extends StatelessComponent implements IPage {
   const Privacy({super.key});
+
+  @override
+  Route get route {
+    return Route(
+      path: AdditionalRoutes.privacy.path,
+      title: 'Privacy',
+      builder: (_, __) => this,
+    );
+  }
 
   @override
   Iterable<Component> build(BuildContext context) sync* {

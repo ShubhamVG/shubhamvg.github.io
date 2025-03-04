@@ -1,19 +1,13 @@
-import 'dart:io';
-
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
-import 'package:yaml/yaml.dart';
 
 import 'components/aurora_background.dart';
 import 'components/footer.dart';
 import 'components/header.dart';
-import 'constants/routes.dart';
 import 'constants/theme.dart';
 import 'pages/contact.dart';
-import 'pages/blog_page.dart';
 import 'pages/blogs.dart';
 import 'pages/fav_tech.dart';
-import 'pages/goal_year.dart';
 import 'pages/goals.dart';
 import 'pages/home.dart';
 import 'pages/journey.dart';
@@ -29,94 +23,19 @@ class App extends StatelessComponent {
       if (!kDebugMode) const AuroraBackground(),
       const Header(),
       Router(routes: [
-        Route(
-          path: '/',
-          title: 'LaV',
-          builder: (_, __) => const Home(),
-        ),
-        Route(
-          path: NavbarRoute.goals.path,
-          title: 'Goals',
-          builder: (_, state) => const Goals(),
-          routes: _goalYearRoutes(),
-        ),
-        Route(
-          path: NavbarRoute.favTech.path,
-          title: 'Tech Stack',
-          builder: (_, __) => const FavTech(),
-        ),
-        Route(
-          path: NavbarRoute.blogs.path,
-          title: 'Blogs',
-          builder: (_, __) => const Blogs(),
-          routes: _blogPosts(),
-        ),
-        Route(
-          path: NavbarRoute.journey.path,
-          title: 'Journey',
-          builder: (_, __) => const Journey(),
-        ),
-        Route(
-          path: NavbarRoute.supports.path,
-          title: 'Support',
-          builder: (_, __) => const Support(),
-        ),
-        Route(
-          path: NavbarRoute.contacts.path,
-          title: 'Contacts & Socials',
-          builder: (_, __) => const Contact(),
-        ),
-        Route(
-          path: AdditionalRoutes.privacy.path,
-          title: 'Privacy',
-          builder: (_, __) => const Privacy(),
-        ),
+        Home().route,
+        Goals().route,
+        Contacts().route,
+        Blogs().route,
+        FavTech().route,
+        Journey().route,
+        Support().route,
+        Contacts().route,
+        Privacy().route,
       ])
     ]);
 
     yield Footer();
-  }
-
-  List<Route> _blogPosts() {
-    final data = File('lib/blogs/posts.yaml').readAsStringSync();
-    final posts = loadYaml(data) as YamlList;
-    final routes = <Route>[];
-
-    for (int i = 0; i < posts.length; i++) {
-      final post = posts[i] as YamlMap;
-      final blogMd =
-          File('lib/blogs/markdowns/${post['stub']!}.md').readAsStringSync();
-
-      routes.add(Route(
-        title: post['title']!,
-        path: post['stub']!,
-        builder: (_, __) => BlogPage(
-          blogMd,
-          metaTitle: post['title']!,
-          metaDesc: post['desc']!,
-          metaKeyword: post['keywords']!,
-        ),
-      ));
-    }
-
-    return routes;
-  }
-
-  List<Route> _goalYearRoutes() {
-    final goalFiles = Directory('lib/goals').listSync();
-    final years = goalFiles.map((e) {
-      final start = e.path.length - 9;
-      return e.path.substring(start, start + 4);
-    }).toList(growable: false);
-
-    final routes = years
-        .map((year) => Route(
-            path: year,
-            title: '$year Goals',
-            builder: (_, __) => GoalYear(year)))
-        .toList(growable: false);
-
-    return routes;
   }
 
   @css

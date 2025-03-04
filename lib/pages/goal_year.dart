@@ -2,14 +2,25 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:jaspr/jaspr.dart';
+import 'package:jaspr_router/jaspr_router.dart';
 
 import '../constants/theme.dart';
 import '../components/main_.dart';
+import '../utils/interfaces.dart';
 
-class GoalYear extends StatelessComponent {
+class GoalYear extends StatelessComponent implements IPage {
   const GoalYear(this.year, {super.key});
 
   final String year;
+
+  @override
+  Route get route {
+    return Route(
+      path: year,
+      title: '$year Goals',
+      builder: (_, __) => this,
+    );
+  }
 
   @override
   Iterable<Component> build(BuildContext context) sync* {

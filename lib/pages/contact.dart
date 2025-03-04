@@ -1,11 +1,22 @@
 import 'package:jaspr/jaspr.dart';
+import 'package:jaspr_router/jaspr_router.dart';
 
 import '../components/main_.dart';
 import '../components/markdown_text.dart';
 import '../constants/routes.dart';
+import '../utils/interfaces.dart';
 
-class Contact extends StatelessComponent {
-  const Contact({super.key});
+class Contacts extends StatelessComponent implements IPage {
+  const Contacts({super.key});
+
+  @override
+  Route get route {
+    return Route(
+      path: NavbarRoute.contacts.path,
+      title: 'Contacts & Socials',
+      builder: (_, __) => this,
+    );
+  }
 
   @override
   Iterable<Component> build(BuildContext context) sync* {

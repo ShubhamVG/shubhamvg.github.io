@@ -1,24 +1,36 @@
 import 'package:jaspr/jaspr.dart';
+import 'package:jaspr_router/jaspr_router.dart';
 
 import '../components/main_.dart';
 import '../components/markdown_text.dart';
+import '../utils/interfaces.dart';
 
-class BlogPage extends StatelessComponent {
+class BlogPage extends StatelessComponent implements IPage {
   const BlogPage(
     this.markdown, {
     super.key,
-    required this.metaTitle,
+    required this.stub,
+    required this.title,
     required this.metaDesc,
     required this.metaKeyword,
   });
 
-  final String metaTitle, metaDesc, metaKeyword;
+  final String stub, title, metaDesc, metaKeyword;
   final String markdown;
+
+  @override
+  Route get route {
+    return Route(
+      title: title,
+      path: stub,
+      builder: (_, __) => this,
+    );
+  }
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield Main(
-      metaTitle: metaTitle,
+      metaTitle: title,
       metaDesc: metaDesc,
       metaKeywords: metaKeyword,
       visibleAurora: false,

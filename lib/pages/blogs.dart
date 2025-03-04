@@ -1,14 +1,28 @@
 import 'dart:io';
 
 import 'package:jaspr/jaspr.dart';
+import 'package:jaspr_router/jaspr_router.dart';
 import 'package:yaml/yaml.dart';
 
 import '../components/blog_article.dart';
 import '../components/main_.dart';
 import '../components/markdown_text.dart';
+import '../constants/routes.dart';
+import '../utils/interfaces.dart';
+import 'blog_page.dart';
 
-class Blogs extends StatelessComponent {
+class Blogs extends StatelessComponent implements IPage {
   const Blogs({super.key});
+
+  @override
+  Route get route {
+    return Route(
+      path: NavbarRoute.blogs.path,
+      title: 'Blogs',
+      builder: (_, __) => this,
+      routes: _blogPostRoutes(),
+    );
+  }
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
@@ -26,20 +40,45 @@ class Blogs extends StatelessComponent {
     );
   }
 
-  List<Component> _getBlogs() {
+  YamlList _readPostYaml() {
     final data = File('lib/blogs/posts.yaml').readAsStringSync();
     final posts = loadYaml(data) as YamlList;
+    return posts;
+  }
 
+  List<Route> _blogPostRoutes() {
+    final posts = _readPostYaml();
+    final routes = <Route>[];
+
+    for (int i = 0; i < posts.length; i++) {
+      final post = posts[i] as YamlMap;
+      final stub = post['stub']! as String;
+      final blogMd = File('lib/blogs/markdowns/$stub.md').readAsStringSync();
+
+      routes.add(BlogPage(
+        blogMd,
+        stub: stub,
+        title: post['title'] as String,
+        metaDesc: post['desc']! as String,
+        metaKeyword: post['keywords']! as String,
+      ).route);
+    }
+
+    return routes;
+  }
+
+  List<StatelessComponent> _getBlogs() {
+    final posts = _readPostYaml();
     final blogComponents = <BlogArticle>[];
 
     for (int i = 0; i < posts.length; i++) {
       final post = posts[i] as YamlMap;
       blogComponents.add(BlogArticle(
-        title: post['title']!,
-        desc: post['desc']!,
-        date: post['date']!,
-        author: post['author']!,
-        link: "/blogs/${post['stub']!}",
+        title: post['title']! as String,
+        desc: post['desc']! as String,
+        date: post['date']! as String,
+        author: post['author']! as String,
+        link: "/blogs/${post['stub']! as String}",
       ));
     }
 

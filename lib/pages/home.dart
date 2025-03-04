@@ -1,11 +1,22 @@
 import 'package:jaspr/jaspr.dart';
+import 'package:jaspr_router/jaspr_router.dart';
 
 import '../components/main_.dart';
 import '../components/typewriter.dart';
 import '../constants/routes.dart';
+import '../utils/interfaces.dart';
 
-class Home extends StatelessComponent {
+class Home extends StatelessComponent implements IPage {
   const Home({super.key});
+
+  @override
+  Route get route {
+    return Route(
+      path: '/',
+      title: 'LaV',
+      builder: (_, __) => this,
+    );
+  }
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
