@@ -9,12 +9,6 @@ images/crown.svg
 images/github.svg
 images/logo.svg
 main.clients.dart.js
-main.clients.dart.js_1.part.js
-main.clients.dart.js_2.part.js
-main.clients.dart.js_3.part.js
-main.clients.dart.js_4.part.js
-main.clients.dart.js_5.part.js
-main.clients.dart.js_6.part.js
 packages/$sdk/dev_compiler/amd/require.js
 packages/$sdk/dev_compiler/ddc/ddc_module_loader.js
 packages/$sdk/dev_compiler/web/dart_stack_trace_mapper.js

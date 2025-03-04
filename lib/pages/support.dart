@@ -25,8 +25,9 @@ financial means or by providing indirect support. I have briefly described
 them below.
 
 ## Donations
-I have a Ko-fi page for my <a href="https://brainiacs.in/" class='badge'>
-Brainiacs.in</a> website. You can donate there if you have the means.
+I have a <a href="$kofiLink" class='badge'>Ko-fi</a> page for my <a 
+href="https://brainiacs.in/" class='wavy-text'>Brainiacs.in</a> website. 
+You can donate there if you have the means.
 
 ## Hire me for your projects
 I'd be glad to work on new stuff and that will also keep me engaged. BTW, even 
