@@ -6,7 +6,7 @@ enum NavbarRoute {
   contacts(label: 'Contacts & Socials', path: '/contacts'),
   favTech(label: 'Fav Tech', path: '/fav-tech'),
   journey(label: 'Journey', path: '/journey'),
-  skillsHobbies(label: 'Skills & Hobbies', path: '/skills-hobbies');
+  skillsHobbies(label: 'Hobbies', path: '/hobbies');
 
   const NavbarRoute({required this.label, required this.path});
 

@@ -12,6 +12,8 @@ import 'pages/goals.dart';
 import 'pages/home.dart';
 import 'pages/journey.dart';
 import 'pages/privacy.dart';
+import 'pages/projects.dart';
+import 'pages/hobbies.dart';
 import 'pages/support.dart';
 
 class App extends StatelessComponent {
@@ -20,7 +22,7 @@ class App extends StatelessComponent {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield div([
-      if (!kDebugMode) const AuroraBackground(),
+      if (kReleaseMode) const AuroraBackground(),
       const Header(),
       Router(routes: [
         Home().route,
@@ -32,6 +34,8 @@ class App extends StatelessComponent {
         Support().route,
         Contacts().route,
         Privacy().route,
+        Hobbies().route,
+        Projects().route,
       ])
     ]);
 
