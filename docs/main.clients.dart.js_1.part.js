@@ -87,7 +87,7 @@ var w=0,v=1,u=[],t
 return function $async$B(e,f,g){if(f===1){u.push(g)
 w=v}while(true)switch(w){case 0:t=y.R
 w=2
-return e.b=D.a0(B.aG(new B.b1(C.L,y.U.a(new A.fu()),t),!1,t.h("M.E")),null,"nav-items",null),1
+return e.b=D.a0(B.aG(new B.b1(C.M,y.U.a(new A.fu()),t),!1,t.h("M.E")),null,"nav-items",null),1
 case 2:return 0
 case 1:return e.c=u.at(-1),3}}}}}
 A.N.prototype={
@@ -129,14 +129,14 @@ B.bC(b.typeUniverse,JSON.parse('{"aE":{"V":[],"h":[]},"ds":{"V":[],"h":[]},"dY":
 var y=(function rtii(){var x=B.D
 return{r:x("ko"),i:x("r<h>"),m:x("q"),U:x("aE(N)"),R:x("b1<N,aE>"),z:x("N"),N:x("c"),d:x("F<h>"),A:x("@"),B:x("q?"),v:x("~(q)")}})();(function constants(){var x=a.makeConstList
 C.W=new A.N("Projects","/projects","project")
-C.S=new A.N("Blogs","/blogs","blogs")
-C.Q=new A.N("Goals","/goals","goals")
+C.R=new A.N("Blogs","/blogs","blogs")
+C.P=new A.N("Goals","/goals","goals")
 C.V=new A.N("Support","/support","supports")
-C.R=new A.N("Contacts & Socials","/contacts","contacts")
+C.Q=new A.N("Contacts & Socials","/contacts","contacts")
 C.U=new A.N("Fav Tech","/fav-tech","favTech")
 C.T=new A.N("Journey","/journey","journey")
-C.P=new A.N("Skills & Hobbies","/skills-hobbies","skillsHobbies")
-C.L=B.j(x([C.W,C.S,C.Q,C.V,C.R,C.U,C.T,C.P]),B.D("r<N>"))})()};
+C.S=new A.N("Hobbies","/hobbies","skillsHobbies")
+C.M=B.j(x([C.W,C.R,C.P,C.V,C.Q,C.U,C.T,C.S]),B.D("r<N>"))})()};
 ((a,b)=>{a[b]=a.current
-a.eventLog.push({p:"main.clients.dart.js_1",e:"endPart",h:b})})($__dart_deferred_initializers__,"Z/c601w6IIsvNTtWFaBimK03Srs=");
+a.eventLog.push({p:"main.clients.dart.js_1",e:"endPart",h:b})})($__dart_deferred_initializers__,"mSAYc/e93pzEau9m3Zz2VG8f0OQ=");
 //# sourceMappingURL=main.clients.dart.js_1.part.js.map
