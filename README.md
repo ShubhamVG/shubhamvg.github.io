@@ -1,5 +1,5 @@
 # LaV's Digital Home
-I lost a bet and had to make a very narcississtic website about me and this 
+I lost a bet and had to make a very narcissistic website about me and this 
 is eggsactly that. A person/portfolio website which is meant to be _all about 
 me_, live at [lavisse.xyz](https://lavisse.xyz).
 
