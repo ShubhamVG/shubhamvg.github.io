@@ -64,6 +64,7 @@ class _CopyrightStuff extends StatelessComponent {
               child: img(
                 styles: Styles(width: 2.rem),
                 src: 'https://www.svgrepo.com/show/475654/github-color.svg',
+                alt: 'Github',
               ),
             ),
             Link(
@@ -72,6 +73,7 @@ class _CopyrightStuff extends StatelessComponent {
                 styles: Styles(width: 2.rem),
                 src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/'
                     '7/7a/Bluesky_Logo.svg/600px-Bluesky_Logo.svg.png',
+                alt: 'BlueSky',
               ),
             ),
             Link(
@@ -80,6 +82,7 @@ class _CopyrightStuff extends StatelessComponent {
                 styles: Styles(width: 2.rem),
                 src: 'https://cdn.pixabay.com/photo/2016/06/13/17/30/'
                     'mail-1454734_640.png',
+                alt: 'E-mail',
               ),
             ),
           ],
