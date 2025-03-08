@@ -21,7 +21,7 @@ class Footer extends StatelessComponent {
             offsetY: Unit.zero,
             color: Color.hex('#222222'),
             blur: 1.rem),
-        backgroundColor: Color.rgba(0x11, 0x11, 0x11, 0.7),
+        backgroundColor: glassDark,
       ),
       [
         const _FooterLinks(),

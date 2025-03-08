@@ -24,6 +24,9 @@ final hamMenuColor = Color.hex('#86ffc1');
 
 final goalTextContainerColor = hexAlpha('#2020203f');
 
+final glassDark = Color.rgba(0x11, 0x11, 0x11, 0.7);
+final glassTranslucent = Color.rgba(0x11, 0x11, 0x11, 0.4);
+
 final smolScrnMediaQry = MediaQuery.screen(maxWidth: 50.rem);
 
 final maxScrnWidth = 62.5.rem;

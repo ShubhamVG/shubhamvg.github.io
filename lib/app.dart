@@ -73,6 +73,12 @@ class App extends StatelessComponent {
       flexDirection: FlexDirection.column,
       justifyContent: JustifyContent.spaceBetween,
     ),
+    css('body *').styles(
+        textShadow: TextShadow(
+            offsetX: Unit.zero,
+            offsetY: Unit.zero,
+            blur: 0.5.rem,
+            color: Colors.black)),
     css('.fancy-badge').styles(
         display: Display.inlineFlex,
         position: Position.relative(),
