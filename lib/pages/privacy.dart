@@ -20,6 +20,8 @@ class Privacy extends StatelessComponent implements IPage {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
+    yield Document.head(children: [link(href: '/', rel: 'canonical')]);
+
     yield Main(
       metaTitle: "Privacy Page",
       metaDesc: "Privacy & Terms of Service or whatever it is called",

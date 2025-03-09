@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
+import '../constants/routes.dart';
 import '../constants/theme.dart';
 import '../components/main_.dart';
 import '../utils/interfaces.dart';
@@ -52,6 +53,10 @@ class GoalYear extends StatelessComponent implements IPage {
         pendingGoals.add(goal);
       }
     }
+
+    yield Document.head(
+      children: [link(href: NavbarRoute.goals.path, rel: 'canonical')],
+    );
 
     yield Main(
       metaTitle: "LaV's $year Goals",
