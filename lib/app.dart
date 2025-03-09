@@ -73,6 +73,12 @@ class App extends StatelessComponent {
       flexDirection: FlexDirection.column,
       justifyContent: JustifyContent.spaceBetween,
     ),
+    css('body *').styles(
+        textShadow: TextShadow(
+            offsetX: Unit.zero,
+            offsetY: Unit.zero,
+            blur: 0.5.rem,
+            color: Colors.black)),
     css('.fancy-badge').styles(
         display: Display.inlineFlex,
         position: Position.relative(),
@@ -88,7 +94,7 @@ class App extends StatelessComponent {
           'background': fancyBadgeBgCss,
           '--progress-start': '20%',
           '--progress-end': '42%',
-          'animation': 'dance 10s linear infinite alternate',
+          'animation': 'dance 5s linear infinite alternate',
         }),
     css('.fancy-badge:hover').styles(
       transition: Transition('all', duration: 300),
@@ -98,7 +104,7 @@ class App extends StatelessComponent {
         content: '',
         position: Position.absolute(),
         width: 95.percent,
-        height: 95.percent,
+        height: 90.percent,
         radius: BorderRadius.circular(9999.rem),
         raw: {'background': 'black'}),
     css('.fancy-badge:hover::before')

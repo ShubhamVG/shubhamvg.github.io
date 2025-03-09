@@ -36,10 +36,14 @@ class Navbar extends StatelessComponent {
         margin: Margin.only(left: Unit.auto, right: Unit.zero),
         radius: BorderRadius.circular(2.rem),
         outline: Outline(
-          color: shinyGreen,
-          style: OutlineStyle.solid,
-          width: OutlineWidth(0.06.rem),
-        ),
+            color: shinyGreen,
+            style: OutlineStyle.solid,
+            width: OutlineWidth(0.06.rem)),
+        shadow: BoxShadow(
+            offsetX: Unit.zero,
+            offsetY: Unit.zero,
+            blur: 0.5.rem,
+            color: Colors.black),
         justifyContent: JustifyContent.spaceBetween,
         alignItems: AlignItems.center,
         backgroundColor: navBgActiveColor),
@@ -47,10 +51,9 @@ class Navbar extends StatelessComponent {
         userSelect: UserSelect.none,
         transition: Transition('all', duration: 300, curve: Curve.easeOut),
         textShadow: TextShadow(
-          offsetX: Unit.zero,
-          offsetY: Unit.zero,
-          color: textShadowColor,
-        )),
+            offsetX: Unit.zero,
+            offsetY: Unit.zero,
+            color: greenTextShadowColor)),
     css('#nav-items a:hover').styles(raw: {'scale': '120%'}),
     css.media(smolScrnMediaQry, [
       css('#ham-menu').styles(

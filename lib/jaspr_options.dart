@@ -4,14 +4,15 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:lav_home/components/aurora_background.dart' as prefix0;
 import 'package:lav_home/components/blog_article.dart' as prefix1;
-import 'package:lav_home/components/footer.dart' as prefix2;
-import 'package:lav_home/components/header.dart' as prefix3;
-import 'package:lav_home/components/main_.dart' as prefix4;
-import 'package:lav_home/components/navbar.dart' as prefix5;
-import 'package:lav_home/components/time.dart' as prefix6;
-import 'package:lav_home/components/typewriter.dart' as prefix7;
-import 'package:lav_home/pages/goal_year.dart' as prefix8;
-import 'package:lav_home/app.dart' as prefix9;
+import 'package:lav_home/components/carousel.dart' as prefix2;
+import 'package:lav_home/components/footer.dart' as prefix3;
+import 'package:lav_home/components/header.dart' as prefix4;
+import 'package:lav_home/components/main_.dart' as prefix5;
+import 'package:lav_home/components/navbar.dart' as prefix6;
+import 'package:lav_home/components/time.dart' as prefix7;
+import 'package:lav_home/components/typewriter.dart' as prefix8;
+import 'package:lav_home/pages/goal_year.dart' as prefix9;
+import 'package:lav_home/app.dart' as prefix10;
 
 /// Default [JasprOptions] for use with your jaspr project.
 ///
@@ -31,22 +32,25 @@ import 'package:lav_home/app.dart' as prefix9;
 /// ```
 final defaultJasprOptions = JasprOptions(
   clients: {
-    prefix5.Navbar: ClientTarget<prefix5.Navbar>('components/navbar'),
-    prefix6.Time: ClientTarget<prefix6.Time>('components/time'),
-    prefix7.Typewriter: ClientTarget<prefix7.Typewriter>('components/typewriter', params: _prefix7Typewriter),
+    prefix2.Carousel: ClientTarget<prefix2.Carousel>('components/carousel', params: _prefix2Carousel),
+    prefix6.Navbar: ClientTarget<prefix6.Navbar>('components/navbar'),
+    prefix7.Time: ClientTarget<prefix7.Time>('components/time'),
+    prefix8.Typewriter: ClientTarget<prefix8.Typewriter>('components/typewriter', params: _prefix8Typewriter),
   },
   styles: () => [
     ...prefix0.AuroraBackground.styles,
     ...prefix1.BlogArticle.styles,
-    ...prefix2.Footer.styles,
-    ...prefix3.Header.styles,
-    ...prefix4.Main.styles,
-    ...prefix5.Navbar.styles,
-    ...prefix6.Time.styles,
-    ...prefix7.TypewriterState.styles,
-    ...prefix8.GoalYear.styles,
-    ...prefix9.App.styles,
+    ...prefix2.Carousel.styles,
+    ...prefix3.Footer.styles,
+    ...prefix4.Header.styles,
+    ...prefix5.Main.styles,
+    ...prefix6.Navbar.styles,
+    ...prefix7.Time.styles,
+    ...prefix8.TypewriterState.styles,
+    ...prefix9.GoalYear.styles,
+    ...prefix10.App.styles,
   ],
 );
 
-Map<String, dynamic> _prefix7Typewriter(prefix7.Typewriter c) => {'messages': c.messages};
+Map<String, dynamic> _prefix2Carousel(prefix2.Carousel c) => {'images': c.images};
+Map<String, dynamic> _prefix8Typewriter(prefix8.Typewriter c) => {'messages': c.messages};

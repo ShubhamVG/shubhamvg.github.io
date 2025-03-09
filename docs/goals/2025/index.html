@@ -107,6 +107,60 @@
         display: flex;
         justify-content: space-between;
       }
+      .carousel {
+        display: flex;
+        position: relative;
+      }
+      .carousel-btn {
+        width: 3rem;
+        height: 3rem;
+        border: none;
+        border-radius: 9999rem;
+        background-color: transparent;
+        align-self: center;
+      }
+      .carousel-btn > img {
+        height: 100%;
+        border-radius: 9999rem;
+        box-shadow: 0 0 0.5rem black;
+        transition: all 300ms;
+        aspect-ratio: 1 / 1;
+      }
+      .carousel-btn > img:hover {
+        transition: all 300ms;
+        scale: 120%;
+      }
+      .carousel-btn-left {
+        position: absolute;
+        left: 5vw;
+      }
+      .carousel-btn-right {
+        position: absolute;
+        right: 5vw;
+      }
+      .carousel-container {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        width: 95%;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 0 1rem #222222;
+        background-color: rgba(17, 17, 17, 0.4);
+        aspect-ratio: 16 / 9;
+        scroll-snap-type: x proximity;
+      }
+      .carousel-item {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+      }
+      .carousel-item > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
       header {
         margin-left: auto;
         margin-right: auto;
@@ -158,6 +212,7 @@
         outline-style: solid;
         outline-width: 0.06rem;
         border-radius: 2rem;
+        box-shadow: 0 0 0.5rem black;
         background-color: rgba(7, 99, 53, 0.34901960784313724);
         justify-content: space-between;
         align-items: center;
@@ -437,6 +492,9 @@
         flex-direction: column;
         justify-content: space-between;
       }
+      body * {
+        text-shadow: 0 0 0.5rem black;
+      }
       .fancy-badge {
         padding: 0.4rem 0.5rem;
         margin-left: 0.5rem;
@@ -452,7 +510,7 @@
         background: conic-gradient(black var(--ps, 0%),white var(--pe, 0%) var(--ps, 10%),black var(--pe, 10%) 100%);
         --progress-start: 20%;
         --progress-end: 42%;
-        animation: dance 10s linear infinite alternate;
+        animation: dance 5s linear infinite alternate;
       }
       .fancy-badge:hover {
         transition: all 300ms;
@@ -460,7 +518,7 @@
       }
       .fancy-badge::before {
         width: 95%;
-        height: 95%;
+        height: 90%;
         border-radius: 9999rem;
         position: absolute;
         content: "";
@@ -515,8 +573,8 @@
       <header>
         <!--@components/time-->
         <div>
-          <div style="display: flex; font-size: 2rem; line-height: 90%"><div>23</div><div style="animation: blink 0.5s step-end infinite alternate">:</div><div>41</div></div>
-          <div><div>5th Mar</div></div>
+          <div style="display: flex; font-size: 2rem; line-height: 90%"><div>15</div><div style="animation: blink 0.5s step-end infinite alternate">:</div><div>42</div></div>
+          <div><div>9th Mar</div></div>
         </div>
         <!--/@components/time-->
         <!--@components/navbar-->
@@ -538,7 +596,7 @@
       </header>
       <main>
         <div id="year-container">
-          <div id="year-progress" style="--progress: 17%"><span>2025's goals</span></div>
+          <div id="year-progress" style="--progress: 18%"><span>2025's goals</span></div>
           <div id="year-text">
             <p class="font-large">This is how much of 2025 has passed.</p>
             <p>And below is everything LaV expects to achieve before it ends.</p>
@@ -601,12 +659,12 @@
       <div style="margin-top: 1rem; text-align: center">
         © Shubham LaV, 2025.
         <div style="margin-top: 0.5rem; margin-left: auto; margin-right: auto; display: flex; width: 40%; justify-content: space-between; align-items: center">
-          <a href="https://github.com/ShubhamVG"><img style="width: 2rem" src="https://www.svgrepo.com/show/475654/github-color.svg"/></a>
+          <a href="https://github.com/ShubhamVG"><img style="width: 2rem" alt="Github" src="https://www.svgrepo.com/show/475654/github-color.svg"/></a>
           <a href="https://bsky.app/profile/lavisse.bsky.social">
-            <img style="width: 2rem" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bluesky_Logo.svg/600px-Bluesky_Logo.svg.png"/>
+            <img style="width: 2rem" alt="BlueSky" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bluesky_Logo.svg/600px-Bluesky_Logo.svg.png"/>
           </a>
           <a href="mailto:vgshubham50@gmail.com">
-            <img style="width: 2rem" src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454734_640.png"/>
+            <img style="width: 2rem" alt="E-mail" src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454734_640.png"/>
           </a>
         </div>
       </div>

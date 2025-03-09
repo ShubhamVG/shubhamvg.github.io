@@ -4,7 +4,7 @@
     <base href="/"/>
     <meta charset="utf-8"/>
     <!--$-->
-    <title>LaV</title>
+    <title>LaV's Digital Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="robots" content="index, follow"/>
     <meta name="language" content="English"/>
@@ -107,6 +107,60 @@
         display: flex;
         justify-content: space-between;
       }
+      .carousel {
+        display: flex;
+        position: relative;
+      }
+      .carousel-btn {
+        width: 3rem;
+        height: 3rem;
+        border: none;
+        border-radius: 9999rem;
+        background-color: transparent;
+        align-self: center;
+      }
+      .carousel-btn > img {
+        height: 100%;
+        border-radius: 9999rem;
+        box-shadow: 0 0 0.5rem black;
+        transition: all 300ms;
+        aspect-ratio: 1 / 1;
+      }
+      .carousel-btn > img:hover {
+        transition: all 300ms;
+        scale: 120%;
+      }
+      .carousel-btn-left {
+        position: absolute;
+        left: 5vw;
+      }
+      .carousel-btn-right {
+        position: absolute;
+        right: 5vw;
+      }
+      .carousel-container {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        width: 95%;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 0 1rem #222222;
+        background-color: rgba(17, 17, 17, 0.4);
+        aspect-ratio: 16 / 9;
+        scroll-snap-type: x proximity;
+      }
+      .carousel-item {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+      }
+      .carousel-item > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
       header {
         margin-left: auto;
         margin-right: auto;
@@ -158,6 +212,7 @@
         outline-style: solid;
         outline-width: 0.06rem;
         border-radius: 2rem;
+        box-shadow: 0 0 0.5rem black;
         background-color: rgba(7, 99, 53, 0.34901960784313724);
         justify-content: space-between;
         align-items: center;
@@ -437,6 +492,9 @@
         flex-direction: column;
         justify-content: space-between;
       }
+      body * {
+        text-shadow: 0 0 0.5rem black;
+      }
       .fancy-badge {
         padding: 0.4rem 0.5rem;
         margin-left: 0.5rem;
@@ -452,7 +510,7 @@
         background: conic-gradient(black var(--ps, 0%),white var(--pe, 0%) var(--ps, 10%),black var(--pe, 10%) 100%);
         --progress-start: 20%;
         --progress-end: 42%;
-        animation: dance 10s linear infinite alternate;
+        animation: dance 5s linear infinite alternate;
       }
       .fancy-badge:hover {
         transition: all 300ms;
@@ -460,7 +518,7 @@
       }
       .fancy-badge::before {
         width: 95%;
-        height: 95%;
+        height: 90%;
         border-radius: 9999rem;
         position: absolute;
         content: "";
@@ -515,8 +573,8 @@
       <header>
         <!--@components/time-->
         <div>
-          <div style="display: flex; font-size: 2rem; line-height: 90%"><div>23</div><div style="animation: blink 0.5s step-end infinite alternate">:</div><div>41</div></div>
-          <div><div>5th Mar</div></div>
+          <div style="display: flex; font-size: 2rem; line-height: 90%"><div>15</div><div style="animation: blink 0.5s step-end infinite alternate">:</div><div>42</div></div>
+          <div><div>9th Mar</div></div>
         </div>
         <!--/@components/time-->
         <!--@components/navbar-->
@@ -540,12 +598,36 @@
         <!--@components/typewriter data={"messages":["Hello!","Interested to know me?","Or, maybe in my stuff","Thanks for dropping by!"]}-->
         <div id="typewriter-container"><p id="typewriter-text" class="typing-start">Hello!</p></div>
         <!--/@components/typewriter-->
-        <section>
-          <h1>Welcome to LaV's Digital Home</h1>
-          <p>
-            First, let me tell you about myself so I go by LaV and I am a 20 y/o lad who like to build stuff (<strong>not</strong> limited to coding).<br>Previously, I used to tell everyone that I am a problem solver but lately, I haven't came across any "problem" to solve so here I am, building beautiful stuff like this website!<br><br>You can check out my projects on the <a href="/projects/" class="badge">Project</a> page or on my <a href="https://github.com/ShubhamVG/" class="wavy-text">GitHub</a> if it is open-sourced.<br>(Do drop me a follow and star the repos that you like ;)<br><br>Also, checkout my<a href='https://docs.google.com/document/d/1UrYJvRJvo7pJ793CHAQnNzk-1yKYCKel' class='fancy-badge' target='_blank'><span>Resume<span></a>'cuz why not?
-          </p>
-        </section>
+        <h1>Welcome to LaV's Digital Home</h1>
+        <p>First, let me tell you about myself so I go by LaV and I am a 20 y/o lad who
+        likes to build stuff (<strong>not</strong> limited to coding).<br>
+        Previously, I used to tell everyone that I am a problem solver but lately, I
+        haven't came across any &quot;problem&quot; to solve so here I am, building beautiful
+        stuff like this website!</p>
+        <p>You can check out my projects on the <a href="/projects" 
+        class="badge">Project Page</a> or on my <a href="https://github.com/ShubhamVG" 
+        class="wavy-text">GitHub</a> if it is open-sourced.<br>
+        (Do drop me a follow and star the repos that you like ;)</p>
+        <p>Read my random thoughts as my <a href="/blogs" 
+        class="badge">Blogs!</a> Or, if you wanna get in touch? Check out the <a 
+        href="/contacts" class="badge">Contacts &amp; Socials!</a> Be
+        careful about my time tho'. I won't be able to reply quickly if you text me at
+        2 AM LoL. You can see my time on the top-left of your screen ;)</p>
+        <p>If you are the type who is here for my resume, then here you go: <a 
+        href='https://docs.google.com/document/d/1UrYJvRJvo7pJ793CHAQnNzk-1yKYCKel' class='fancy-badge' target='_blank'><span>CV / Resume<span></a></p>
+        <p>Everything on this page is well organized and present in the navbar so choose
+        whatever you wanna read without getting overwhelmed! e.g.,</p>
+        <ul>
+        <li>You like my stuff and wanna support me? In that case, I'm glad, haha, and
+        you should check out the <a href="/support" class="badge">
+        Support page!</a></li>
+        <li>Wanna know what tech I use and my favorite programming languages? If you are
+        a programmer, then you will know how many people ask you this question haha.
+        That's why I have dedicated a page to it. Check out <a 
+        href="/fav-tech" class="badge">Fav Tech!</a></li>
+        </ul>
+        <p>I hope you like being here. Enjoy your stay!</p>
+        
       </main>
     </div>
     <footer style="padding: 1rem; margin-left: auto; margin-right: auto; width: calc(100% - 2rem); max-width: 62.5rem; border-radius: 1.5rem; box-shadow: 0 0 1rem #222222; background-color: rgba(17, 17, 17, 0.7)">
@@ -566,12 +648,12 @@
       <div style="margin-top: 1rem; text-align: center">
         © Shubham LaV, 2025.
         <div style="margin-top: 0.5rem; margin-left: auto; margin-right: auto; display: flex; width: 40%; justify-content: space-between; align-items: center">
-          <a href="https://github.com/ShubhamVG"><img style="width: 2rem" src="https://www.svgrepo.com/show/475654/github-color.svg"/></a>
+          <a href="https://github.com/ShubhamVG"><img style="width: 2rem" alt="Github" src="https://www.svgrepo.com/show/475654/github-color.svg"/></a>
           <a href="https://bsky.app/profile/lavisse.bsky.social">
-            <img style="width: 2rem" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bluesky_Logo.svg/600px-Bluesky_Logo.svg.png"/>
+            <img style="width: 2rem" alt="BlueSky" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bluesky_Logo.svg/600px-Bluesky_Logo.svg.png"/>
           </a>
           <a href="mailto:vgshubham50@gmail.com">
-            <img style="width: 2rem" src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454734_640.png"/>
+            <img style="width: 2rem" alt="E-mail" src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454734_640.png"/>
           </a>
         </div>
       </div>

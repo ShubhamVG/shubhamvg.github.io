@@ -24,6 +24,9 @@ final hamMenuColor = Color.hex('#86ffc1');
 
 final goalTextContainerColor = hexAlpha('#2020203f');
 
+final glassDark = Color.rgba(0x11, 0x11, 0x11, 0.7);
+final glassTranslucent = Color.rgba(0x11, 0x11, 0x11, 0.4);
+
 final smolScrnMediaQry = MediaQuery.screen(maxWidth: 50.rem);
 
 final maxScrnWidth = 62.5.rem;
@@ -46,7 +49,7 @@ final progressBgCss =
 
 final shinyGreen = Color.rgb(0, 141, 59);
 
-final textShadowColor = hexAlpha('#00ffaa80');
+final greenTextShadowColor = hexAlpha('#00ffaa80');
 
 final titliWebUrl = 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,'
     'wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,'
