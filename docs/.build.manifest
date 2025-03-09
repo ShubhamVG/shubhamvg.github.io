@@ -10,6 +10,7 @@ images/brainiacs.in.png
 images/brainiacs.jpg
 images/crown.svg
 images/github.svg
+images/ko-fi.svg
 images/left-arrow.svg
 images/logo.svg
 images/right-arrow.svg
@@ -19,8 +20,8 @@ main.clients.dart.js_10.part.js
 main.clients.dart.js_2.part.js
 main.clients.dart.js_3.part.js
 main.clients.dart.js_4.part.js
-main.clients.dart.js_6.part.js
 main.clients.dart.js_7.part.js
+main.clients.dart.js_8.part.js
 main.clients.dart.js_9.part.js
 packages/$sdk/dev_compiler/amd/require.js
 packages/$sdk/dev_compiler/ddc/ddc_module_loader.js
