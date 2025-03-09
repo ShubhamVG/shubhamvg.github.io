@@ -49,7 +49,7 @@ final progressBgCss =
 
 final shinyGreen = Color.rgb(0, 141, 59);
 
-final textShadowColor = hexAlpha('#00ffaa80');
+final greenTextShadowColor = hexAlpha('#00ffaa80');
 
 final titliWebUrl = 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,'
     'wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,'
