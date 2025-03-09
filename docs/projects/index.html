@@ -11,7 +11,7 @@
     <meta name="author" content="LaV"/>
     <meta name="title" content="LaV's Fancy Projects"/>
     <meta name="description" content="Some of the projects I made that I really like &amp; wanted to share."/>
-    <meta name="keywords" content="projects, LaV"/>
+    <meta name="keywords" content="projects, brainiacs.in, anime, cine, snek-meth, AST, recyclopia, hackathon, LaV"/>
     <!--/-->
     <script src="main.clients.dart.js" defer></script>
     <style>
@@ -107,6 +107,60 @@
         display: flex;
         justify-content: space-between;
       }
+      .carousel {
+        display: flex;
+        position: relative;
+      }
+      .carousel-btn {
+        width: 3rem;
+        height: 3rem;
+        border: none;
+        border-radius: 9999rem;
+        background-color: transparent;
+        align-self: center;
+      }
+      .carousel-btn > img {
+        height: 100%;
+        border-radius: 9999rem;
+        box-shadow: 0 0 0.5rem black;
+        transition: all 300ms;
+        aspect-ratio: 1 / 1;
+      }
+      .carousel-btn > img:hover {
+        transition: all 300ms;
+        scale: 120%;
+      }
+      .carousel-btn-left {
+        position: absolute;
+        left: 5vw;
+      }
+      .carousel-btn-right {
+        position: absolute;
+        right: 5vw;
+      }
+      .carousel-container {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        width: 95%;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 0 1rem #222222;
+        background-color: rgba(17, 17, 17, 0.4);
+        aspect-ratio: 16 / 9;
+        scroll-snap-type: x proximity;
+      }
+      .carousel-item {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+      }
+      .carousel-item > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
       header {
         margin-left: auto;
         margin-right: auto;
@@ -158,6 +212,7 @@
         outline-style: solid;
         outline-width: 0.06rem;
         border-radius: 2rem;
+        box-shadow: 0 0 0.5rem black;
         background-color: rgba(7, 99, 53, 0.34901960784313724);
         justify-content: space-between;
         align-items: center;
@@ -437,6 +492,9 @@
         flex-direction: column;
         justify-content: space-between;
       }
+      body * {
+        text-shadow: 0 0 0.5rem black;
+      }
       .fancy-badge {
         padding: 0.4rem 0.5rem;
         margin-left: 0.5rem;
@@ -452,7 +510,7 @@
         background: conic-gradient(black var(--ps, 0%),white var(--pe, 0%) var(--ps, 10%),black var(--pe, 10%) 100%);
         --progress-start: 20%;
         --progress-end: 42%;
-        animation: dance 10s linear infinite alternate;
+        animation: dance 5s linear infinite alternate;
       }
       .fancy-badge:hover {
         transition: all 300ms;
@@ -460,7 +518,7 @@
       }
       .fancy-badge::before {
         width: 95%;
-        height: 95%;
+        height: 90%;
         border-radius: 9999rem;
         position: absolute;
         content: "";
@@ -515,8 +573,8 @@
       <header>
         <!--@components/time-->
         <div>
-          <div style="display: flex; font-size: 2rem; line-height: 90%"><div>23</div><div style="animation: blink 0.5s step-end infinite alternate">:</div><div>41</div></div>
-          <div><div>5th Mar</div></div>
+          <div style="display: flex; font-size: 2rem; line-height: 90%"><div>15</div><div style="animation: blink 0.5s step-end infinite alternate">:</div><div>42</div></div>
+          <div><div>9th Mar</div></div>
         </div>
         <!--/@components/time-->
         <!--@components/navbar-->
@@ -538,9 +596,107 @@
       </header>
       <main>
         <h1>Projects</h1>
-        <p>Thinking which ones to add here. Till then, check out my <a href="https://github.com/ShubhamVG" 
-        class='badge'>GitHub</a> Thanks!</p>
+        <p>I have worked on a lot of projects, or so I feel but here are a few that I
+        wanna share with everyone. Also, check out my <a href="https://github.com/ShubhamVG" 
+        class='badge'>GitHub</a> for more projects that I may not have added here.
+        Enjoy!</p>
         
+        <section>
+          <h2><a href="https://brainiacs.in" class='wavy-text'>Brainiacs.in</h2>
+          </a>
+          The best way to describe *Brainiacs.in* would be by telling you I made it in 
+          the first place. I made it because my friends and I like anime, games, and you 
+          know, reading or watching fictional stuff and that's why, we often ask each 
+          other which anime or game or fictional character the other resembles the most. 
+          It is a good conversation starter too but as you can imagine, it can get hard 
+          & messy to remember which person gave you which character or role and that's 
+          why I made *Brainiacs.in*. After signing up, you can enter your friends' names 
+          and the anime or fictional character they resemble the most along with a 
+          picture and then share that with friends. It it totally free too. <a 
+          href="https://brainiacs.in" class='badge' target="_blank">Check it out!</a>
+          <br><br>
+          
+          <!--@components/carousel data={"images":["/images/brainiacs.in.png","/images/brainiacs.in-crew.png"]}-->
+          <div class="carousel">
+            <button class="carousel-btn-left carousel-btn"><img alt="Left Button" src="/images/left-arrow.svg"/></button>
+            <div class="carousel-container">
+              <div class="carousel-item"><img src="/images/brainiacs.in.png"/></div>
+              <div class="carousel-item"><img src="/images/brainiacs.in-crew.png"/></div>
+            </div>
+            <button class="carousel-btn-right carousel-btn"><img alt="Right Button" src="/images/right-arrow.svg"/></button>
+          </div>
+          <!--/@components/carousel-->
+          <h3>Tech used</h3>
+          <ul>
+          <li>HTML/CSS/Dart for the frontend however soon will be migrating to <a 
+          href="https://jaspr.site/" class="wavy-text" target="_blank">Jaspr</a> <em>after
+          redesigning the pages</em>.</li>
+          <li>Backend made with <a href="https://github.com/gin-gonic/gin" 
+          class="wavy-text" target="_blank">Gin</a> and database used SQLite with <a 
+          href="https://gorm.io" class="wavy-text" target="_blank">GORM</a>.</li>
+          <li>Big shoutout to <a href="https://github.com/interrrp" class="badge" 
+          target="_blank">@interrrp</a> for optimizing the backend by an order of
+          magnitude or probably more. Dude knows his stuff really well.</li>
+          </ul>
+          
+        </section>
+        <section>
+          <h2><a href="https://github.com/ShubhamVG/cine" class='wavy-text'>Cine</a></h2>
+          <p>Cine lets you convert images, GIFs, videos &amp; such into ASCII art (yes,
+          animated too). This was a quick project I made in Go. Even made a <a 
+          href="https://youtu.be/N3e6IuwF6Gk" class="badge" target="_blank">YT skit</a>
+          using it.</p>
+          <p>I wanted to add more features to it but then I got busy with a hackathon and
+          couldn't put my hands on it ever since so, don't expect a lot from it. Free
+          free to contribute to it tho'. <a href="https://github.com/ShubhamVG/cine" class='badge' 
+          target="_blank">Check out Cine!</a></p>
+          
+          <!--@components/carousel data={"images":["https://raw.githubusercontent.com/ShubhamVG/cine/refs/heads/main/GitHub%20Assets/furret.png"]}-->
+          <div class="carousel">
+            <button class="carousel-btn-left carousel-btn"><img alt="Left Button" src="/images/left-arrow.svg"/></button>
+            <div class="carousel-container">
+              <div class="carousel-item">
+                <img src="https://raw.githubusercontent.com/ShubhamVG/cine/refs/heads/main/GitHub%20Assets/furret.png"/>
+              </div>
+            </div>
+            <button class="carousel-btn-right carousel-btn"><img alt="Right Button" src="/images/right-arrow.svg"/></button>
+          </div>
+          <!--/@components/carousel-->
+          <h3>Tech used</h3>
+          <ul>
+          <li>Go for everything.</li>
+          <li>FFMpeg, need any more introduction than that? Haha.</li>
+          </ul>
+          
+        </section>
+        <section>
+          <h2><a href="https://github.com/ShubhamVG/snek-meth" class='wavy-text'>snek-meth</a></h2>
+          <p>snek-meth is basically a math engine and parser that can evaluate &amp; parse
+          mathematical expressions. I made when I was learning about parsing,
+          tokenizing. AST, etc.</p>
+          <p>I specifically made it as a maths engine because I want to rewrite this in zig
+          some day and use it to make a fractal generator app for mobile. <a 
+          href="https://github.com/ShubhamVG/snek-meth" class='badge' target="_blank">Check out
+          snek-meth!</a></p>
+          <h3>Tech used</h3>
+          <ul>
+          <li>Python but Zig (soon hopefully)</li>
+          <li>Great tutorial by <a href="https://www.youtube.com/@CodePulse" 
+          class="wavy-text" target="_blank">CodePulse</a>.</li>
+          </ul>
+          
+        </section>
+        <section>
+          <h2><a href="https://devpost.com/software/recyclopia" class='wavy-text'>Recyclopia</a></h2>
+          <p>Recyclopia is from my last hackathon. We were 3 members and I was the team
+          lead. Not gonna describe much about it here. <a href="https://devpost.com/software/recyclopia" 
+          class='badge' target="_blank">Check out Recyclopia</a></p>
+          <h3>Tech used</h3>
+          <ul>
+          <li>Flutter</li>
+          </ul>
+          
+        </section>
       </main>
     </div>
     <footer style="padding: 1rem; margin-left: auto; margin-right: auto; width: calc(100% - 2rem); max-width: 62.5rem; border-radius: 1.5rem; box-shadow: 0 0 1rem #222222; background-color: rgba(17, 17, 17, 0.7)">
@@ -561,12 +717,12 @@
       <div style="margin-top: 1rem; text-align: center">
         © Shubham LaV, 2025.
         <div style="margin-top: 0.5rem; margin-left: auto; margin-right: auto; display: flex; width: 40%; justify-content: space-between; align-items: center">
-          <a href="https://github.com/ShubhamVG"><img style="width: 2rem" src="https://www.svgrepo.com/show/475654/github-color.svg"/></a>
+          <a href="https://github.com/ShubhamVG"><img style="width: 2rem" alt="Github" src="https://www.svgrepo.com/show/475654/github-color.svg"/></a>
           <a href="https://bsky.app/profile/lavisse.bsky.social">
-            <img style="width: 2rem" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bluesky_Logo.svg/600px-Bluesky_Logo.svg.png"/>
+            <img style="width: 2rem" alt="BlueSky" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bluesky_Logo.svg/600px-Bluesky_Logo.svg.png"/>
           </a>
           <a href="mailto:vgshubham50@gmail.com">
-            <img style="width: 2rem" src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454734_640.png"/>
+            <img style="width: 2rem" alt="E-mail" src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454734_640.png"/>
           </a>
         </div>
       </div>
