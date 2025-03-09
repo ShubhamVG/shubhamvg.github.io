@@ -49,7 +49,7 @@ class _CopyrightStuff extends StatelessComponent {
         div(
           styles: Styles(
             display: Display.flex,
-            width: 40.percent,
+            width: 60.percent,
             margin: Margin.only(
               left: Unit.auto,
               right: Unit.auto,
@@ -83,6 +83,14 @@ class _CopyrightStuff extends StatelessComponent {
                 src: 'https://cdn.pixabay.com/photo/2016/06/13/17/30/'
                     'mail-1454734_640.png',
                 alt: 'E-mail',
+              ),
+            ),
+            Link(
+              to: kofiLink,
+              child: img(
+                styles: Styles(width: 2.rem),
+                src: '/images/ko-fi.svg',
+                alt: 'Ko-fi',
               ),
             ),
           ],
