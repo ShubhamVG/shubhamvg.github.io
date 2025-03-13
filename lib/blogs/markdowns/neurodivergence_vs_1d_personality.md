@@ -70,7 +70,7 @@ tell you.
 i.e., ignoring their hours of work and practicing and putting it all on "luck" 
 BUT ALSO, here you are double insulting them by telling them what they are not!
 
-## <wavy>It is extremely hurtful to ignore someone's hard word</wavy>
+## <wavy>It is extremely hurtful to ignore someone's hard work</wavy>
 Reminds me of a YouTube comment which was under a maths or engineering video. 
 The commenter was a guy who was pursuing engineering (or maths) and everybody 
 had told him that he must be a genius for making it so far, to the way to a 
@@ -81,7 +81,7 @@ to reach where he was and it wasn't just a fluke or being a pRoDiGy</wavy>. (I
 hate that word! I am a big believer of *"Talent without hard work is talent 
 wasted"* and *"Hard work can beat talent when talent does not work as hard."*)
 <br><br>
-From next time, when you meet a hard worker, appreciate their hard word and 
+From next time, when you meet a hard worker, appreciate their hard work and 
 don't just say that "you must be a genius" please. Even if you take nothing 
 from this blog post, it's totally fine and understandable but please make this 
 a lifelong lesson and pass it on!
