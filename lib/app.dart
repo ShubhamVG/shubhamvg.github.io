@@ -112,6 +112,14 @@ class App extends StatelessComponent {
     css('.fancy-badge > span')
         .styles(zIndex: ZIndex(1), textAlign: TextAlign.center),
     css('.font-large').styles(fontSize: 1.5.rem),
+    css('wavy').styles(
+      display: Display.inline, 
+      textDecoration: TextDecoration(
+        line: TextDecorationLine.underline,
+        style: TextDecorationStyle.wavy,
+        thickness: TextDecorationThickness.value(0.06.rem),
+      ),
+    ),
     css('.wavy-text').styles(
       textDecoration: TextDecoration(
         line: TextDecorationLine.underline,
