@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
+import '../components/year_progress.dart';
 import '../constants/routes.dart';
 import '../constants/theme.dart';
 import '../components/main_.dart';
@@ -12,12 +13,12 @@ import '../utils/interfaces.dart';
 class GoalYear extends StatelessComponent implements IPage {
   const GoalYear(this.year, {super.key});
 
-  final String year;
+  final int year;
 
   @override
   Route get route {
     return Route(
-      path: year,
+      path: '$year',
       title: '$year Goals',
       builder: (_, __) => this,
     );
@@ -65,13 +66,7 @@ class GoalYear extends StatelessComponent implements IPage {
       [
         // Year container
         div(id: 'year-container', [
-          div(
-            id: 'year-progress',
-            styles: Styles(raw: {'--progress': '${_yearProgress()}%'}),
-            [
-              span([Text("$year's goals")])
-            ],
-          ),
+          YearProgress(year),
           div(id: 'year-text', [
             p(
               classes: 'font-large',
@@ -155,12 +150,6 @@ class GoalYear extends StatelessComponent implements IPage {
     ]);
   }
 
-  int _yearProgress() {
-    final duration = DateTime.now().difference(DateTime(2025));
-    final yearProgressPercentage = duration.inDays * 100 ~/ 365;
-    return yearProgressPercentage;
-  }
-
   @css
   static final styles = <StyleRule>[
     css('.crown').styles(
@@ -228,39 +217,6 @@ class GoalYear extends StatelessComponent implements IPage {
         display: Display.flex,
         width: Unit.fitContent,
         margin: Margin.symmetric(horizontal: Unit.auto)),
-    css('#year-progress').styles(
-        display: Display.flex,
-        position: Position.relative(),
-        width: 10.rem,
-        height: 10.rem,
-        radius: BorderRadius.circular(9999.rem),
-        shadow: BoxShadow(
-          offsetX: Unit.zero,
-          offsetY: Unit.zero,
-          blur: 0.5.rem,
-          color: auroraColor,
-        ),
-        justifyContent: JustifyContent.center,
-        alignItems: AlignItems.center,
-        raw: {'background': progressBgCss}),
-    css('#year-progress::before').styles(
-        content: '',
-        position: Position.absolute(),
-        width: 90.percent,
-        height: 90.percent,
-        radius: BorderRadius.circular(9999.rem),
-        shadow: BoxShadow(
-          offsetX: Unit.zero,
-          offsetY: Unit.zero,
-          blur: 0.5.rem,
-          color: auroraColor,
-        ),
-        raw: {'background': progressCircGradient}),
-    css('#year-progress > span').styles(
-        zIndex: ZIndex(1),
-        width: 80.percent,
-        textAlign: TextAlign.center,
-        fontSize: 1.3.rem),
     css('#year-text').styles(
         display: Display.flex,
         margin: Margin.only(left: 1.5.rem),

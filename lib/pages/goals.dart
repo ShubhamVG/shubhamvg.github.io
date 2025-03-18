@@ -22,25 +22,6 @@ class Goals extends StatelessComponent implements IPage {
     );
   }
 
-  List<String> _getGoalYears() {
-    final goalFiles = Directory('lib/goals').listSync();
-    final years = goalFiles.map((e) {
-      final start = e.path.length - 9;
-      return e.path.substring(start, start + 4);
-    }).toList(growable: false);
-
-    return years;
-  }
-
-  List<Route> _goalYearRoutes() {
-    final years = _getGoalYears();
-    final routes = years.map((year) {
-      return GoalYear(year).route;
-    }).toList(growable: false);
-
-    return routes;
-  }
-
   @override
   Iterable<Component> build(BuildContext context) sync* {
     final years = _getGoalYears();
@@ -84,7 +65,7 @@ class Goals extends StatelessComponent implements IPage {
                     Link(
                       to: '/goals/$year',
                       classes: 'badge',
-                      child: Text(year),
+                      child: Text('$year'),
                     )
                   ],
                 ),
@@ -93,5 +74,27 @@ class Goals extends StatelessComponent implements IPage {
         ]),
       ],
     );
+  }
+
+  List<int> _getGoalYears() {
+    final goalFiles = Directory('lib/goals').listSync();
+    final years = goalFiles.map((e) {
+      final start = e.path.length - 9;
+      final yearStr = e.path.substring(start, start + 4);
+      final year = int.parse(yearStr);
+
+      return year;
+    }).toList(growable: false);
+
+    return years;
+  }
+
+  List<Route> _goalYearRoutes() {
+    final years = _getGoalYears();
+    final routes = years.map((year) {
+      return GoalYear(year).route;
+    }).toList(growable: false);
+
+    return routes;
   }
 }
