@@ -332,6 +332,32 @@
           width: 0;
         }
       }
+      #year-progress {
+        display: flex;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 9999rem;
+        position: relative;
+        box-shadow: 0 0 0.5rem #00ff8c;
+        justify-content: center;
+        align-items: center;
+        background: conic-gradient(#00c569 var(--progress, 0%),#2b2b2b var(--progress, 0%) 100%);
+      }
+      #year-progress::before {
+        width: 90%;
+        height: 90%;
+        border-radius: 9999rem;
+        position: absolute;
+        box-shadow: 0 0 0.5rem #00ff8c;
+        content: "";
+        background: linear-gradient(135deg, hsla(0, 0%, 0%, 1) 22%,rgb(18, 70, 44) 53%, rgb(29, 94, 67) 84%, rgb(13, 189, 136) 100%);
+      }
+      #year-progress > span {
+        width: 80%;
+        z-index: 1;
+        font-size: 1.3rem;
+        text-align: center;
+      }
       .crown {
         width: 2rem;
         height: 2rem;
@@ -397,32 +423,6 @@
         margin-right: auto;
         display: flex;
         width: fit-content;
-      }
-      #year-progress {
-        display: flex;
-        width: 10rem;
-        height: 10rem;
-        border-radius: 9999rem;
-        position: relative;
-        box-shadow: 0 0 0.5rem #00ff8c;
-        justify-content: center;
-        align-items: center;
-        background: conic-gradient(#00c569 var(--progress, 0%),#2b2b2b var(--progress, 0%) 100%);
-      }
-      #year-progress::before {
-        width: 90%;
-        height: 90%;
-        border-radius: 9999rem;
-        position: absolute;
-        box-shadow: 0 0 0.5rem #00ff8c;
-        content: "";
-        background: linear-gradient(135deg, hsla(0, 0%, 0%, 1) 22%,rgb(18, 70, 44) 53%, rgb(29, 94, 67) 84%, rgb(13, 189, 136) 100%);
-      }
-      #year-progress > span {
-        width: 80%;
-        z-index: 1;
-        font-size: 1.3rem;
-        text-align: center;
       }
       #year-text {
         margin-left: 1.5rem;
@@ -578,8 +578,8 @@
       <header>
         <!--@components/time-->
         <div>
-          <div style="display: flex; font-size: 2rem; line-height: 90%"><div>17</div><div style="animation: blink 0.5s step-end infinite alternate">:</div><div>29</div></div>
-          <div><div>16th Mar</div></div>
+          <div style="display: flex; font-size: 2rem; line-height: 90%"><div>18</div><div style="animation: blink 0.5s step-end infinite alternate">:</div><div>48</div></div>
+          <div><div>18th Mar</div></div>
         </div>
         <!--/@components/time-->
         <!--@components/navbar-->

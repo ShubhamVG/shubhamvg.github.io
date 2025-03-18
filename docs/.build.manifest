@@ -4,6 +4,7 @@ components/carousel.client.dart.js
 components/navbar.client.dart.js
 components/time.client.dart.js
 components/typewriter.client.dart.js
+components/year_progress.client.dart.js
 favicon.ico
 images/brainiacs.in-crew.png
 images/brainiacs.in.png
@@ -17,12 +18,14 @@ images/right-arrow.svg
 main.clients.dart.js
 main.clients.dart.js_1.part.js
 main.clients.dart.js_10.part.js
+main.clients.dart.js_11.part.js
+main.clients.dart.js_12.part.js
+main.clients.dart.js_13.part.js
+main.clients.dart.js_14.part.js
 main.clients.dart.js_2.part.js
 main.clients.dart.js_3.part.js
 main.clients.dart.js_4.part.js
-main.clients.dart.js_7.part.js
-main.clients.dart.js_8.part.js
-main.clients.dart.js_9.part.js
+main.clients.dart.js_5.part.js
 packages/$sdk/dev_compiler/amd/require.js
 packages/$sdk/dev_compiler/ddc/ddc_module_loader.js
 packages/$sdk/dev_compiler/web/dart_stack_trace_mapper.js
@@ -39,6 +42,7 @@ packages/build_web_compilers/src/dev_compiler_stack_trace/stack_trace_mapper.dar
 packages/lav_home/app.styles.json
 packages/lav_home/blogs/markdowns/google_gemini_almost_got_me_cancelled.md
 packages/lav_home/blogs/markdowns/neurodivergence_vs_1d_personality.md
+packages/lav_home/blogs/markdowns/tutorial_how_to_piss_off_a_friend_by_refusing_illegal_activity.md
 packages/lav_home/blogs/markdowns/why_i_will_never_have_a_linkedin.md
 packages/lav_home/blogs/posts.yaml
 packages/lav_home/components/aurora_background.styles.json
@@ -54,6 +58,8 @@ packages/lav_home/components/time.client.json
 packages/lav_home/components/time.styles.json
 packages/lav_home/components/typewriter.client.json
 packages/lav_home/components/typewriter.styles.json
+packages/lav_home/components/year_progress.client.json
+packages/lav_home/components/year_progress.styles.json
 packages/lav_home/goals/2025.json
 packages/lav_home/pages/goal_year.styles.json
 packages/lav_home/styles.bundle.json
