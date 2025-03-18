@@ -61,8 +61,7 @@ class Projects extends StatelessComponent implements IPage {
 }
 
 const _brainiacs = """
-## <a href="https://brainiacs.in" class='wavy-text'>Brainiacs.in
-</a>
+## <a href="https://brainiacs.in" class='wavy-text'>Brainiacs.in</a>
 The best way to describe *Brainiacs.in* would be by telling you I made it in 
 the first place. I made it because my friends and I like anime, games, and you 
 know, reading or watching fictional stuff and that's why, we often ask each 
