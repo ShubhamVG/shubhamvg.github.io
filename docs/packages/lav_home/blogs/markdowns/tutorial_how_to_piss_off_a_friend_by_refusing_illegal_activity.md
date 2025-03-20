@@ -4,7 +4,7 @@ something illegal. Oh welp, how do I even start LoL, buckle up 'cuz it is both
 a fun and wild ride.
 
 ## Characters
-There are only two characters only. One is me, and the other we shall call 
+There are two characters only. One is me, and the other we shall call 
 *Svetlana*.
 <br>
 Svetlana is an aspirational UI/UX designer and actually, she is interested in 
