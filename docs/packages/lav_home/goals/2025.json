@@ -7,12 +7,12 @@
   {
     "icon": "https://static.vecteezy.com/system/resources/thumbnails/011/257/977/small_2x/trophy-icon-gold-cup-best-for-tournament-or-championship-logo-illustration-vector.jpg",
     "text": "Participate in 3 hackathons in 2025",
-    "progress": 0
+    "progress": 33
   },
   {
     "icon": "https://www.pngkey.com/png/full/399-3999135_photo-team-work-clipart-png-images-transparent-background.png",
     "text": "Collab with at least 5 different people",
-    "progress": 80
+    "progress": 100
   },
   {
     "icon": "brainiacs.jpg",
@@ -32,6 +32,6 @@
   {
     "icon": "https://i.pinimg.com/736x/b1/ff/7d/b1ff7d9c6b852405d9f7dcce42362775.jpg",
     "text": "Write and publish a book",
-    "progress": 8
+    "progress": 16
   }
 ]
