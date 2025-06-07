@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="/"/>
+    <meta charset="utf-8"/>
+    <!--$-->
+    <title>Skills &amp; Hobbies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="language" content="English"/>
+    <meta name="author" content="LaV"/>
+    <meta name="title" content="Skills &amp; Hobbies"/>
+    <meta name="description" content="I have a lot of hobbies so I have listed some of them here one this page."/>
+    <meta name="keywords" content="skills, hobbies, LaV, gardening, programmer, code, math, card pyramid, cooking, improv, gardening, flowers, humour, jokes, hacking, crafting, designing, creativity"/>
+    <!--/-->
+    <script src="main.clients.dart.js" defer></script>
+    <style>
+      @import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap);
+      @keyframes moveCirc {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes moveNE {
+        0% {
+          transform: translate(-50%, 20%);
+        }
+        50% {
+          transform: translate(50%, -20%);
+        }
+        100% {
+          transform: translate(-50%, 20%);
+        }
+      }
+      @keyframes moveVert {
+        0% {
+          transform: translateY(-50%);
+        }
+        50% {
+          transform: translateY(50%);
+        }
+        100% {
+          transform: translateY(-50%);
+        }
+      }
+      #g1 {
+        width: 80%;
+        height: 80%;
+        position: absolute;
+        animation: moveCirc 30s ease infinite;
+        background: radial-gradient(circle, hsla(147, 100%, 36%, 1) 0%,hsla(194, 83%, 26%, 0) 50%);
+        transform-origin: center center;
+      }
+      #g2 {
+        width: 80%;
+        height: 80%;
+        position: absolute;
+        animation: moveNE 20s ease infinite;
+        background: radial-gradient(circle, rgb(19, 141, 94) 0%,hsla(194, 83%, 26%, 0) 50%);
+        transform-origin: center center;
+      }
+      #g3 {
+        width: 80%;
+        height: 80%;
+        position: absolute;
+        animation: moveVert 20s ease infinite;
+        background: radial-gradient(circle, rgb(8, 190, 160) 0%,hsla(194, 83%, 26%, 0) 50%);
+        transform-origin: center center;
+      }
+      #gradient-bg {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: linear-gradient(135deg, rgb(8, 43, 24) 0%, rgb(15, 58, 34)26%, hsla(147, 50%, 8%, 1) 60%, hsla(0, 0%, 0%, 1) 100%);
+      }
+      #gradient-bg>svg {
+        width: 0;
+        height: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      #gradients {
+        width: 100%;
+        height: 100%;
+        filter: url(#goo) blur(2.5rem);
+      }
+      .blog-article {
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+      .blog-article * {
+        margin: 0;
+      }
+      .blog-article > footer {
+        margin-top: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+      }
+      .carousel {
+        display: flex;
+        position: relative;
+      }
+      .carousel-btn {
+        width: 3rem;
+        height: 3rem;
+        border: none;
+        border-radius: 9999rem;
+        background-color: transparent;
+        align-self: center;
+      }
+      .carousel-btn > img {
+        height: 100%;
+        border-radius: 9999rem;
+        box-shadow: 0 0 0.5rem black;
+        transition: all 300ms;
+        aspect-ratio: 1 / 1;
+      }
+      .carousel-btn > img:hover {
+        transition: all 300ms;
+        scale: 120%;
+      }
+      .carousel-btn-left {
+        position: absolute;
+        left: 5vw;
+      }
+      .carousel-btn-right {
+        position: absolute;
+        right: 5vw;
+      }
+      .carousel-container {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        width: 95%;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 0 1rem #222222;
+        background-color: rgba(17, 17, 17, 0.4);
+        aspect-ratio: 16 / 9;
+        scroll-snap-type: x proximity;
+      }
+      .carousel-item {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+      }
+      .carousel-item > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      header {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        max-width: 62.5rem;
+        z-index: 10;
+        justify-content: space-between;
+      }
+      @media screen and (max-width: 50rem) {
+        header {
+          margin-top: 0.65rem;
+          margin-left: 0.65rem;
+          margin-right: 0.65rem;
+          position: relative;
+        }
+      }
+      main {
+        margin: 1rem auto;
+        max-width: 62.5rem;
+      }
+      @media screen and (max-width: 50rem) {
+        main {
+          margin-left: 0.63rem;
+          margin-right: 0.63rem;
+        }
+      }
+      #ham-menu {
+        display: none;
+      }
+      nav {
+        margin-top: auto;
+        margin-bottom: auto;
+        height: fit-content;
+        flex-basis: 100%;
+      }
+      #nav-bg {
+        display: none;
+      }
+      #nav-items {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-left: auto;
+        margin-right: 0;
+        display: flex;
+        width: 90%;
+        height: 2rem;
+        min-width: 40rem;
+        outline-color: rgb(0, 141, 59);
+        outline-style: solid;
+        outline-width: 0.06rem;
+        border-radius: 2rem;
+        box-shadow: 0 0 0.5rem black;
+        background-color: rgba(7, 99, 53, 0.34901960784313724);
+        justify-content: space-between;
+        align-items: center;
+      }
+      #nav-items a {
+        transition: all 300ms ease-out;
+        user-select: none;
+        -webkit-user-select: none;
+        text-shadow: 0 0 rgba(0, 255, 170, 0.5019607843137255);
+      }
+      #nav-items a:hover {
+        scale: 120%;
+      }
+      @media screen and (max-width: 50rem) {
+        #ham-menu {
+          margin-left: auto;
+          margin-right: 0;
+          display: block;
+          width: fit-content;
+        }
+        #ham-menu.active div:nth-child(1) {
+          transform: translateY(150%) rotate(45deg);
+        }
+        #ham-menu.active div:nth-child(2) {
+          opacity: 0.0;
+        }
+        #ham-menu.active div:nth-child(3) {
+          transform: translateY(-150%) rotate(-45deg);
+        }
+        #ham-menu div {
+          margin-top: 0.19rem;
+          width: 1.7rem;
+          height: 0.3rem;
+          border-radius: 1.25rem;
+          transition: all 300ms;
+          background-color: #86ffc1;
+        }
+        nav {
+          margin-top: 0;
+          margin-bottom: auto;
+        }
+        #nav-bg.active {
+          display: block;
+          width: 100vw;
+          height: 100vh;
+          position: fixed;
+          top: 0;
+          left: 0;
+          backdrop-filter: blur(2rem);
+        }
+        #nav-items {
+          padding: 0;
+          display: none;
+          width: 100%;
+          height: auto;
+          min-width: auto;
+          opacity: 0.0;
+          border-radius: 0;
+          position: absolute;
+          right: 0;
+          visibility: hidden;
+          transform: translateY(50%);
+          transition: all 300ms;
+        }
+        #nav-items.active {
+          display: grid;
+          opacity: 1.0;
+          visibility: visible;
+          transition: all 300ms;
+          grid-template-columns: 1.0fr 1.0fr;
+        }
+        #nav-items a {
+          padding: 1rem;
+          outline-color: rgb(0, 141, 59);
+          outline-style: solid;
+          outline-width: 0.06rem;
+          text-align: center;
+        }
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0.0;
+        }
+      }
+      #typewriter-container {
+        width: fit-content;
+      }
+      #typewriter-text {
+        padding-right: 0.1rem;
+        width: 100%;
+        max-width: 100vw;
+        border-right-style: solid;
+        border-right-width: 0.31rem;
+        overflow: hidden;
+        font-size: 1.5rem;
+        white-space: nowrap;
+      }
+      .typing-delete {
+        animation: cursor-blink 0.5s step-end infinite alternate,typing-delete 1s forwards;
+      }
+      .typing-start {
+        animation: cursor-blink 0.5s step-end infinite alternate,typing-start 1.2s forwards;
+      }
+      @keyframes cursor-blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+      @keyframes typing-delete {
+        100% {
+          width: 0;
+        }
+      }
+      @keyframes typing-start {
+        from {
+          width: 0;
+        }
+      }
+      #year-progress {
+        display: flex;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 9999rem;
+        position: relative;
+        box-shadow: 0 0 0.5rem #00ff8c;
+        justify-content: center;
+        align-items: center;
+        background: conic-gradient(#00c569 var(--progress, 0%),#2b2b2b var(--progress, 0%) 100%);
+      }
+      #year-progress::before {
+        width: 90%;
+        height: 90%;
+        border-radius: 9999rem;
+        position: absolute;
+        box-shadow: 0 0 0.5rem #00ff8c;
+        content: "";
+        background: linear-gradient(135deg, hsla(0, 0%, 0%, 1) 22%,rgb(18, 70, 44) 53%, rgb(29, 94, 67) 84%, rgb(13, 189, 136) 100%);
+      }
+      #year-progress > span {
+        width: 80%;
+        z-index: 1;
+        font-size: 1.3rem;
+        text-align: center;
+      }
+      .crown {
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        top: -1.25rem;
+        right: -0.4rem;
+        rotate: 30deg;
+      }
+      .goal {
+        padding: 0.5rem;
+        display: flex;
+        width: 100%;
+        align-items: center;
+      }
+      .goal-logo {
+        width: 80%;
+        height: 80%;
+        border-radius: 9999rem;
+        z-index: 1;
+      }
+      .goal-progress {
+        display: flex;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 9999rem;
+        position: relative;
+        box-shadow: 0 0 0.5rem #00ff8c;
+        justify-content: center;
+        align-items: center;
+        background: conic-gradient(#00c569 var(--progress, 0%),#2b2b2b var(--progress, 0%) 100%);
+      }
+      .goal-progress::before {
+        width: 80%;
+        height: 80%;
+        border-radius: 9999rem;
+        position: absolute;
+        content: "";
+        background: linear-gradient(135deg, rgb(8, 43, 24) 0%, rgb(15, 58, 34)26%, hsla(147, 50%, 8%, 1) 60%, hsla(0, 0%, 0%, 1) 100%);
+      }
+      .goal-text {
+        padding: 1rem;
+        margin: 0.5rem;
+        width: 80%;
+        min-height: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 0.4rem #00ff8c;
+        background-color: rgba(32, 32, 32, 0.24705882352941178);
+      }
+      .goals-category-title {
+        margin-top: 2rem;
+        margin-bottom: 0;
+        font-size: 1.2rem;
+      }
+      .goals-container {
+        margin-right: 0.8rem;
+        margin-bottom: 2rem;
+        display: grid;
+        grid-template-columns: 1.0fr 1.0fr;
+        column-gap: 1.5rem;
+      }
+      #year-container {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        width: fit-content;
+      }
+      #year-text {
+        margin-left: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      @media screen and (max-width: 50rem) {
+        .goal {
+          width: fit-content;
+        }
+        .goal:nth-child(even) {
+          margin-left: auto;
+          margin-right: 0;
+        }
+        .goal-text {
+          width: 70%;
+        }
+        .goals-container {
+          display: block;
+        }
+      }
+      @media screen and (max-width: 39rem) {
+        .goal {
+          width: 80%;
+        }
+        .goal-text {
+          width: calc(90% - 5rem);
+        }
+        #year-container {
+          display: block;
+        }
+        #year-progress {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        #year-text {
+          display: block;
+        }
+      }
+      :root {
+        font-family: 'Titillium Web';
+        color-scheme: dark;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      .badge {
+        padding: 0.25rem;
+        display: inline-block;
+        outline-color: rgb(0, 141, 59);
+        outline-style: solid;
+        outline-width: 0.06rem;
+        border-radius: 0.4rem;
+        transition: all 300ms ease;
+        background-color: rgba(5, 80, 43, 0.611764705882353);
+      }
+      .badge:hover {
+        box-shadow: 0 0 black;
+        scale: 120%;
+        backdrop-filter: blur(1rem);
+      }
+      body {
+        display: flex;
+        min-height: 100vh;
+        position: relative;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      body * {
+        text-shadow: 0 0 0.5rem black;
+      }
+      .fancy-badge {
+        padding: 0.4rem 0.5rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        display: inline-flex;
+        border-radius: 9999rem;
+        position: relative;
+        transition: all 300ms;
+        font-weight: bold;
+        background-color: black;
+        justify-content: center;
+        align-items: center;
+        background: conic-gradient(black var(--ps, 0%),white var(--pe, 0%) var(--ps, 10%),black var(--pe, 10%) 100%);
+        --progress-start: 20%;
+        --progress-end: 42%;
+        animation: dance 5s linear infinite alternate;
+      }
+      .fancy-badge:hover {
+        transition: all 300ms;
+        scale: 120%;
+      }
+      .fancy-badge::before {
+        width: 95%;
+        height: 90%;
+        border-radius: 9999rem;
+        position: absolute;
+        content: "";
+        background: black;
+      }
+      .fancy-badge:hover::before {
+        width: 90%;
+        height: 90%;
+      }
+      .fancy-badge > span {
+        z-index: 1;
+        text-align: center;
+      }
+      .font-large {
+        font-size: 1.5rem;
+      }
+      wavy {
+        display: inline;
+        text-decoration: underline wavy 0.06rem;
+      }
+      .wavy-text {
+        text-decoration: underline wavy 0.06rem;
+      }
+      @property --pe {
+        syntax: '<percentage>';
+        initial-value: 20%;
+        inherits: false;
+      }
+      @property --ps {
+        syntax: '<percentage>';
+        initial-value: 0%;
+        inherits: false;
+      }
+      @keyframes dance {
+        100% {
+          --ps: 80%;
+          --pe: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="gradient-bg">
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="goo">
+              <fegaussianblur in="SourceGraphic" result="blur" stdDeviation="10"></fegaussianblur>
+              <fecolormatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo"></fecolormatrix>
+              <feblend in="SourceGraphic" in2="goo"></feblend>
+            </filter>
+          </defs>
+        </svg>
+        <div id="gradients"><div id="g1"></div><div id="g2"></div><div id="g3"></div></div>
+      </div>
+      <header>
+        <!--@components/time-->
+        <div>
+          <div style="display: flex; font-size: 2rem; line-height: 90%"><div>10</div><div style="animation: blink 0.5s step-end infinite alternate">:</div><div>01</div></div>
+          <div><div>7th Jun</div></div>
+        </div>
+        <!--/@components/time-->
+        <!--@components/navbar-->
+        <nav>
+          <div id="nav-bg"></div>
+          <div id="ham-menu"><div></div><div></div><div></div></div>
+          <div id="nav-items">
+            <a href="/projects">Projects</a>
+            <a href="/blogs">Blogs</a>
+            <a href="/goals">Goals</a>
+            <a href="/support">Support</a>
+            <a href="/contacts">Contacts &amp; Socials</a>
+            <a href="/fav-tech">Fav Tech</a>
+            <a href="/journey">Journey</a>
+            <a href="/hobbies">Hobbies</a>
+          </div>
+        </nav>
+        <!--/@components/navbar-->
+      </header>
+      <main>
+        <h1>Skills &amp; Hobbies</h1>
+        <p>If you are someone who know me from Discord, then you may know how many
+        hobbies I have. Or if you know me personally IRL, then you may have been me
+        engaged in a couple of niche activities but did you know how many funky
+        activities I engage in? Well, the answer is TOO MANY! I have listed some of
+        them here. Also, I realized that I don't pictures often. I should start doing
+        that and maybe add some here when I have some to share. I apologize for no
+        pics for the moment! They might be added soon or never, you gotta remind me
+        in case I forget :p</p>
+        <h2>Card Stacking</h2>
+        <p>I <strong>LOVE</strong> stacking cards and making fancy structures like pyramids, buildings,
+        castles, stable structures that can even load weights and more. I WILL ADD
+        PICTURES HERE SOON SO THAT IT IS EASY TO IMAGINE MY CARD STACKING ABILITIES
+        but for now, just trust me that I am pretty good at it LoL. I mean, how many
+        people do you know who are <em>into</em> card stacking (haven't just done it once in
+        their life). It takes a long time to finish a structure, yeah and doing it
+        without fan in a hot summer day is, <em>well not painful</em> but you know, it is not
+        everyone's cuppa tea BUT when the structure is ready <em>(after collapsing 69
+        times)</em>, the dopamine you get from that cannot be explained in words.<br>
+        It is a goated hobby and easier to level up once you have the basics right.</p>
+        <h2>Cooking</h2>
+        <p>Recently started learning and been enjoying it so far. I cannot make a lot of
+        dishes just from memory, and neither can I guarantee that my cooking is good
+        but I really enjoy the process of cooking and also, those who have cooked
+        before will understand that <em>the meals <strong>you</strong> have cooked yourself tastes
+        sOoOoOoOoOoOoOo much better</em>. Also, it is one of those activities where you
+        have to be engaged in the process but also, you can turn your brain off or
+        at least can put your mind off from the other tiring chores that you were
+        doing before.</p>
+        <h2>Gardening</h2>
+        <p>My grandma used to say that I have a green thumb. I always liked gardening.
+        Getting seeds and growing a tiny sapling from it and treating it is so
+        satisfying. I remember this funny story from childhood; it was summer and
+        everyone was enjoying a mango. After I was done, I collected all the seeds,
+        cleaned it and took a tiny tool to dig a tiny hole in the ground and put the
+        seed inside. I did at multiple places and then &quot;plastered&quot; the holes back xD.
+        Mother and aunt and everyone was laughing because I was not supposed to
+        <em>plaster the seeds</em> inside ground but welp, whatever the kid me did. However,
+        couple of days later, a tiny plant grew and that surprised everybody including
+        me. It was such a proud moment too :) I guess that also made me a proud father
+        that day xD.<br>
+        Unfortunately, I do not get to engage in gardening a lot in my home town so I
+        only get to do that when I am at granny's place. Still enjoy the heck out of
+        it though even though it kinda makes my clothes dirty xD.</p>
+        <h2>Writing Humourous Stuff</h2>
+        <p>I am that guy who sees a quote or a joke and make his own version of it xD.
+        Whenever I am burnt out from programming or designing something, I write
+        one-liner jokes or other humourous stuff. I don't write stories &amp; such. I have
+        only written one and <em>I may turn it into a book in the future</em>; no promises
+        though. Apart from that, I also write blogs (obviously lol) and I read a
+        bunch. I really wish I had a kindle or an e-ink display for reading. It would
+        hurt my eyes so less and I would be able to read so much more :p</p>
+        <h2>Coding / Programming</h2>
+        <p>This one should be obvious haha. This is a hobby, a skill, a profession,
+        whatever you wanna call it. I have been actively learning &amp; doing this since
+        2023 and still not bored from it. Coding is surprisingly creative and
+        addictive.</p>
+        <h2>Maths</h2>
+        <p>This one should also be obvious, especially if you are someone who knows me
+        personally. Some people say that maths isn't required for programming and I
+        somewhat agree with that statement but mostly disagree. Sure, you can program
+        without knowing maths but you won't be able to enjoy it as much. Maths ain't
+        just playing with numbers. It is the game you play which teaches you how to
+        think. It enables you to see things and problems in a completely different way.
+        And I am so thankful that I was a maths guy (I guess it is in my Indian DNA
+        xD). I use mathematical modelling a lot to optimize algorithms and such.
+        Solving math problems is fun too. I wish I could say the same for physics. I
+        was always the physics person too but I haven't revised that in a while so I
+        have kinda forgotten some of it. Not the part where it taught me how to see
+        problems in different lenses tho'! And how to break a big problem into smaller
+        ones and make problem solving easier :)</p>
+        <h2>Activities I wanna get into in the future</h2>
+        <h3>Bouldering / Rock Climbing</h3>
+        <p>I wish there was a bouldering gym near me :( and also a calesthenics gym. I
+        love that and the gymnastics and the power activities which required you to
+        use every part of your body.</p>
+        <h3>Improv</h3>
+        <p>Same as bouldering, I wish there were improv classes nearby. I love things
+        related to communication in general, whether it is just having a good talk
+        with friends or sharing crucial information in a meeting or giving a talk or
+        performing for an audience. I actually do wanna give an engaging talk
+        somewhere. Hook me up if you can. I can try giving a talk related to
+        programming, open-sourced or how to be an effective communicator &amp; such to
+        students or juniors or whoever you think would benefit from them :)</p>
+        
+      </main>
+    </div>
+    <footer style="padding: 1rem; margin-left: auto; margin-right: auto; width: calc(100% - 2rem); max-width: 62.5rem; border-radius: 1.5rem; box-shadow: 0 0 1rem #222222; background-color: rgba(17, 17, 17, 0.7)">
+      <div style="display: grid; text-align: center; grid-template-columns: 1.0fr 1.0fr">
+        <div>
+          <div style="margin-left: auto; margin-right: auto; display: flex; width: fit-content; text-align: left; flex-direction: column">
+            <strong>More</strong>
+            <a href="/contacts">Contacts &amp; Socials</a>
+            <a href="/projects">Projects</a>
+            <a href="/blogs">Blogs</a>
+            <a href="/support">Support</a>
+          </div>
+        </div>
+        <div>
+          <div style="margin-left: auto; margin-right: auto; display: flex; width: fit-content; text-align: left; flex-direction: column"><strong>Info</strong><a href="/privacy">Privacy</a></div>
+        </div>
+      </div>
+      <div style="margin-top: 1rem; text-align: center">
+        © Shubham LaV, 2025.
+        <div style="margin-top: 0.5rem; margin-left: auto; margin-right: auto; display: flex; width: 60%; justify-content: space-between; align-items: center">
+          <a href="https://github.com/ShubhamVG"><img style="width: 2rem" alt="Github" src="https://www.svgrepo.com/show/475654/github-color.svg"/></a>
+          <a href="https://bsky.app/profile/lavisse.bsky.social">
+            <img style="width: 2rem" alt="BlueSky" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bluesky_Logo.svg/600px-Bluesky_Logo.svg.png"/>
+          </a>
+          <a href="mailto:vgshubham50@gmail.com">
+            <img style="width: 2rem" alt="E-mail" src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454734_640.png"/>
+          </a>
+          <a href="https://ko-fi.com/brainiacsin"><img style="width: 2rem" alt="Ko-fi" src="/images/ko-fi.svg"/></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

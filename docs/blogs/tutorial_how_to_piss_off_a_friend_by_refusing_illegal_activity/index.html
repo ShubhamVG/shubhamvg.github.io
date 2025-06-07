@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="/"/>
+    <meta charset="utf-8"/>
+    <!--$-->
+    <title>Tutorial: How to piss off a friend by refusing illegal activity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="language" content="English"/>
+    <meta name="author" content="LaV"/>
+    <meta name="title" content="Tutorial: How to piss off a friend by refusing illegal activity"/>
+    <meta name="description" content="The story of how I am not friends with a certain someone by refusing  to do something illegal...
+"/>
+    <meta name="keywords" content="tutorial, illegal, robinhood, app, money, ads, small business,  independent, creators
+"/>
+    <!--/-->
+    <script src="main.clients.dart.js" defer></script>
+    <style>
+      @import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap);
+      @keyframes moveCirc {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes moveNE {
+        0% {
+          transform: translate(-50%, 20%);
+        }
+        50% {
+          transform: translate(50%, -20%);
+        }
+        100% {
+          transform: translate(-50%, 20%);
+        }
+      }
+      @keyframes moveVert {
+        0% {
+          transform: translateY(-50%);
+        }
+        50% {
+          transform: translateY(50%);
+        }
+        100% {
+          transform: translateY(-50%);
+        }
+      }
+      #g1 {
+        width: 80%;
+        height: 80%;
+        position: absolute;
+        animation: moveCirc 30s ease infinite;
+        background: radial-gradient(circle, hsla(147, 100%, 36%, 1) 0%,hsla(194, 83%, 26%, 0) 50%);
+        transform-origin: center center;
+      }
+      #g2 {
+        width: 80%;
+        height: 80%;
+        position: absolute;
+        animation: moveNE 20s ease infinite;
+        background: radial-gradient(circle, rgb(19, 141, 94) 0%,hsla(194, 83%, 26%, 0) 50%);
+        transform-origin: center center;
+      }
+      #g3 {
+        width: 80%;
+        height: 80%;
+        position: absolute;
+        animation: moveVert 20s ease infinite;
+        background: radial-gradient(circle, rgb(8, 190, 160) 0%,hsla(194, 83%, 26%, 0) 50%);
+        transform-origin: center center;
+      }
+      #gradient-bg {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: linear-gradient(135deg, rgb(8, 43, 24) 0%, rgb(15, 58, 34)26%, hsla(147, 50%, 8%, 1) 60%, hsla(0, 0%, 0%, 1) 100%);
+      }
+      #gradient-bg>svg {
+        width: 0;
+        height: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      #gradients {
+        width: 100%;
+        height: 100%;
+        filter: url(#goo) blur(2.5rem);
+      }
+      .blog-article {
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+      .blog-article * {
+        margin: 0;
+      }
+      .blog-article > footer {
+        margin-top: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+      }
+      .carousel {
+        display: flex;
+        position: relative;
+      }
+      .carousel-btn {
+        width: 3rem;
+        height: 3rem;
+        border: none;
+        border-radius: 9999rem;
+        background-color: transparent;
+        align-self: center;
+      }
+      .carousel-btn > img {
+        height: 100%;
+        border-radius: 9999rem;
+        box-shadow: 0 0 0.5rem black;
+        transition: all 300ms;
+        aspect-ratio: 1 / 1;
+      }
+      .carousel-btn > img:hover {
+        transition: all 300ms;
+        scale: 120%;
+      }
+      .carousel-btn-left {
+        position: absolute;
+        left: 5vw;
+      }
+      .carousel-btn-right {
+        position: absolute;
+        right: 5vw;
+      }
+      .carousel-container {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        width: 95%;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 0 1rem #222222;
+        background-color: rgba(17, 17, 17, 0.4);
+        aspect-ratio: 16 / 9;
+        scroll-snap-type: x proximity;
+      }
+      .carousel-item {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+      }
+      .carousel-item > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      header {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        max-width: 62.5rem;
+        z-index: 10;
+        justify-content: space-between;
+      }
+      @media screen and (max-width: 50rem) {
+        header {
+          margin-top: 0.65rem;
+          margin-left: 0.65rem;
+          margin-right: 0.65rem;
+          position: relative;
+        }
+      }
+      main {
+        margin: 1rem auto;
+        max-width: 62.5rem;
+      }
+      @media screen and (max-width: 50rem) {
+        main {
+          margin-left: 0.63rem;
+          margin-right: 0.63rem;
+        }
+      }
+      #ham-menu {
+        display: none;
+      }
+      nav {
+        margin-top: auto;
+        margin-bottom: auto;
+        height: fit-content;
+        flex-basis: 100%;
+      }
+      #nav-bg {
+        display: none;
+      }
+      #nav-items {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-left: auto;
+        margin-right: 0;
+        display: flex;
+        width: 90%;
+        height: 2rem;
+        min-width: 40rem;
+        outline-color: rgb(0, 141, 59);
+        outline-style: solid;
+        outline-width: 0.06rem;
+        border-radius: 2rem;
+        box-shadow: 0 0 0.5rem black;
+        background-color: rgba(7, 99, 53, 0.34901960784313724);
+        justify-content: space-between;
+        align-items: center;
+      }
+      #nav-items a {
+        transition: all 300ms ease-out;
+        user-select: none;
+        -webkit-user-select: none;
+        text-shadow: 0 0 rgba(0, 255, 170, 0.5019607843137255);
+      }
+      #nav-items a:hover {
+        scale: 120%;
+      }
+      @media screen and (max-width: 50rem) {
+        #ham-menu {
+          margin-left: auto;
+          margin-right: 0;
+          display: block;
+          width: fit-content;
+        }
+        #ham-menu.active div:nth-child(1) {
+          transform: translateY(150%) rotate(45deg);
+        }
+        #ham-menu.active div:nth-child(2) {
+          opacity: 0.0;
+        }
+        #ham-menu.active div:nth-child(3) {
+          transform: translateY(-150%) rotate(-45deg);
+        }
+        #ham-menu div {
+          margin-top: 0.19rem;
+          width: 1.7rem;
+          height: 0.3rem;
+          border-radius: 1.25rem;
+          transition: all 300ms;
+          background-color: #86ffc1;
+        }
+        nav {
+          margin-top: 0;
+          margin-bottom: auto;
+        }
+        #nav-bg.active {
+          display: block;
+          width: 100vw;
+          height: 100vh;
+          position: fixed;
+          top: 0;
+          left: 0;
+          backdrop-filter: blur(2rem);
+        }
+        #nav-items {
+          padding: 0;
+          display: none;
+          width: 100%;
+          height: auto;
+          min-width: auto;
+          opacity: 0.0;
+          border-radius: 0;
+          position: absolute;
+          right: 0;
+          visibility: hidden;
+          transform: translateY(50%);
+          transition: all 300ms;
+        }
+        #nav-items.active {
+          display: grid;
+          opacity: 1.0;
+          visibility: visible;
+          transition: all 300ms;
+          grid-template-columns: 1.0fr 1.0fr;
+        }
+        #nav-items a {
+          padding: 1rem;
+          outline-color: rgb(0, 141, 59);
+          outline-style: solid;
+          outline-width: 0.06rem;
+          text-align: center;
+        }
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0.0;
+        }
+      }
+      #typewriter-container {
+        width: fit-content;
+      }
+      #typewriter-text {
+        padding-right: 0.1rem;
+        width: 100%;
+        max-width: 100vw;
+        border-right-style: solid;
+        border-right-width: 0.31rem;
+        overflow: hidden;
+        font-size: 1.5rem;
+        white-space: nowrap;
+      }
+      .typing-delete {
+        animation: cursor-blink 0.5s step-end infinite alternate,typing-delete 1s forwards;
+      }
+      .typing-start {
+        animation: cursor-blink 0.5s step-end infinite alternate,typing-start 1.2s forwards;
+      }
+      @keyframes cursor-blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+      @keyframes typing-delete {
+        100% {
+          width: 0;
+        }
+      }
+      @keyframes typing-start {
+        from {
+          width: 0;
+        }
+      }
+      #year-progress {
+        display: flex;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 9999rem;
+        position: relative;
+        box-shadow: 0 0 0.5rem #00ff8c;
+        justify-content: center;
+        align-items: center;
+        background: conic-gradient(#00c569 var(--progress, 0%),#2b2b2b var(--progress, 0%) 100%);
+      }
+      #year-progress::before {
+        width: 90%;
+        height: 90%;
+        border-radius: 9999rem;
+        position: absolute;
+        box-shadow: 0 0 0.5rem #00ff8c;
+        content: "";
+        background: linear-gradient(135deg, hsla(0, 0%, 0%, 1) 22%,rgb(18, 70, 44) 53%, rgb(29, 94, 67) 84%, rgb(13, 189, 136) 100%);
+      }
+      #year-progress > span {
+        width: 80%;
+        z-index: 1;
+        font-size: 1.3rem;
+        text-align: center;
+      }
+      .crown {
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        top: -1.25rem;
+        right: -0.4rem;
+        rotate: 30deg;
+      }
+      .goal {
+        padding: 0.5rem;
+        display: flex;
+        width: 100%;
+        align-items: center;
+      }
+      .goal-logo {
+        width: 80%;
+        height: 80%;
+        border-radius: 9999rem;
+        z-index: 1;
+      }
+      .goal-progress {
+        display: flex;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 9999rem;
+        position: relative;
+        box-shadow: 0 0 0.5rem #00ff8c;
+        justify-content: center;
+        align-items: center;
+        background: conic-gradient(#00c569 var(--progress, 0%),#2b2b2b var(--progress, 0%) 100%);
+      }
+      .goal-progress::before {
+        width: 80%;
+        height: 80%;
+        border-radius: 9999rem;
+        position: absolute;
+        content: "";
+        background: linear-gradient(135deg, rgb(8, 43, 24) 0%, rgb(15, 58, 34)26%, hsla(147, 50%, 8%, 1) 60%, hsla(0, 0%, 0%, 1) 100%);
+      }
+      .goal-text {
+        padding: 1rem;
+        margin: 0.5rem;
+        width: 80%;
+        min-height: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 0.4rem #00ff8c;
+        background-color: rgba(32, 32, 32, 0.24705882352941178);
+      }
+      .goals-category-title {
+        margin-top: 2rem;
+        margin-bottom: 0;
+        font-size: 1.2rem;
+      }
+      .goals-container {
+        margin-right: 0.8rem;
+        margin-bottom: 2rem;
+        display: grid;
+        grid-template-columns: 1.0fr 1.0fr;
+        column-gap: 1.5rem;
+      }
+      #year-container {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        width: fit-content;
+      }
+      #year-text {
+        margin-left: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      @media screen and (max-width: 50rem) {
+        .goal {
+          width: fit-content;
+        }
+        .goal:nth-child(even) {
+          margin-left: auto;
+          margin-right: 0;
+        }
+        .goal-text {
+          width: 70%;
+        }
+        .goals-container {
+          display: block;
+        }
+      }
+      @media screen and (max-width: 39rem) {
+        .goal {
+          width: 80%;
+        }
+        .goal-text {
+          width: calc(90% - 5rem);
+        }
+        #year-container {
+          display: block;
+        }
+        #year-progress {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        #year-text {
+          display: block;
+        }
+      }
+      :root {
+        font-family: 'Titillium Web';
+        color-scheme: dark;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      .badge {
+        padding: 0.25rem;
+        display: inline-block;
+        outline-color: rgb(0, 141, 59);
+        outline-style: solid;
+        outline-width: 0.06rem;
+        border-radius: 0.4rem;
+        transition: all 300ms ease;
+        background-color: rgba(5, 80, 43, 0.611764705882353);
+      }
+      .badge:hover {
+        box-shadow: 0 0 black;
+        scale: 120%;
+        backdrop-filter: blur(1rem);
+      }
+      body {
+        display: flex;
+        min-height: 100vh;
+        position: relative;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      body * {
+        text-shadow: 0 0 0.5rem black;
+      }
+      .fancy-badge {
+        padding: 0.4rem 0.5rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        display: inline-flex;
+        border-radius: 9999rem;
+        position: relative;
+        transition: all 300ms;
+        font-weight: bold;
+        background-color: black;
+        justify-content: center;
+        align-items: center;
+        background: conic-gradient(black var(--ps, 0%),white var(--pe, 0%) var(--ps, 10%),black var(--pe, 10%) 100%);
+        --progress-start: 20%;
+        --progress-end: 42%;
+        animation: dance 5s linear infinite alternate;
+      }
+      .fancy-badge:hover {
+        transition: all 300ms;
+        scale: 120%;
+      }
+      .fancy-badge::before {
+        width: 95%;
+        height: 90%;
+        border-radius: 9999rem;
+        position: absolute;
+        content: "";
+        background: black;
+      }
+      .fancy-badge:hover::before {
+        width: 90%;
+        height: 90%;
+      }
+      .fancy-badge > span {
+        z-index: 1;
+        text-align: center;
+      }
+      .font-large {
+        font-size: 1.5rem;
+      }
+      wavy {
+        display: inline;
+        text-decoration: underline wavy 0.06rem;
+      }
+      .wavy-text {
+        text-decoration: underline wavy 0.06rem;
+      }
+      @property --pe {
+        syntax: '<percentage>';
+        initial-value: 20%;
+        inherits: false;
+      }
+      @property --ps {
+        syntax: '<percentage>';
+        initial-value: 0%;
+        inherits: false;
+      }
+      @keyframes dance {
+        100% {
+          --ps: 80%;
+          --pe: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="gradient-bg">
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="goo">
+              <fegaussianblur in="SourceGraphic" result="blur" stdDeviation="10"></fegaussianblur>
+              <fecolormatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo"></fecolormatrix>
+              <feblend in="SourceGraphic" in2="goo"></feblend>
+            </filter>
+          </defs>
+        </svg>
+        <div id="gradients"><div id="g1"></div><div id="g2"></div><div id="g3"></div></div>
+      </div>
+      <header>
+        <!--@components/time-->
+        <div>
+          <div style="display: flex; font-size: 2rem; line-height: 90%"><div>10</div><div style="animation: blink 0.5s step-end infinite alternate">:</div><div>01</div></div>
+          <div><div>7th Jun</div></div>
+        </div>
+        <!--/@components/time-->
+        <!--@components/navbar-->
+        <nav>
+          <div id="nav-bg"></div>
+          <div id="ham-menu"><div></div><div></div><div></div></div>
+          <div id="nav-items">
+            <a href="/projects">Projects</a>
+            <a href="/blogs">Blogs</a>
+            <a href="/goals">Goals</a>
+            <a href="/support">Support</a>
+            <a href="/contacts">Contacts &amp; Socials</a>
+            <a href="/fav-tech">Fav Tech</a>
+            <a href="/journey">Journey</a>
+            <a href="/hobbies">Hobbies</a>
+          </div>
+        </nav>
+        <!--/@components/navbar-->
+      </header>
+      <style>
+        #gradient-bg {
+          display: none;
+        }
+      </style>
+      <main>
+        <h1>Tutorial: How to piss off a friend by refusing illegal activity</h1>
+        <p>The story of how I am not friends with a certain someone by refusing to do
+        something illegal. Oh welp, how do I even start LoL, buckle up 'cuz it is both
+        a fun and wild ride.</p>
+        <h2>Characters</h2>
+        <p>There are two characters only. One is me, and the other we shall call
+        <em>Svetlana</em>.
+        <br>
+        Svetlana is an aspirational UI/UX designer and actually, she is interested in
+        some other creative fields as well like making 3D models with Blender. That
+        should be enough for an introduction.</p>
+        <h2>Tutorial Starts Here</h2>
+        <p>So, after meeting Svetlana on a Discord server about UI designing, I shoot her
+        a DM asking if she is open to collab on projects. By collab, what I mean is
+        that I am a dev &amp; she is a designer so we both will pitch each other app ideas
+        and work on them together (for free) to bring our apps to life, and split the
+        profit if we make any.
+        <br><br>
+        She was happy to hear that as it was a good opportunity for the both of us and
+        she was down to collab so, we started exchanging ideas. I pitched mine first
+        and I believe it was <a href='https://brainiacs.in' class='wavy-text' 
+        target='_blank'>brainiacs.in</a> and she didn't dislike it but <em>wanted us to
+        work on her idea first</em>. That wasn't a red flag but <em>what she pitched next
+        was</em>.</p>
+        <h2>The Illegal Robinhood App</h2>
+        <p>She pitched an app idea where the users can watch ads and earn money.
+        <br>
+        <img 
+        src='https://statico.soapcentral.com/editor/2024/10/a5f5a-17299280494991.jpg' 
+        alt='those who you' 
+        width='80%' style='display:block;margin:0 auto;' />
+        <br>
+        Those who know how ads, licenses or ToS works can guess how terrible of an
+        idea this is and for those who do not, do not worry. I will explain, with
+        <em>morals, maths and everything</em> how bad this idea really is.
+        <br><br>
+        Coming back to Svetlana, she told me that she wanted to bring this app to life
+        to help the needy or something. <em>I asked Svetlana if she had read the ToS of
+        Google ads.</em> She said no which I had expected of course, and I started telling
+        her how we cannot legally do that.
+        <br><br>
+        I send her the exact section of the ToS which prevented us from doing that and
+        told her how we may get sued if we make the app she just pitched. BTW, in
+        writing, it is just 2-3 lines but it took good 5-10 minutes to find and
+        explain everything. After hearing that, she was sad &amp; upset which is to be
+        expected from any creator when their idea(s) die in front of them.</p>
+        <h2>5 Stages of Grief (or maybe only 3?)</h2>
+        <p>Guess how Svetlana reacted or what she did next? <em>That dum b*itch asked an AI
+        to justify that making her illegal app idea</em>. (To those who are upset by my
+        choice of words, I am not trying to character assassinate her. You will see
+        why I chose the words I did).</p>
+        <h3>LLMs are dum-dum but she was dumber</h3>
+        <p>Look, <em>being upset &amp; angry in her position is totally understandable</em>, and I
+        tried giving her some space too but well, <wavy><em>her denial, anger &amp;
+        bargaining all came at once</em></wavy>. First, she asked an AI and you know how
+        LLM answers in a way to feed into your confirmation bias. For example, if you
+        ask any LLM whether it is justified to drink alcohol, then it will say yes and
+        it will give you a few reasons to why it is okay, and if you ask how the same
+        LLM whether it is not justified to drink alcohol, then this time it may say no
+        and will give you a few reasons why drinking alcohol is never good.
+        <br><br>
+        <strong>BUT</strong> in Svetlana's case, even though the LLM fed into the confirmation bias
+        and told her what she wanted to hear, <em><strong>the LLM still told her that she could
+        get sued for making that app as it is is illegal</strong></em>.</p>
+        <h3>Anger and Bargaining and that's it?</h3>
+        <p>Well, she hadn't read that even the LLM says the idea is illegal part LoL. She
+        just sent me the screenshot of the AI telling her whatever and I actually
+        pointed out that the section where the LLM had said that it violated blah blah
+        and what not. Anyways, how did she react to that? <em>By saying f*uck the law
+        and that she wants to be like Robinhood</em>. She did really say both those
+        things. I am not making anything up.</p>
+        <h2>The Ethics &amp; Mathematics of how the idea is both terrible &amp; illegal</h2>
+        <p>Well, since she only cared about the moral and ethics part of helping the
+        needy or however she had put it like, I started to tell her why it is both
+        morally and ethically wrong too.</p>
+        <h3>Morally &amp; Ethically</h3>
+        <p>I haven't read Robinhood but according to everything I have heard (and after
+        ignoring the criminal part like where his bandit group will kill people &amp;
+        stuff), Robinhood would <strong>rob the rich and donate to the poor</strong>. Is that
+        okay to do? For the benefit of the doubt, let's say yes. <em>However, for
+        Svetlana's case, she isn't really robbing the rich. <wavy>She is robbing the
+        poor too!</wavy></em>
+        <br><br>
+        Look, not only rich businesses put up ads for their services. Small local
+        businesses and independent creators do too. They work their butts off and save
+        a little to invest on ads dreaming to expand their horizon and what would an
+        app that will basically eat ads do? Hurt their investments and their dreams! I
+        know this 'cuz back then, I was helping out a cousin put ads for some service
+        he was planning to start.
+        <br><br>
+        I guess it was easy for Svetlana to ignore all the hundreds of thousands of
+        small business owners and independent creators who spend on that. I am not
+        suggesting that robbing rich mega corporations is a good thing either. That
+        is equally as bad too but putting that aside, what do you think? Is the app
+        idea still justified? Not to forget that we can get sued anytime and other
+        legal complications that still remain.</p>
+        <h3>Maths behind the investment</h3>
+        <p>Enough chit chat. Let's crunch down some numbers now. Time to use my beloved
+        math skills :)
+        <br><br>
+        BTW, I am not an expert on ads or anything. But according to my understanding,
+        the way Google ads work is that you first upload your ads to Google and spend
+        however much you want to, and then Google will promote them at the places they
+        feel relevant for example on websites which uses AdSense or on YouTube videos,
+        and the respective owners of those websites or YouTube channels gets some
+        money from what the ad publisher had invested.
+        <br><br>
+        I am not sure about the exact ratio of how much Google's Ads services keep and
+        how much they pays to the ad promoters (websites, YouTube channels, etc.). The
+        ratio could be 90-10 (where Google Ads keep 90% of the money and pays the
+        promoters 10% only) or 60-40 or anything. Let's go with 60-40 for now.
+        <br><br>
+        In that case, if the app were to exist with say 5000 active users, then:</p>
+        <ul>
+        <li>For every $1000 invested by an ad publisher</li>
+        <li>The host company like Google will take $600 (since it's 60-40 ratio)</li>
+        <li>The remaining $400 that the app earns will be split among 5000 users so each
+        will only receive $0.08 or 8 cents.</li>
+        </ul>
+        <p>What an amazing Robinhood story this is! The hero robs both the rich and the
+        poor, then pays more than half the money to the rich first, and lastly, gives
+        1 dime, single a single coin, to all the poor/needy people. What a heroic feat!
+        /s</p>
+        <h2>So what happened to the app, the collab and the friendship?</h2>
+        <p>I took my time and explained her everything. It took maybe an hour. Well, she
+        bargained after the denial &amp; anger. I still refused to collab on that app and
+        asked if she has any other ideas but well, it was too late. She didn't have
+        any and she indirectly said that <wavy><em>if we aren't collaborating on this
+        one, then we aren't collaborating on any</em></wavy>.
+        <br><br>
+        Well, need I say anything more? I knew that we aren't gonna collab and she
+        isn't the rational type so trying anything was just gonna be wasteful but I
+        don't like to end conversations or discussions with negativity lurking so
+        before bidding her adieu, I said something along the lines of <em>&quot;It's okay even
+        if we don't collab but the stuff you do is interesting so can we be in touch
+        and share the amazing things we do every once in a while?&quot;</em> and she said sure.
+        <br><br>
+        Fast forward to a few weeks later, I texted her to catch up on her hoping that
+        maybe she has realized her mistake but what did I get? A dry response
+        suggesting that the air is still tensed around us. Well, that ensures that I'm
+        never gonna get an apology from her xD
+        <br><br>
+        Couple of weeks later, she was doing something with Blender, maybe watching
+        the mandatory donut course by Blender Guru. I texted her for that and I
+        congratulated her for her final render because it was &quot;holy smokes&quot; amazing.
+        It even took her multiple days to render which makes it more amazing and I
+        praised her for her amazing work. She said thanks and then I asked her if
+        she'll try to get into game dev next. And I haven't received a reply ever
+        since :p</p>
+        <h2>Conclusion</h2>
+        <p>I don't know if the air is still tensed between us but I'm not gonna text
+        anymore. Anyways, I don't know about you but it was a crazy experience for me
+        as I felt that she was gonna hate me for real, and maybe does; we'll never
+        know.
+        <br><br>
+        I hope that I was able to knock some sense into some of you tho' and now some
+        of you understand why making such an app will be a terrible idea. Another
+        takeaway should be that I tried to ease things between us, or more
+        importantly, <em>I did not end the conversation when something negative was going
+        on</em>. Recall that I asked Svetlana if it was okay to be in touch even if we
+        don't end up collabing. It wasn't my intention to ask her to collab in the
+        future but I did it to ease out the negativity lurking and the tense air. It
+        doesn't matter if it that works or not but I always suggest that you try to do
+        that. You are smart enough to know and understand why ;)</p>
+        
+      </main>
+    </div>
+    <footer style="padding: 1rem; margin-left: auto; margin-right: auto; width: calc(100% - 2rem); max-width: 62.5rem; border-radius: 1.5rem; box-shadow: 0 0 1rem #222222; background-color: rgba(17, 17, 17, 0.7)">
+      <div style="display: grid; text-align: center; grid-template-columns: 1.0fr 1.0fr">
+        <div>
+          <div style="margin-left: auto; margin-right: auto; display: flex; width: fit-content; text-align: left; flex-direction: column">
+            <strong>More</strong>
+            <a href="/contacts">Contacts &amp; Socials</a>
+            <a href="/projects">Projects</a>
+            <a href="/blogs">Blogs</a>
+            <a href="/support">Support</a>
+          </div>
+        </div>
+        <div>
+          <div style="margin-left: auto; margin-right: auto; display: flex; width: fit-content; text-align: left; flex-direction: column"><strong>Info</strong><a href="/privacy">Privacy</a></div>
+        </div>
+      </div>
+      <div style="margin-top: 1rem; text-align: center">
+        © Shubham LaV, 2025.
+        <div style="margin-top: 0.5rem; margin-left: auto; margin-right: auto; display: flex; width: 60%; justify-content: space-between; align-items: center">
+          <a href="https://github.com/ShubhamVG"><img style="width: 2rem" alt="Github" src="https://www.svgrepo.com/show/475654/github-color.svg"/></a>
+          <a href="https://bsky.app/profile/lavisse.bsky.social">
+            <img style="width: 2rem" alt="BlueSky" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Bluesky_Logo.svg/600px-Bluesky_Logo.svg.png"/>
+          </a>
+          <a href="mailto:vgshubham50@gmail.com">
+            <img style="width: 2rem" alt="E-mail" src="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454734_640.png"/>
+          </a>
+          <a href="https://ko-fi.com/brainiacsin"><img style="width: 2rem" alt="Ko-fi" src="/images/ko-fi.svg"/></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

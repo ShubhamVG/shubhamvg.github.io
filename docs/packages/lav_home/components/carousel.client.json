@@ -1,0 +1,1 @@
+{"name":"Carousel","id":["lav_home","lib/components/carousel.dart"],"import":"package:lav_home/components/carousel.dart","params":[{"name":"images","isNamed":false,"decoder":"(p['images'] as List<dynamic>).cast<String>()","encoder":"c.images"}]}
