@@ -1,1 +1,0 @@
-{"name":"YearProgress","id":"components/year_progress","import":"package:lav_home/components/year_progress.dart","params":[{"name":"year","isNamed":false,"decoder":"p['year']","encoder":"c.year"}]}

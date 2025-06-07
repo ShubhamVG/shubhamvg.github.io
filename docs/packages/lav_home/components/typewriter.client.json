@@ -1,1 +1,0 @@
-{"name":"Typewriter","id":"components/typewriter","import":"package:lav_home/components/typewriter.dart","params":[{"name":"messages","isNamed":true,"decoder":"(p['messages'] as List<dynamic>).cast<String>()","encoder":"c.messages"}]}

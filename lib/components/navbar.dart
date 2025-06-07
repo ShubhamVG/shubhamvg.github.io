@@ -24,7 +24,7 @@ class Navbar extends StatelessComponent {
     css('nav').styles(
       height: Unit.fitContent,
       margin: Margin.symmetric(vertical: Unit.auto),
-      flex: Flex(basis: FlexBasis(100.percent)),
+      flex: Flex(basis: 100.percent),
     ),
     css('#nav-bg').styles(display: Display.none),
     css('#nav-items').styles(

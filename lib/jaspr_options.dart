@@ -34,7 +34,7 @@ import 'package:lav_home/app.dart' as prefix11;
 ///   runApp(...);
 /// }
 /// ```
-final defaultJasprOptions = JasprOptions(
+JasprOptions get defaultJasprOptions => JasprOptions(
   clients: {
     prefix2.Carousel: ClientTarget<prefix2.Carousel>(
       'components/carousel',
@@ -55,21 +55,20 @@ final defaultJasprOptions = JasprOptions(
       params: _prefix9YearProgress,
     ),
   },
-  styles:
-      () => [
-        ...prefix0.AuroraBackground.styles,
-        ...prefix1.BlogArticle.styles,
-        ...prefix2.Carousel.styles,
-        ...prefix3.Footer.styles,
-        ...prefix4.Header.styles,
-        ...prefix5.Main.styles,
-        ...prefix6.Navbar.styles,
-        ...prefix7.Time.styles,
-        ...prefix8.TypewriterState.styles,
-        ...prefix9.YearProgress.styles,
-        ...prefix10.GoalYear.styles,
-        ...prefix11.App.styles,
-      ],
+  styles: () => [
+    ...prefix0.AuroraBackground.styles,
+    ...prefix1.BlogArticle.styles,
+    ...prefix2.Carousel.styles,
+    ...prefix3.Footer.styles,
+    ...prefix4.Header.styles,
+    ...prefix5.Main.styles,
+    ...prefix6.Navbar.styles,
+    ...prefix7.Time.styles,
+    ...prefix8.TypewriterState.styles,
+    ...prefix9.YearProgress.styles,
+    ...prefix10.GoalYear.styles,
+    ...prefix11.App.styles,
+  ],
 );
 
 Map<String, dynamic> _prefix2Carousel(prefix2.Carousel c) => {
