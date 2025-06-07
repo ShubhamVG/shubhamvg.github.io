@@ -4,7 +4,10 @@ import 'app.dart';
 import 'jaspr_options.dart';
 
 void main() {
-  Jaspr.initializeApp(options: defaultJasprOptions);
+  Jaspr.initializeApp(
+    options: defaultJasprOptions,
+    useIsolates: true,
+  );
 
   runApp(Document(
     title: 'LaV',

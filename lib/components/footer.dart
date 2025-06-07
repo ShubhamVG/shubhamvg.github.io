@@ -19,7 +19,7 @@ class Footer extends StatelessComponent {
         shadow: BoxShadow(
             offsetX: Unit.zero,
             offsetY: Unit.zero,
-            color: Color.hex('#222222'),
+            color: Color('#222222'),
             blur: 1.rem),
         backgroundColor: glassDark,
       ),

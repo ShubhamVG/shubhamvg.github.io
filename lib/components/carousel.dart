@@ -100,7 +100,7 @@ class Carousel extends StatelessComponent {
             offsetX: Unit.zero,
             offsetY: Unit.zero,
             blur: 1.rem,
-            color: Color.hex('#222222')),
+            color: Color('#222222')),
         backgroundColor: glassTranslucent,
         raw: {
           'aspect-ratio': '16 / 9',

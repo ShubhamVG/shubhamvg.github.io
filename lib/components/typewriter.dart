@@ -1,4 +1,5 @@
-import 'dart:async';
+@Import.onWeb('dart:async', show: [#Timer])
+import 'typewriter.imports.dart';
 
 import 'package:jaspr/jaspr.dart';
 
@@ -20,6 +21,10 @@ class TypewriterState extends State<Typewriter> {
   @override
   void initState() {
     msg = component.messages[0];
+
+    // Server environment would scream an error
+    if (!kIsWeb) return;
+
     Timer.periodic(const Duration(seconds: 5), (_) {
       const deletionTime = Duration(milliseconds: 1100);
 
