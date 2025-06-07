@@ -53,6 +53,7 @@ packages/lav_home/components/navbar.styles.json
 packages/lav_home/components/time.client.json
 packages/lav_home/components/time.styles.json
 packages/lav_home/components/typewriter.client.json
+packages/lav_home/components/typewriter.imports.json
 packages/lav_home/components/typewriter.styles.json
 packages/lav_home/components/year_progress.client.json
 packages/lav_home/components/year_progress.styles.json

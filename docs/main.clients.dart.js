@@ -2266,7 +2266,7 @@ lO(){return A.et("prefix1","")},
 lP(){return A.et("prefix2","")},
 lQ(){return A.et("prefix3","")},
 lR(){return A.et("prefix4","")},
-n6(){A.nf(A.f_(["components/time",A.es(A.n9(),new A.hM()),"components/typewriter",A.es(A.na(),new A.hN()),"components/carousel",A.es(A.n7(),new A.hO()),"components/year_progress",A.es(A.nb(),new A.hP()),"components/navbar",A.es(A.n8(),new A.hQ())],t.N,t.D))},
+n6(){A.nf(A.f_(["components/time",A.es(A.n9(),new A.hM()),"components/carousel",A.es(A.n7(),new A.hN()),"components/year_progress",A.es(A.nb(),new A.hO()),"components/navbar",A.es(A.n8(),new A.hP()),"components/typewriter",A.es(A.na(),new A.hQ())],t.N,t.D))},
 hM:function hM(){},
 hN:function hN(){},
 hO:function hO(){},
@@ -2294,8 +2294,8 @@ case 5:case 3:++n
 r=2
 break
 case 4:return 0
-case 1:return b.c=p.at(-1),3}}}}},B={},C={},D={},H={},I={},K={},E={},F={},L={},M={},N={},O={},P={},Q={},R={},S={},G={},T={}
-var w=[A,J,B,C,G,D,E,F,I,R,Q,N,O,H,L,M,S,T,K,P]
+case 1:return b.c=p.at(-1),3}}}}},B={},C={},H={},I={},D={},E={},K={},F={},L={},M={},N={},O={},P={},Q={},R={},S={},G={},T={}
+var w=[A,J,B,C,G,D,E,F,H,R,Q,N,O,T,K,M,S,L,I,P]
 var $={}
 A.i5.prototype={}
 J.dn.prototype={
@@ -4606,22 +4606,22 @@ return C.mW(a)},
 $S:5}
 A.hN.prototype={
 $1(a){t.a.a(a)
-A.eq("prefix3")
+A.eq("prefix0")
 return G.mV(a)},
 $S:5}
 A.hO.prototype={
 $1(a){t.a.a(a)
-A.eq("prefix0")
+A.eq("prefix4")
 return D.mU(a)},
 $S:5}
 A.hP.prototype={
 $1(a){t.a.a(a)
-A.eq("prefix4")
+A.eq("prefix1")
 return E.mT(a)},
 $S:5}
 A.hQ.prototype={
 $1(a){t.a.a(a)
-A.eq("prefix1")
+A.eq("prefix3")
 return F.mS(a)},
 $S:5};(function aliases(){var s=J.aM.prototype
 s.cm=s.i
@@ -4733,8 +4733,8 @@ initializeLoadedHunk:function(a){var s=$__dart_deferred_initializers__[a]
 if(s==null){throw"DeferredLoading state error: code with hash '"+a+"' was not loaded"}initializeDeferredHunk(s)
 v.deferredInitialized[a]=true},
 deferredLibraryParts:{prefix0:[0,1,2,3],prefix1:[0,1,2,4],prefix2:[0,1,5,6,7],prefix3:[0,6,8],prefix4:[0,1,5,9]},
-deferredPartUris:["main.clients.dart.js_3.part.js","main.clients.dart.js_2.part.js","main.clients.dart.js_11.part.js","main.clients.dart.js_10.part.js","main.clients.dart.js_13.part.js","main.clients.dart.js_4.part.js","main.clients.dart.js_5.part.js","main.clients.dart.js_1.part.js","main.clients.dart.js_9.part.js","main.clients.dart.js_12.part.js"],
-deferredPartHashes:["Nrj9sb4v34sWsWUkrHpiD5h6oG0=","PBi7BMLqXeamt90Fd+CHVgzK2Jk=","qXfn48rnyDyF5Nt35ObaYpWBrbI=","foYxX3di/L8vnaPw10anFtMQUug=","4e+dTpfX9WcYEUGwwqev3wPV2NI=","XhccBjN4sSz74mJWxIIkUrjnlcg=","TmsizPPjEiMXRAvEQau2Nbk0sHU=","3qTgGRA9Oyhv0O5eYf3uR3eSvw4=","Bn0y8bgngL+Xfx6sI9Xr4l9IPZY=","re9cAHTquipkglAicgsudBAns3k="],
+deferredPartUris:["main.clients.dart.js_3.part.js","main.clients.dart.js_2.part.js","main.clients.dart.js_10.part.js","main.clients.dart.js_9.part.js","main.clients.dart.js_12.part.js","main.clients.dart.js_4.part.js","main.clients.dart.js_5.part.js","main.clients.dart.js_1.part.js","main.clients.dart.js_13.part.js","main.clients.dart.js_11.part.js"],
+deferredPartHashes:["Nrj9sb4v34sWsWUkrHpiD5h6oG0=","PBi7BMLqXeamt90Fd+CHVgzK2Jk=","iPxo1Sn6SzUbXh9Emgs0LtOGG9I=","B4SNV8oOEkvGzNRBYQQsrcrC22Y=","ZoeUNLjIFRGcBNeoRSF5xe3v9wU=","XhccBjN4sSz74mJWxIIkUrjnlcg=","TmsizPPjEiMXRAvEQau2Nbk0sHU=","3qTgGRA9Oyhv0O5eYf3uR3eSvw4=","Ob4NsWWe/PPA+h3JEN/ocTmJjwg=","5j08AJK09EkPEKPoLxinyuFSp0g="],
 typeUniverse:{eC:new Map(),tR:{},eT:{},tPV:{},sEA:[]},
 mangledGlobalNames:{b:"int",v:"double",a2:"num",a:"String",aT:"bool",z:"Null",m:"List",j:"Object",w:"Map"},
 mangledNames:{},
