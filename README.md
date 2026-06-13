@@ -1,7 +1,7 @@
 # LaV's Digital Home
 I lost a bet and had to make a very narcissistic website about me and this 
 is eggsactly that. A person/portfolio website which is meant to be _all about 
-me_, live at [lavisse.xyz](https://lavisse.xyz).
+me_, live at https://shubhamlav.github.io.
 
 ## Made with Jaspr
 Check out [jaspr](https://jaspr.site). Web framework written in Dart by 
